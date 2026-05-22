@@ -374,32 +374,81 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── How it works — sage green ── */}
-        <section style={{ background: "#e8f0e5" }} className="py-24 px-4" id="how-it-works">
-          <div className="max-w-5xl mx-auto">
+        {/* ── How it works ── */}
+        <section className="py-24 px-4 overflow-hidden" id="how-it-works" style={{ background: "#0a0a0a" }}>
+          <div className="max-w-6xl mx-auto">
+
+            {/* Header */}
             <RevealOnScroll className="text-center mb-14">
-              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>How It Works</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Four steps to tax-ready</h2>
-              <p className="text-lg text-gray-600 max-w-xl mx-auto">Tax season used to be stressful. Not anymore.</p>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#4ade80" }}>How It Works</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Four steps to tax-ready</h2>
+              <p className="text-lg text-gray-400 max-w-xl mx-auto">Tax season used to be stressful. Not anymore.</p>
             </RevealOnScroll>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {/* Demo video — phone frame */}
+            <RevealOnScroll className="flex justify-center mb-20">
+              <div className="relative">
+                <div
+                  className="w-56 md:w-72 rounded-[40px] overflow-hidden step-phone-float"
+                  style={{
+                    border: "3px solid rgba(255,255,255,0.12)",
+                    boxShadow: "0 0 0 1px rgba(74,222,128,0.15), 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(74,222,128,0.12)",
+                  }}
+                >
+                  <video autoPlay loop muted playsInline className="w-full h-auto block">
+                    <source src="/demo.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                {/* Ambient glow */}
+                <div
+                  className="absolute -inset-8 -z-10 rounded-full pointer-events-none animate-glow-pulse"
+                  style={{ background: "radial-gradient(circle, rgba(74,222,128,0.18) 0%, transparent 70%)", filter: "blur(30px)" }}
+                />
+              </div>
+            </RevealOnScroll>
+
+            {/* Steps */}
+            <div className="relative grid md:grid-cols-4 gap-5">
+              {/* Connecting line */}
+              <div className="hidden md:block absolute top-8 left-[14%] right-[14%] h-px pointer-events-none"
+                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(74,222,128,0.35) 20%, rgba(74,222,128,0.35) 80%, transparent 100%)" }}
+              />
+
               {[
-                { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly.", img: "/screenshot-receipt.jpeg", alt: "TaxSort AI receipt scanning" },
-                { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds.", img: "/screenshot-expenses.jpeg", alt: "TaxSort expense list" },
-                { step: "03", title: "Track", desc: "Every business drive is logged automatically with GPS mileage tracking.", img: "/screenshot-mileage.jpeg", alt: "TaxSort mileage tracking" },
-                { step: "04", title: "Export", desc: "Generate audit-ready PDFs for your accountant in one tap.", img: "/screenshot-export.jpeg", alt: "TaxSort export screen" },
+                { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly.", img: "/screenshot-receipt.jpeg", alt: "Receipt scanning" },
+                { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds.", img: "/screenshot-expenses.jpeg", alt: "Expense sorting" },
+                { step: "03", title: "Track", desc: "Every business drive logged automatically with GPS mileage tracking.", img: "/screenshot-mileage.jpeg", alt: "Mileage tracking" },
+                { step: "04", title: "Export", desc: "Generate audit-ready PDFs for your accountant in one tap.", img: "/screenshot-export.jpeg", alt: "Export reports" },
               ].map((s, i) => (
-                <RevealOnScroll key={s.step} delay={i * 100}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-full">
-                    <div className="h-64 overflow-hidden">
-                      <div style={{ marginTop: "-20px" }}>
-                        <Image src={s.img} alt={s.alt} width={300} height={600} className="w-full h-auto" />
-                      </div>
+                <RevealOnScroll key={s.step} delay={i * 120}>
+                  <div
+                    className="rounded-2xl overflow-hidden flex flex-col h-full group hover:-translate-y-2 transition-transform duration-300"
+                    style={{ background: "#111111", border: "1px solid rgba(255,255,255,0.07)", boxShadow: "0 4px 24px rgba(0,0,0,0.3)" }}
+                  >
+                    {/* Step dot on connecting line */}
+                    <div className="hidden md:flex justify-center -mt-3 mb-0 relative z-10">
+                      <div
+                        className="w-4 h-4 rounded-full step-dot-pulse"
+                        style={{ background: "#4ade80", boxShadow: "0 0 12px rgba(74,222,128,0.8)" }}
+                      />
                     </div>
-                    <div className="p-5">
-                      <div className="text-3xl font-bold mb-1" style={{ color: "#2a7a3b" }}>{s.step}</div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{s.title}</h3>
-                      <p className="text-gray-500 text-sm">{s.desc}</p>
+
+                    {/* Screenshot */}
+                    <div className="h-52 overflow-hidden relative">
+                      <div style={{ marginTop: "-20px" }}>
+                        <Image src={s.img} alt={s.alt} width={300} height={600} className="w-full h-auto group-hover:scale-105 transition-transform duration-500" />
+                      </div>
+                      {/* Gradient fade at bottom */}
+                      <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
+                        style={{ background: "linear-gradient(to bottom, transparent, #111111)" }}
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 flex flex-col flex-1">
+                      <div className="text-4xl font-bold mb-2 step-num-glow" style={{ color: "#4ade80" }}>{s.step}</div>
+                      <h3 className="text-lg font-bold text-white mb-2">{s.title}</h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
                     </div>
                   </div>
                 </RevealOnScroll>

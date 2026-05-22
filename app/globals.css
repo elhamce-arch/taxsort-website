@@ -144,3 +144,24 @@ body {
 .icon-bar-1 { animation: barPop 1.8s ease-in-out infinite alternate; }
 .icon-bar-2 { animation: barPop 1.8s ease-in-out infinite alternate 0.25s; }
 .icon-bar-3 { animation: barPop 1.8s ease-in-out infinite alternate 0.5s; }
+
+/* ── How it works step animations ── */
+@keyframes stepNumGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(74,222,128,0.4); }
+  50%       { text-shadow: 0 0 40px rgba(74,222,128,0.9), 0 0 80px rgba(74,222,128,0.3); }
+}
+@keyframes phoneFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-8px) scale(1.01); }
+}
+@keyframes connectorGrow {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+}
+.step-num-glow { animation: stepNumGlow 3s ease-in-out infinite; }
+.step-phone-float { animation: phoneFloat 4s ease-in-out infinite; }
+.step-dot-pulse { animation: dotPulse 2s ease-in-out infinite; }
