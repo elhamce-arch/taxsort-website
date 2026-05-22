@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --sage: #e8f0e5;
+  --sage-dark: #d4e4cf;
+  --green: #2a7a3b;
+  --green-dark: #1f5e2d;
+  --dark: #1a1a1a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #ffffff;
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}

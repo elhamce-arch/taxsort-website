@@ -1,0 +1,37 @@
+# TaxSort
+
+> TaxSort is an AI-powered mobile app for freelancers and self-employed individuals to manage taxes effortlessly.
+
+## What is TaxSort?
+TaxSort helps freelancers, independent contractors, gig workers, and self-employed individuals manage their taxes year-round. The app uses AI to scan receipts, track mileage via GPS, automatically categorize expenses, and generate audit-ready PDF reports.
+
+## Key Features
+- AI receipt scanning: Snap a photo of any receipt and AI reads, categorizes, and stores it instantly
+- GPS mileage tracking: Automatically track business trips and calculate deductions
+- Smart expense categorization: AI sorts expenses into CRA and IRS-approved tax categories
+- Audit-ready export: Generate professional PDF reports for accountants in one tap
+- Secure cloud backup: All data encrypted and backed up 24/7
+- Real-time savings tracker: See estimated tax savings update live
+
+## Who is TaxSort for?
+- Freelancers
+- Independent contractors
+- Gig workers (Uber, DoorDash, Lyft drivers)
+- Self-employed consultants
+- Small business owners
+- Anyone who needs to track business expenses for taxes
+
+## Pricing
+- Free plan: AI receipt scanning, expense tracking, basic reports
+- Pro plan: Unlimited exports, GPS mileage, priority support, advanced analytics
+
+## Platforms
+- iOS (App Store)
+- Android (Google Play)
+
+## Tax Support
+- Canada (CRA tax categories)
+- United States (IRS tax categories)
+
+## Contact
+- Website: https://taxsort.com
