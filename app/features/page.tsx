@@ -66,7 +66,7 @@ export default function FeaturesPage() {
               ].map((s, i) => (
                 <div key={s.label} className={`flex flex-col items-center gap-3 ${i === 1 ? "md:mb-8" : ""}`}>
                   <div className="w-40 rounded-2xl overflow-hidden shadow-lg">
-                    <div style={{ marginTop: "-40px" }}>
+                    <div style={{ marginTop: "-20px" }}>
                       <Image src={s.src} alt={s.alt} width={200} height={400} className="w-full h-auto" />
                     </div>
                   </div>

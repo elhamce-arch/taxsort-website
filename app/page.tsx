@@ -191,7 +191,7 @@ export default function Home() {
               {/* Left phone */}
               <div className="hidden md:block relative w-36 md:w-44 self-end mb-8 animate-float-left">
                 <div className="rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/10">
-                  <div style={{ marginTop: "-40px" }}>
+                  <div style={{ marginTop: "-20px" }}>
                     <Image
                       src="/screenshot-receipt.jpeg"
                       alt="AI receipt scanning"
@@ -206,7 +206,7 @@ export default function Home() {
               {/* Center phone — largest, straight float */}
               <div className="relative w-52 md:w-64 z-10 animate-float">
                 <div className="rounded-[36px] overflow-hidden shadow-[0_0_80px_rgba(74,222,128,0.25)] border-2 border-white/10">
-                  <div style={{ marginTop: "-40px" }}>
+                  <div style={{ marginTop: "-20px" }}>
                     <Image
                       src="/screenshot-expenses.jpeg"
                       alt="TaxSort expense tracking"
@@ -222,7 +222,7 @@ export default function Home() {
               {/* Right phone */}
               <div className="hidden md:block relative w-36 md:w-44 self-end mb-8 animate-float-right">
                 <div className="rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/10">
-                  <div style={{ marginTop: "-40px" }}>
+                  <div style={{ marginTop: "-20px" }}>
                     <Image
                       src="/screenshot-mileage.jpeg"
                       alt="GPS mileage tracking"
@@ -278,25 +278,26 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <RevealOnScroll className="text-center mb-14">
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>How It Works</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Three steps to tax-ready</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Four steps to tax-ready</h2>
               <p className="text-lg text-gray-600 max-w-xl mx-auto">Tax season used to be stressful. Not anymore.</p>
             </RevealOnScroll>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly.", img: "/screenshot-receipt.jpeg", alt: "TaxSort AI receipt scanning" },
                 { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds.", img: "/screenshot-expenses.jpeg", alt: "TaxSort expense list" },
-                { step: "03", title: "Export", desc: "Generate audit-ready PDFs for your accountant in one tap.", img: "/screenshot-export.jpeg", alt: "TaxSort export screen" },
+                { step: "03", title: "Track", desc: "Every business drive is logged automatically with GPS mileage tracking.", img: "/screenshot-mileage.jpeg", alt: "TaxSort mileage tracking" },
+                { step: "04", title: "Export", desc: "Generate audit-ready PDFs for your accountant in one tap.", img: "/screenshot-export.jpeg", alt: "TaxSort export screen" },
               ].map((s, i) => (
-                <RevealOnScroll key={s.step} delay={i * 120}>
+                <RevealOnScroll key={s.step} delay={i * 100}>
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-full">
-                    <div className="h-56 overflow-hidden">
-                      <div style={{ marginTop: "-40px" }}>
-                        <Image src={s.img} alt={s.alt} width={300} height={500} className="w-full h-auto" />
+                    <div className="h-64 overflow-hidden">
+                      <div style={{ marginTop: "-20px" }}>
+                        <Image src={s.img} alt={s.alt} width={300} height={600} className="w-full h-auto" />
                       </div>
                     </div>
-                    <div className="p-6">
-                      <div className="text-4xl font-bold text-gray-100 mb-2">{s.step}</div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{s.title}</h3>
+                    <div className="p-5">
+                      <div className="text-3xl font-bold text-gray-100 mb-1">{s.step}</div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{s.title}</h3>
                       <p className="text-gray-500 text-sm">{s.desc}</p>
                     </div>
                   </div>
