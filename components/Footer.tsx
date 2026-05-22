@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -7,11 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#1a1a1a" />
-                </svg>
-              </div>
+              <Image src="/logo.png" alt="TaxSort logo" width={32} height={32} className="rounded-lg" />
               <span className="text-white font-semibold">TaxSort</span>
             </div>
             <p className="text-sm">Effortless tax management for freelancers and self-employed.</p>
@@ -37,8 +35,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-medium mb-3 text-sm">Download</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">App Store</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Google Play</a></li>
+              <li><a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">App Store</a></li>
+              <li><a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Google Play</a></li>
             </ul>
           </div>
         </div>

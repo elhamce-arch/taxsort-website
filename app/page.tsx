@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 
 const stats = [
   { value: "98%", label: "Receipts processed instantly" },
@@ -138,19 +139,23 @@ export default function Home() {
                 Effortless AI receipt capture, mileage tracking, and expense sorting for freelancers.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="#download"
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-lg font-semibold text-white"
                   style={{ background: "#2a7a3b" }}
                 >
-                  Download
-                </Link>
-                <Link
-                  href="/how-it-works"
+                  App Store
+                </a>
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3 rounded-lg font-semibold text-gray-900 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
                 >
-                  Get App
-                </Link>
+                  Google Play
+                </a>
               </div>
             </div>
 
@@ -271,14 +276,18 @@ export default function Home() {
             <p className="text-lg text-gray-600 mb-8">Free to download. No credit card required.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="#"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 rounded-xl font-semibold text-white"
                 style={{ background: "#2a7a3b" }}
               >
                 Download on App Store
               </a>
               <a
-                href="#"
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 rounded-xl font-semibold text-gray-900 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
               >
                 Get it on Google Play
