@@ -182,12 +182,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
-                  <path d="M3 2L3 12L9 12L12 7Z" fill="#4285F4"/>
-                  <path d="M3 12L3 22L12 17L9 12Z" fill="#34A853"/>
-                  <path d="M9 12L12 7L21 12Z" fill="#FBBC04"/>
-                  <path d="M9 12L21 12L12 17Z" fill="#EA4335"/>
-                </svg>
+                <Image src="/google-play-icon.png" alt="Google Play" width={24} height={24} />
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
                   Google Play
@@ -416,12 +411,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
-                  <path d="M3 2L3 12L9 12L12 7Z" fill="#4285F4"/>
-                  <path d="M3 12L3 22L12 17L9 12Z" fill="#34A853"/>
-                  <path d="M9 12L12 7L21 12Z" fill="#FBBC04"/>
-                  <path d="M9 12L21 12L12 17Z" fill="#EA4335"/>
-                </svg>
+                <Image src="/google-play-icon.png" alt="Google Play" width={24} height={24} />
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
                   Google Play
