@@ -15,7 +15,6 @@ const features = [
   { icon: "📄", title: "Audit-Ready Export", desc: "Generate professional PDF or CSV reports in one tap. Send directly to your accountant or import into TurboTax or H&R Block." },
   { icon: "☁️", title: "Secure Cloud Backup", desc: "All receipts and data are encrypted and backed up to the cloud 24/7. Never lose a receipt again." },
   { icon: "📊", title: "Real-Time Tax Savings", desc: "Watch your estimated tax savings grow as you add expenses. Know exactly where you stand before tax season hits." },
-  { icon: "🏦", title: "Bank Integration", desc: "Connect your bank account to automatically import transactions. Categorize with one tap." },
   { icon: "👥", title: "Multi-Business Support", desc: "Manage expenses for multiple businesses or side hustles from one app. Separate reports per business." },
   { icon: "🔍", title: "Smart Search", desc: "Find any receipt instantly with full-text search across all your stored receipts and expenses." },
 ];

@@ -227,6 +227,23 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Video */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">See TaxSort in action</h2>
+            <p className="text-lg text-gray-500 mb-10">Watch how easy it is to snap, sort, and save on taxes.</p>
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/lpuW6R3Dqe4"
+                title="TaxSort App Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Stats row */}
         <section className="py-16 px-4 bg-gray-900 text-white">
           <div className="max-w-7xl mx-auto">
