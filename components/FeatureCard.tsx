@@ -35,7 +35,7 @@ export default function FeatureCard({ icon, title, desc, accent, glow }: Props) 
           className="absolute inset-0 opacity-30"
           style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%)" }}
         />
-        <span className="relative" style={{ fontSize: "3.5rem" }}>{icon}</span>
+        <span className="relative" style={{ fontSize: "6rem" }}>{icon}</span>
       </div>
       {/* Body */}
       <div className="p-6 flex flex-col flex-1">
