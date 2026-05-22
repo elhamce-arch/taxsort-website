@@ -243,7 +243,7 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
-              Snap receipts, track mileage, and export tax-ready reports — for freelancers, business owners, Uber drivers, realtors, and anyone who wants to keep more of what they earn.
+              Snap receipts, track mileage, and export tax-ready reports.
             </p>
 
             {/* Download badges */}
@@ -338,9 +338,9 @@ export default function Home() {
         <section className="py-10 border-y border-white/10" style={{ background: "#0d2617" }}>
           <div className="max-w-7xl mx-auto px-4 text-center">
             <p className="text-xs text-gray-400 uppercase tracking-widest mb-6">Trusted by people who work for themselves</p>
-            <div className="flex flex-wrap justify-center gap-8 text-gray-300 font-semibold text-sm">
-              {["Freelancers", "Business Owners", "Uber Drivers", "Realtors", "Gig Workers", "Personal Finance"].map((t) => (
-                <span key={t}>{t}</span>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              {["Business Owners", "Freelancers", "Uber Drivers", "Realtors", "Gig Workers", "Personal Finance"].map((t) => (
+                <span key={t} className="font-bold" style={{ color: "#86efac" }}>{t}</span>
               ))}
             </div>
           </div>
@@ -466,6 +466,63 @@ export default function Home() {
                 </RevealOnScroll>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Pricing preview ── */}
+        <section className="py-20 px-4" style={{ background: "#0a0a0a" }} id="pricing">
+          <div className="max-w-4xl mx-auto">
+            <RevealOnScroll className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#4ade80" }}>Pricing</p>
+              <h2 className="text-4xl font-bold text-white mb-4">Simple, honest pricing</h2>
+              <p className="text-gray-400">Start free. Upgrade when you need more.</p>
+            </RevealOnScroll>
+            <div className="grid md:grid-cols-2 gap-6">
+              <RevealOnScroll>
+                <div className="rounded-2xl p-8 flex flex-col h-full" style={{ background: "#111111", boxShadow: "0 0 0 1px rgba(255,255,255,0.08)" }}>
+                  <h3 className="text-xl font-bold text-white mb-1">Free</h3>
+                  <p className="text-gray-400 text-sm mb-4">Try it out — no credit card needed</p>
+                  <div className="flex items-baseline gap-1 mb-6">
+                    <span className="text-5xl font-bold text-white">$0</span>
+                    <span className="text-gray-400 ml-1">forever</span>
+                  </div>
+                  <ul className="space-y-2 text-sm text-gray-400 flex-1 mb-6">
+                    {["AI receipt scanning (up to 10/month)", "Auto expense categorization", "GPS mileage tracking", "1 bank or CSV import/month", "Cloud backup"].map((f) => (
+                      <li key={f} className="flex items-start gap-2"><span style={{ color: "#4ade80" }}>✓</span>{f}</li>
+                    ))}
+                  </ul>
+                  <Link href="/#download" className="block text-center py-3 rounded-xl font-semibold text-white transition-colors" style={{ border: "1px solid rgba(255,255,255,0.2)" }}>
+                    Download Free
+                  </Link>
+                </div>
+              </RevealOnScroll>
+              <RevealOnScroll delay={100}>
+                <div className="rounded-2xl p-8 flex flex-col h-full relative" style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)", boxShadow: "0 0 0 1px rgba(74,222,128,0.25), 0 8px 40px rgba(74,222,128,0.1)" }}>
+                  <span className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "#4ade80", color: "#0d0d0d" }}>Most Popular</span>
+                  <h3 className="text-xl font-bold text-white mb-1">Pro</h3>
+                  <p className="text-gray-400 text-sm mb-4">Everything you need to stay tax-ready</p>
+                  <div className="flex items-baseline gap-1 mb-1">
+                    <span className="text-5xl font-bold text-white">$7.99</span>
+                    <span className="text-gray-400 ml-1">/ month</span>
+                  </div>
+                  <p className="text-sm mb-6 flex items-center gap-2">
+                    <span style={{ textDecoration: "line-through", color: "#6b7280" }}>$95.88/yr</span>
+                    <span style={{ color: "#4ade80" }}>$44.99 / year — save 53%</span>
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-300 flex-1 mb-6">
+                    {["Unlimited AI receipt scanning", "Unlimited bank & CSV imports", "Unlimited PDF, CSV & ZIP exports", "Multiple business profiles", "Deduction Health Score", "AI tax tips on every receipt"].map((f) => (
+                      <li key={f} className="flex items-start gap-2"><span style={{ color: "#4ade80" }}>✓</span>{f}</li>
+                    ))}
+                  </ul>
+                  <Link href="/pricing" className="block text-center py-3 rounded-xl font-semibold bg-white text-gray-900 hover:bg-gray-100 transition-colors">
+                    Get Pro
+                  </Link>
+                </div>
+              </RevealOnScroll>
+            </div>
+            <RevealOnScroll className="text-center mt-8">
+              <Link href="/pricing" className="text-sm font-semibold" style={{ color: "#4ade80" }}>See full pricing details →</Link>
+            </RevealOnScroll>
           </div>
         </section>
 

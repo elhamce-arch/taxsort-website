@@ -96,8 +96,11 @@ export default function PricingPage() {
                     <span className="text-5xl font-bold">{p.price}</span>
                     <span className={p.highlight ? "text-gray-400" : "text-gray-500"}>{p.period}</span>
                   </div>
-                  {p.annualNote && (
-                    <p className="text-sm mt-2" style={{ color: "#4ade80" }}>{p.annualNote}</p>
+                  {p.name === "Pro" && (
+                    <p className="text-sm mt-2 flex items-center gap-2">
+                      <span style={{ textDecoration: "line-through", color: "#6b7280" }}>$95.88/yr</span>
+                      <span style={{ color: "#4ade80" }}>$44.99 / year — save 53%</span>
+                    </p>
                   )}
                 </div>
                 <Link

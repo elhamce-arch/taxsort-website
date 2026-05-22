@@ -38,6 +38,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
+            <Link href="/" className={`text-sm font-medium transition-colors ${textColor}`}>Home</Link>
             <Link href="/features" className={`text-sm font-medium transition-colors ${textColor}`}>Features</Link>
             <Link href="/#how-it-works" className={`text-sm font-medium transition-colors ${textColor}`}>How it works</Link>
             <Link href="/pricing" className={`text-sm font-medium transition-colors ${textColor}`}>Pricing</Link>
@@ -78,6 +79,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
           className="md:hidden px-4 pb-4 flex flex-col gap-3"
           style={dark ? { background: "#0f2e18" } : { background: "#e8f0e5" }}
         >
+          <Link href="/" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Home</Link>
           <Link href="/features" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Features</Link>
           <Link href="/how-it-works" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>How it works</Link>
           <Link href="/pricing" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Pricing</Link>
