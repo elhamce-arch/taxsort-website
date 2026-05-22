@@ -344,7 +344,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="p-5">
-                      <div className="text-3xl font-bold text-gray-100 mb-1">{s.step}</div>
+                      <div className="text-3xl font-bold mb-1" style={{ color: "#2a7a3b" }}>{s.step}</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{s.title}</h3>
                       <p className="text-gray-500 text-sm">{s.desc}</p>
                     </div>
