@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import FeatureCard from "@/components/FeatureCard";
 import Link from "next/link";
 import Image from "next/image";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
@@ -279,42 +280,13 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {features.map((f, i) => (
                 <RevealOnScroll key={f.title} delay={i * 80}>
-                  <div
-                    className="rounded-3xl overflow-hidden group cursor-default h-full flex flex-col"
-                    style={{
-                      background: "#111111",
-                      boxShadow: `0 0 0 1px rgba(255,255,255,0.06)`,
-                      transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                    }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.12), 0 8px 40px ${f.glow}`;
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
-                    }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06)`;
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                    }}
-                  >
-                    {/* Card top — colored gradient visual */}
-                    <div
-                      className="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                      style={{ background: f.accent }}
-                    >
-                      {/* Shine overlay */}
-                      <div
-                        className="absolute inset-0 opacity-30"
-                        style={{
-                          background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%)",
-                        }}
-                      />
-                      <span className="relative drop-shadow-lg" style={{ fontSize: "3.5rem" }}>{f.icon}</span>
-                    </div>
-                    {/* Card body */}
-                    <div className="p-6 flex flex-col flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2">{f.title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
-                    </div>
-                  </div>
+                  <FeatureCard
+                    icon={f.icon}
+                    title={f.title}
+                    desc={f.desc}
+                    accent={f.accent}
+                    glow={f.glow}
+                  />
                 </RevealOnScroll>
               ))}
             </div>
