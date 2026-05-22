@@ -42,6 +42,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
             <Link href="/#how-it-works" className={`text-sm font-medium transition-colors ${textColor}`}>How it works</Link>
             <Link href="/pricing" className={`text-sm font-medium transition-colors ${textColor}`}>Pricing</Link>
             <Link href="/testimonials" className={`text-sm font-medium transition-colors ${textColor}`}>Testimonials</Link>
+            <Link href="/blog" className={`text-sm font-medium transition-colors ${textColor}`}>Blog</Link>
           </div>
 
           {/* CTA */}
@@ -81,6 +82,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
           <Link href="/how-it-works" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>How it works</Link>
           <Link href="/pricing" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Pricing</Link>
           <Link href="/testimonials" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Testimonials</Link>
+          <Link href="/blog" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Blog</Link>
           <Link
             href="#download"
             className="py-2 px-4 rounded-lg text-sm font-semibold text-white text-center"
