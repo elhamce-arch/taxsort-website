@@ -81,7 +81,7 @@ export default function PrivacyPage() {
                   <li>Your data persists while your account remains active.</li>
                   <li>You can delete all transaction data using the &ldquo;Wipe All Data&rdquo; option in the app.</li>
                   <li>Mileage history can be deleted from the Mileage tab.</li>
-                  <li>For permanent account deletion, contact us at <a href="mailto:TaxSortSupport@gmail.com" className="underline" style={{ color: "#2a7a3b" }}>TaxSortSupport@gmail.com</a>.</li>
+                  <li>For permanent account deletion, contact us at <a href="mailto:support@taxsort.app" className="underline" style={{ color: "#2a7a3b" }}>support@taxsort.app</a>.</li>
                 </ul>
               </div>
 
@@ -93,8 +93,8 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="text-xl font-bold text-gray-900 mb-3">9. Contact Us</h2>
                 <p className="text-sm">Questions about this privacy policy? Email us at{" "}
-                  <a href="mailto:TaxSortSupport@gmail.com" className="underline" style={{ color: "#2a7a3b" }}>
-                    TaxSortSupport@gmail.com
+                  <a href="mailto:support@taxsort.app" className="underline" style={{ color: "#2a7a3b" }}>
+                    support@taxsort.app
                   </a>
                 </p>
               </div>

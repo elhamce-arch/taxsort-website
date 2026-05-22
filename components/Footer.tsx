@@ -29,6 +29,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><a href="mailto:support@taxsort.app" className="hover:text-white transition-colors">support@taxsort.app</a></li>
             </ul>
           </div>
 
