@@ -5,10 +5,10 @@ import Image from "next/image";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 
 const stats = [
-  { value: "98%", label: "Receipts processed instantly" },
-  { value: "100%", label: "All tax categories supported" },
-  { value: "24/7", label: "Secure cloud backup" },
-  { value: "1 tap", label: "Export audit-ready files" },
+  { value: "98%", title: "Save Your Bookkeeping Time", label: "Let AI handle receipt scanning, categorization, and organization automatically — no manual data entry ever." },
+  { value: "100%", title: "All Tax Categories Supported", label: "Every CRA and IRS-approved expense category covered. Receipts processed and sorted instantly as you snap them." },
+  { value: "24/7", title: "Secure Cloud Backup", label: "Your receipts and financial data are encrypted and backed up around the clock. Never lose a receipt again." },
+  { value: "1 tap", title: "Export Audit-Ready Files", label: "Generate professional PDF reports, CSV files, or ZIP bundles for your accountant in a single tap." },
 ];
 
 const features = [
@@ -189,6 +189,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Stats — key value props */}
+        <section className="py-20 px-4 bg-gray-900 text-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14">
+              <h2 className="text-4xl font-bold mb-3">Why freelancers choose TaxSort</h2>
+              <p className="text-gray-400 text-lg">Built to save you time, money, and stress — every tax season.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {stats.map((s) => (
+                <div key={s.value} className="rounded-2xl p-6 border border-gray-700 hover:border-gray-500 transition-colors">
+                  <div className="text-5xl font-bold mb-3" style={{ color: "#4ade80" }}>{s.value}</div>
+                  <h3 className="text-white font-semibold text-lg mb-2">{s.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Features */}
         <section className="py-20 px-4" id="features">
           <div className="max-w-7xl mx-auto">
@@ -211,7 +230,7 @@ export default function Home() {
         </section>
 
         {/* How it works */}
-        <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
+        <section style={{ background: "#e8f0e5" }} className="py-20 px-4" id="how-it-works">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-14">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Snap. Sort. Save. — in 3 steps</h2>
@@ -255,26 +274,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats row */}
-        <section className="py-16 px-4 bg-gray-900 text-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-2">See your savings in action</h2>
-            </div>
-            <div className="flex flex-wrap justify-center gap-16 text-center">
-              {[
-                { value: "40%", label: "Average tax savings" },
-                { value: "32%", label: "More deductions found" },
-                { value: "2014", label: "Receipts scanned per user" },
-              ].map((s) => (
-                <div key={s.value}>
-                  <div className="text-5xl font-bold mb-2">{s.value}</div>
-                  <div className="text-gray-400 text-sm">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Testimonials */}
         <section className="py-20 px-4">

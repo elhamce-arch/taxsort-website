@@ -8,13 +8,17 @@ export const metadata: Metadata = {
   description: "Tax tips, guides, and advice for freelancers, independent contractors, and self-employed individuals. Learn how to maximize deductions and simplify tax season.",
 };
 
+const categories = ["All", "Tax Tips", "Mileage", "Canada", "USA", "Gig Economy"];
+
 const posts = [
   {
     slug: "top-tax-deductions-freelancers",
     title: "Top 15 Tax Deductions Every Freelancer Should Know",
-    excerpt: "Most freelancers leave money on the table at tax time. Here are the 15 most commonly missed deductions you should be tracking today.",
+    excerpt: "Most freelancers leave money on the table at tax time. Here are the 15 most commonly missed deductions — from your home office to your phone bill.",
     category: "Tax Tips",
     date: "May 20, 2026",
+    readTime: "6 min read",
+    color: "#e8f0e5",
   },
   {
     slug: "mileage-deduction-guide",
@@ -22,6 +26,8 @@ const posts = [
     excerpt: "Every business kilometre you drive is a tax deduction. Here's exactly how to track, calculate, and claim your mileage — whether you're in Canada or the US.",
     category: "Mileage",
     date: "May 15, 2026",
+    readTime: "8 min read",
+    color: "#e8f5e9",
   },
   {
     slug: "home-office-deduction",
@@ -29,6 +35,8 @@ const posts = [
     excerpt: "Working from home? You may be able to deduct a portion of your rent, utilities, and internet. Here's how to calculate and claim it correctly.",
     category: "Tax Tips",
     date: "May 10, 2026",
+    readTime: "5 min read",
+    color: "#fef9e7",
   },
   {
     slug: "gig-worker-taxes-canada",
@@ -36,39 +44,122 @@ const posts = [
     excerpt: "Driving for Uber or delivering for DoorDash? Here's everything you need to know about filing taxes as a gig worker in Canada.",
     category: "Canada",
     date: "May 5, 2026",
+    readTime: "10 min read",
+    color: "#fce4ec",
+  },
+  {
+    slug: "receipt-scanning-tips",
+    title: "How to Never Lose a Business Receipt Again",
+    excerpt: "The best freelancers are obsessive about receipts — but not in a stressful way. Here's the simple system to capture every deductible expense automatically.",
+    category: "Tax Tips",
+    date: "April 28, 2026",
+    readTime: "4 min read",
+    color: "#e3f2fd",
+  },
+  {
+    slug: "freelancer-tax-mistakes",
+    title: "7 Tax Mistakes Freelancers Make (And How to Avoid Them)",
+    excerpt: "From missing the self-employment deduction to forgetting quarterly payments — these are the most expensive mistakes freelancers make at tax time.",
+    category: "Tax Tips",
+    date: "April 20, 2026",
+    readTime: "7 min read",
+    color: "#f3e5f5",
   },
 ];
+
+const categoryIcons: Record<string, string> = {
+  "Tax Tips": "💡",
+  "Mileage": "🚗",
+  "Canada": "🍁",
+  "USA": "🇺🇸",
+  "Gig Economy": "📱",
+};
 
 export default function BlogPage() {
   return (
     <>
       <Navbar />
       <main>
+        {/* Hero */}
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">Tax tips for freelancers</h1>
-            <p className="text-xl text-gray-600">Guides and advice to help you keep more of what you earn.</p>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#2a7a3b" }}>TaxSort Blog</p>
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Tax tips for freelancers</h1>
+            <p className="text-xl text-gray-600 max-w-xl mx-auto">
+              Practical guides to help you track more, deduct more, and keep more of what you earn.
+            </p>
           </div>
         </section>
 
+        {/* Featured post */}
+        <section className="py-12 px-4 border-b border-gray-100">
+          <div className="max-w-5xl mx-auto">
+            <article className="rounded-2xl overflow-hidden border border-gray-100 md:flex hover:shadow-lg transition-all">
+              <div className="md:w-2/5 h-48 md:h-auto flex items-center justify-center text-6xl" style={{ background: posts[0].color }}>
+                {categoryIcons[posts[0].category] ?? "📝"}
+              </div>
+              <div className="p-8 md:w-3/5 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full text-white" style={{ background: "#2a7a3b" }}>{posts[0].category}</span>
+                  <span className="text-xs text-gray-400">{posts[0].date} · {posts[0].readTime}</span>
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3 leading-snug">{posts[0].title}</h2>
+                <p className="text-gray-500 leading-relaxed mb-5">{posts[0].excerpt}</p>
+                <Link href={`/blog/${posts[0].slug}`} className="font-semibold text-sm inline-flex items-center gap-1" style={{ color: "#2a7a3b" }}>
+                  Read article →
+                </Link>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* All posts */}
         <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-            {posts.map((p) => (
-              <article key={p.slug} className="rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-all">
-                <div className="h-40 flex items-center justify-center text-5xl" style={{ background: "#e8f0e5" }}>
-                  📝
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gray-100 text-gray-600">{p.category}</span>
-                    <span className="text-xs text-gray-400">{p.date}</span>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {posts.slice(1).map((p) => (
+                <article key={p.slug} className="rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-all flex flex-col">
+                  <div className="h-32 flex items-center justify-center text-4xl" style={{ background: p.color }}>
+                    {categoryIcons[p.category] ?? "📝"}
                   </div>
-                  <h2 className="text-lg font-bold text-gray-900 mb-2 leading-snug">{p.title}</h2>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.excerpt}</p>
-                  <span className="text-sm font-semibold" style={{ color: "#2a7a3b" }}>Read more →</span>
-                </div>
-              </article>
-            ))}
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gray-100 text-gray-600">{p.category}</span>
+                      <span className="text-xs text-gray-400">{p.readTime}</span>
+                    </div>
+                    <h2 className="text-base font-bold text-gray-900 mb-2 leading-snug flex-1">{p.title}</h2>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">{p.excerpt}</p>
+                    <div className="flex items-center justify-between mt-auto">
+                      <span className="text-xs text-gray-400">{p.date}</span>
+                      <Link href={`/blog/${p.slug}`} className="text-sm font-semibold" style={{ color: "#2a7a3b" }}>
+                        Read →
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter CTA */}
+        <section style={{ background: "#e8f0e5" }} className="py-16 px-4">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Get tax tips in your inbox</h2>
+            <p className="text-gray-600 mb-6">Monthly guides for freelancers. No spam, unsubscribe anytime.</p>
+            <div className="flex gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-green-400 text-sm"
+              />
+              <button
+                className="px-5 py-3 rounded-xl text-sm font-semibold text-white whitespace-nowrap"
+                style={{ background: "#2a7a3b" }}
+              >
+                Subscribe
+              </button>
+            </div>
           </div>
         </section>
       </main>
