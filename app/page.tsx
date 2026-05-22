@@ -137,9 +137,9 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up delay-100">
-              Snap, sort, and save on{" "}
-              <span style={{ color: "#4ade80" }}>taxes</span>
-              {" "}effortlessly.
+              Snap, Sort, and Save on{" "}
+              <span style={{ color: "#4ade80" }}>Taxes</span>
+              {" "}Effortlessly.
             </h1>
 
             {/* Subtitle */}
@@ -155,8 +155,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                <svg viewBox="0 0 814 1000" className="w-5 h-6" fill="#000">
+                  <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 530.4 0 407.9 0 292.1c0-183.2 119.7-280.4 237.5-280.4 60.2 0 110.3 39.5 148.4 39.5 36.3 0 93.3-41.5 161.9-41.5 26 0 108.2 2.6 168.6 79.9zm-138.4-79.4c-3.8-17.9-11-36.5-22.3-53.6-28.1-40.8-74.2-70.2-116.8-70.2-2.6 0-5.2.3-7.7.6 1.3 20.6 8.9 41.5 21.8 59.7 27.5 37.5 73.6 65.1 124.4 63.5z"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Download on the</span>
@@ -169,8 +169,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-                  <path d="M3 20.5v-17c0-.83 1-.98 1.4-.3l7.6 8.3-7.6 8.3c-.4.68-1.4.53-1.4-.3zm11.4-8.5l-2.1 2.3 4.3 2.5c.6.35 1.1-.05.9-.65L15.4 12zm-2.1-2.3L14.4 12l.9-2.65c.2-.6-.3-1-.9-.65l-4.3 2.5 2.1 2.3zm-4.7-5.4L13 7.8l2.1-2.3-4.3-2.5c-.6-.35-1.1.05-.9.65l.9 2.65z" />
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
+                  <path d="M3.18 23.76a2.5 2.5 0 001.56-.52L16.5 12 4.74.76A2.5 2.5 0 003.18.24C2.25.24 1.5 1 1.5 2v20c0 1 .75 1.76 1.68 1.76z" fill="#4285F4"/>
+                  <path d="M20.32 10.21l-3.82-2.21L13.06 12l3.44 3.44 3.82-2.21c1.09-.63 1.09-2.39 0-3.02z" fill="#FBBC04"/>
+                  <path d="M4.74 23.24L16.5 12l-3.44-3.44L4.74.76a2.5 2.5 0 00-.56 1.59v19.3c0 .59.2 1.14.56 1.59z" fill="#34A853"/>
+                  <path d="M4.74.76L16.5 12l-3.44-3.44L4.74.76z" fill="#EA4335"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
@@ -240,9 +243,9 @@ export default function Home() {
         {/* ── Trusted by ── */}
         <section className="py-10 border-y border-white/10" style={{ background: "#0d2617" }}>
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-xs text-gray-600 uppercase tracking-widest mb-6">Trusted by freelancers worldwide</p>
-            <div className="flex flex-wrap justify-center gap-10 text-gray-600 font-semibold text-sm">
-              {["Freelancers", "Contractors", "Consultants", "Gig Workers", "Creatives"].map((t) => (
+            <p className="text-xs text-gray-400 uppercase tracking-widest mb-6">Trusted by people who work for themselves</p>
+            <div className="flex flex-wrap justify-center gap-8 text-gray-300 font-semibold text-sm">
+              {["Freelancers", "Business Owners", "Uber Drivers", "Realtors", "Gig Workers", "Personal Finance"].map((t) => (
                 <span key={t}>{t}</span>
               ))}
             </div>
@@ -382,8 +385,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                <svg viewBox="0 0 814 1000" className="w-5 h-6" fill="#000">
+                  <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 530.4 0 407.9 0 292.1c0-183.2 119.7-280.4 237.5-280.4 60.2 0 110.3 39.5 148.4 39.5 36.3 0 93.3-41.5 161.9-41.5 26 0 108.2 2.6 168.6 79.9zm-138.4-79.4c-3.8-17.9-11-36.5-22.3-53.6-28.1-40.8-74.2-70.2-116.8-70.2-2.6 0-5.2.3-7.7.6 1.3 20.6 8.9 41.5 21.8 59.7 27.5 37.5 73.6 65.1 124.4 63.5z"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Download on the</span>
@@ -396,8 +399,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-                  <path d="M3 20.5v-17c0-.83 1-.98 1.4-.3l7.6 8.3-7.6 8.3c-.4.68-1.4.53-1.4-.3zm11.4-8.5l-2.1 2.3 4.3 2.5c.6.35 1.1-.05.9-.65L15.4 12zm-2.1-2.3L14.4 12l.9-2.65c.2-.6-.3-1-.9-.65l-4.3 2.5 2.1 2.3zm-4.7-5.4L13 7.8l2.1-2.3-4.3-2.5c-.6-.35-1.1.05-.9.65l.9 2.65z" />
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
+                  <path d="M3.18 23.76a2.5 2.5 0 001.56-.52L16.5 12 4.74.76A2.5 2.5 0 003.18.24C2.25.24 1.5 1 1.5 2v20c0 1 .75 1.76 1.68 1.76z" fill="#4285F4"/>
+                  <path d="M20.32 10.21l-3.82-2.21L13.06 12l3.44 3.44 3.82-2.21c1.09-.63 1.09-2.39 0-3.02z" fill="#FBBC04"/>
+                  <path d="M4.74 23.24L16.5 12l-3.44-3.44L4.74.76a2.5 2.5 0 00-.56 1.59v19.3c0 .59.2 1.14.56 1.59z" fill="#34A853"/>
+                  <path d="M4.74.76L16.5 12l-3.44-3.44L4.74.76z" fill="#EA4335"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
