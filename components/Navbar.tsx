@@ -15,18 +15,18 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
 
   const bg = dark
     ? scrolled
-      ? "bg-[#0d0d0d]/95 backdrop-blur-md border-b border-white/5"
+      ? "backdrop-blur-md border-b border-white/10"
       : "bg-transparent"
     : "border-b border-black/5";
 
   const textColor = dark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900";
   const logoText = dark ? "text-white" : "text-gray-900";
-  const mobileBg = dark ? "bg-[#0d0d0d]" : "";
+  const mobileBg = dark ? "" : "";
 
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${bg}`}
-      style={!dark ? { background: "#e8f0e5" } : undefined}
+      style={dark && scrolled ? { background: "rgba(15,46,24,0.95)" } : !dark ? { background: "#e8f0e5" } : undefined}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -74,8 +74,8 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
       {/* Mobile menu */}
       {open && (
         <div
-          className={`md:hidden px-4 pb-4 flex flex-col gap-3 ${mobileBg}`}
-          style={!dark ? { background: "#e8f0e5" } : undefined}
+          className="md:hidden px-4 pb-4 flex flex-col gap-3"
+          style={dark ? { background: "#0f2e18" } : { background: "#e8f0e5" }}
         >
           <Link href="/features" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Features</Link>
           <Link href="/how-it-works" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>How it works</Link>

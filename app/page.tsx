@@ -123,8 +123,8 @@ export default function Home() {
       />
       <Navbar dark />
       <main>
-        {/* ── Hero — dark with floating phones ── */}
-        <section className="bg-[#0d0d0d] pt-20 pb-0 px-4 overflow-hidden">
+        {/* ── Hero — dark green with floating phones ── */}
+        <section className="pt-20 pb-0 px-4 overflow-hidden" style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)" }}>
           <div className="max-w-4xl mx-auto text-center">
 
             {/* Eyebrow */}
@@ -238,7 +238,7 @@ export default function Home() {
         </section>
 
         {/* ── Trusted by ── */}
-        <section className="bg-[#111111] py-10 border-y border-white/5">
+        <section className="py-10 border-y border-white/10" style={{ background: "#0d2617" }}>
           <div className="max-w-7xl mx-auto px-4 text-center">
             <p className="text-xs text-gray-600 uppercase tracking-widest mb-6">Trusted by freelancers worldwide</p>
             <div className="flex flex-wrap justify-center gap-10 text-gray-600 font-semibold text-sm">
@@ -307,8 +307,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Stats — dark ── */}
-        <section className="py-20 px-4 bg-[#0d0d0d] text-white">
+        {/* ── Stats — dark green ── */}
+        <section className="py-20 px-4 text-white" style={{ background: "#0f2e18" }}>
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "98%", label: "Receipt accuracy" },
@@ -368,8 +368,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── CTA — dark ── */}
-        <section className="py-24 px-4 bg-[#0d0d0d]" id="download">
+        {/* ── CTA — dark green ── */}
+        <section className="py-24 px-4" id="download" style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)" }}>
           <RevealOnScroll className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Start saving on <span style={{ color: "#4ade80" }}>taxes</span> today.
