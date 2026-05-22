@@ -143,8 +143,8 @@ export default function Home() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-10 animate-fade-in-up delay-200">
-              The AI receipt scanner and mileage tracker built for freelancers, contractors, and gig workers.
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+              Snap receipts, track mileage, and export tax-ready reports — for freelancers, business owners, Uber drivers, realtors, and anyone who wants to keep more of what they earn.
             </p>
 
             {/* Download badges */}
@@ -155,8 +155,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 814 1000" className="w-5 h-6" fill="#000">
-                  <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 530.4 0 407.9 0 292.1c0-183.2 119.7-280.4 237.5-280.4 60.2 0 110.3 39.5 148.4 39.5 36.3 0 93.3-41.5 161.9-41.5 26 0 108.2 2.6 168.6 79.9zm-138.4-79.4c-3.8-17.9-11-36.5-22.3-53.6-28.1-40.8-74.2-70.2-116.8-70.2-2.6 0-5.2.3-7.7.6 1.3 20.6 8.9 41.5 21.8 59.7 27.5 37.5 73.6 65.1 124.4 63.5z"/>
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="#000">
+                  <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.459 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Download on the</span>
@@ -170,10 +170,10 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
-                  <path d="M3.18 23.76a2.5 2.5 0 001.56-.52L16.5 12 4.74.76A2.5 2.5 0 003.18.24C2.25.24 1.5 1 1.5 2v20c0 1 .75 1.76 1.68 1.76z" fill="#4285F4"/>
-                  <path d="M20.32 10.21l-3.82-2.21L13.06 12l3.44 3.44 3.82-2.21c1.09-.63 1.09-2.39 0-3.02z" fill="#FBBC04"/>
-                  <path d="M4.74 23.24L16.5 12l-3.44-3.44L4.74.76a2.5 2.5 0 00-.56 1.59v19.3c0 .59.2 1.14.56 1.59z" fill="#34A853"/>
-                  <path d="M4.74.76L16.5 12l-3.44-3.44L4.74.76z" fill="#EA4335"/>
+                  <path d="M3.61 1.814a1 1 0 00-.61.92v18.532a1 1 0 00.61.92L13.792 12 3.61 1.814z" fill="#4285F4"/>
+                  <path d="M4.906 2.481L13.792 12l3.373-2.5-9.964-7.186a1 1 0 00-2.295.167z" fill="#EA4335"/>
+                  <path d="M4.906 21.519a1 1 0 002.295.167L17.165 14.5 13.792 12l-8.886 9.519z" fill="#34A853"/>
+                  <path d="M17.165 9.5l2.813 1.44c.375.222.605.63.605 1.06s-.23.838-.605 1.06L17.165 14.5 13.792 12l3.373-2.5z" fill="#FBBC04"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
@@ -385,8 +385,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                <svg viewBox="0 0 814 1000" className="w-5 h-6" fill="#000">
-                  <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 530.4 0 407.9 0 292.1c0-183.2 119.7-280.4 237.5-280.4 60.2 0 110.3 39.5 148.4 39.5 36.3 0 93.3-41.5 161.9-41.5 26 0 108.2 2.6 168.6 79.9zm-138.4-79.4c-3.8-17.9-11-36.5-22.3-53.6-28.1-40.8-74.2-70.2-116.8-70.2-2.6 0-5.2.3-7.7.6 1.3 20.6 8.9 41.5 21.8 59.7 27.5 37.5 73.6 65.1 124.4 63.5z"/>
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="#000">
+                  <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.459 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Download on the</span>
@@ -400,10 +400,10 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
-                  <path d="M3.18 23.76a2.5 2.5 0 001.56-.52L16.5 12 4.74.76A2.5 2.5 0 003.18.24C2.25.24 1.5 1 1.5 2v20c0 1 .75 1.76 1.68 1.76z" fill="#4285F4"/>
-                  <path d="M20.32 10.21l-3.82-2.21L13.06 12l3.44 3.44 3.82-2.21c1.09-.63 1.09-2.39 0-3.02z" fill="#FBBC04"/>
-                  <path d="M4.74 23.24L16.5 12l-3.44-3.44L4.74.76a2.5 2.5 0 00-.56 1.59v19.3c0 .59.2 1.14.56 1.59z" fill="#34A853"/>
-                  <path d="M4.74.76L16.5 12l-3.44-3.44L4.74.76z" fill="#EA4335"/>
+                  <path d="M3.61 1.814a1 1 0 00-.61.92v18.532a1 1 0 00.61.92L13.792 12 3.61 1.814z" fill="#4285F4"/>
+                  <path d="M4.906 2.481L13.792 12l3.373-2.5-9.964-7.186a1 1 0 00-2.295.167z" fill="#EA4335"/>
+                  <path d="M4.906 21.519a1 1 0 002.295.167L17.165 14.5 13.792 12l-8.886 9.519z" fill="#34A853"/>
+                  <path d="M17.165 9.5l2.813 1.44c.375.222.605.63.605 1.06s-.23.838-.605 1.06L17.165 14.5 13.792 12l3.373-2.5z" fill="#FBBC04"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
