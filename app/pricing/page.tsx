@@ -13,6 +13,7 @@ const plans = [
     name: "Free",
     price: "$0",
     period: "forever",
+    annualNote: null,
     desc: "Perfect for getting started",
     cta: "Download Free",
     features: [
@@ -24,11 +25,13 @@ const plans = [
       "iOS & Android",
     ],
     highlight: false,
+    badge: null,
   },
   {
     name: "Pro",
-    price: "$9",
-    period: "per month",
+    price: "$7.99",
+    period: "/ month",
+    annualNote: "or $44.99 / year — save 53%",
     desc: "For serious freelancers",
     cta: "Get Pro",
     features: [
@@ -36,12 +39,12 @@ const plans = [
       "GPS auto mileage tracking",
       "Smart expense categorization",
       "Unlimited PDF & CSV exports",
-      "Bank account integration",
       "Multi-business support",
       "Priority support",
       "Advanced analytics",
     ],
     highlight: true,
+    badge: "Most Popular",
   },
 ];
 
@@ -74,9 +77,14 @@ export default function PricingPage() {
             {plans.map((p) => (
               <div
                 key={p.name}
-                className={`rounded-2xl p-8 ${p.highlight ? "text-white" : "border border-gray-200 bg-white"}`}
+                className={`rounded-2xl p-8 relative ${p.highlight ? "text-white" : "border border-gray-200 bg-white"}`}
                 style={p.highlight ? { background: "#1a1a1a" } : {}}
               >
+                {p.badge && (
+                  <span className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "#4ade80", color: "#0d0d0d" }}>
+                    {p.badge}
+                  </span>
+                )}
                 <div className="mb-6">
                   <h2 className="text-xl font-bold mb-1">{p.name}</h2>
                   <p className={`text-sm mb-4 ${p.highlight ? "text-gray-400" : "text-gray-500"}`}>{p.desc}</p>
@@ -84,6 +92,9 @@ export default function PricingPage() {
                     <span className="text-5xl font-bold">{p.price}</span>
                     <span className={p.highlight ? "text-gray-400" : "text-gray-500"}>{p.period}</span>
                   </div>
+                  {p.annualNote && (
+                    <p className="text-sm mt-2" style={{ color: "#4ade80" }}>{p.annualNote}</p>
+                  )}
                 </div>
                 <Link
                   href="/#download"
