@@ -8,42 +8,128 @@ import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 
 const features = [
   {
-    icon: "📷",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <rect x="24" y="8" width="52" height="72" rx="5" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.08"/>
+        <line x1="34" y1="24" x2="66" y2="24" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+        <line x1="34" y1="33" x2="58" y2="33" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+        <line x1="34" y1="42" x2="66" y2="42" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+        <line x1="34" y1="51" x2="52" y2="51" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.35"/>
+        <line x1="34" y1="60" x2="63" y2="60" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+        <g className="icon-scan-beam">
+          <rect x="16" y="43" width="68" height="2.5" rx="1.25" fill="#86efac"/>
+          <rect x="16" y="40" width="68" height="8" rx="4" fill="#86efac" fillOpacity="0.15"/>
+        </g>
+        <circle cx="76" cy="16" r="4" fill="#86efac" className="icon-dot-1"/>
+        <circle cx="86" cy="8" r="2.8" fill="#86efac" fillOpacity="0.8" className="icon-dot-2"/>
+        <circle cx="84" cy="22" r="2" fill="#86efac" fillOpacity="0.6" className="icon-dot-3"/>
+      </svg>
+    ),
     title: "AI Receipt Scanning",
     desc: "Snap a photo and our AI instantly reads, categorizes, and stores your receipt. No manual entry ever.",
     accent: "linear-gradient(135deg, #1a4d28 0%, #2a7a3b 100%)",
     glow: "rgba(74,222,128,0.15)",
   },
   {
-    icon: "🗺️",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <path d="M16 84 Q28 68 45 62 Q58 56 65 42" stroke="white" strokeWidth="2" strokeDasharray="4 3.5" strokeLinecap="round" opacity="0.45"/>
+        <rect x="10" y="78" width="20" height="11" rx="3.5" fill="white" fillOpacity="0.65"/>
+        <rect x="13" y="73" width="14" height="8" rx="3" fill="white" fillOpacity="0.45"/>
+        <circle cx="15" cy="90" r="3.5" fill="white" opacity="0.9"/>
+        <circle cx="26" cy="90" r="3.5" fill="white" opacity="0.9"/>
+        <path d="M65 8 C55 8 47 16 47 26 C47 39 65 58 65 58 C65 58 83 39 83 26 C83 16 75 8 65 8Z" fill="white" opacity="0.9"/>
+        <circle cx="65" cy="26" r="8" fill="#60a5fa"/>
+        <circle cx="65" cy="24" r="3" fill="white" opacity="0.6"/>
+        <circle cx="65" cy="58" r="6" fill="none" stroke="white" strokeWidth="2" className="icon-ping-1"/>
+        <circle cx="65" cy="58" r="6" fill="none" stroke="white" strokeWidth="1.5" className="icon-ping-2"/>
+      </svg>
+    ),
     title: "GPS Mileage Tracking",
     desc: "Automatically track every business trip with GPS. Every kilometer counts toward your deductions.",
     accent: "linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)",
     glow: "rgba(96,165,250,0.15)",
   },
   {
-    icon: "📂",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <rect x="10" y="16" width="80" height="19" rx="9.5" fill="white" fillOpacity="0.1" stroke="white" strokeOpacity="0.35" strokeWidth="1.5"/>
+        <circle cx="25" cy="25.5" r="6" fill="#f87171" opacity="0.9"/>
+        <rect x="37" y="22" width="38" height="4" rx="2" fill="white" opacity="0.45"/>
+        <rect x="37" y="28" width="24" height="3" rx="1.5" fill="white" opacity="0.3"/>
+        <rect x="10" y="41" width="80" height="19" rx="9.5" fill="white" fillOpacity="0.1" stroke="white" strokeOpacity="0.35" strokeWidth="1.5"/>
+        <circle cx="25" cy="50.5" r="6" fill="#60a5fa" opacity="0.9"/>
+        <rect x="37" y="47" width="44" height="4" rx="2" fill="white" opacity="0.45"/>
+        <rect x="37" y="53" width="30" height="3" rx="1.5" fill="white" opacity="0.3"/>
+        <rect x="10" y="66" width="80" height="19" rx="9.5" fill="white" fillOpacity="0.18" stroke="white" strokeOpacity="0.6" strokeWidth="2"/>
+        <circle cx="25" cy="75.5" r="6" fill="#a78bfa" opacity="0.9"/>
+        <rect x="37" y="72" width="40" height="4" rx="2" fill="white" opacity="0.6"/>
+        <rect x="37" y="78" width="26" height="3" rx="1.5" fill="white" opacity="0.4"/>
+        <circle cx="82" cy="75.5" r="8" fill="#a78bfa" fillOpacity="0.35" className="icon-dot-1"/>
+        <path d="M77 75.5 L81 79.5 L87 72" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
     title: "Smart Expense Sorting",
     desc: "AI automatically categorizes expenses into CRA and IRS-approved tax categories.",
     accent: "linear-gradient(135deg, #3b1f5e 0%, #7c3aed 100%)",
     glow: "rgba(167,139,250,0.15)",
   },
   {
-    icon: "📄",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <path d="M18 10 L64 10 L78 24 L78 82 L18 82 Z" fill="white" fillOpacity="0.08" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+        <path d="M64 10 L64 24 L78 24" fill="none" stroke="white" strokeWidth="2" strokeLinejoin="round" opacity="0.55"/>
+        <line x1="28" y1="38" x2="68" y2="38" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+        <line x1="28" y1="47" x2="68" y2="47" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+        <line x1="28" y1="56" x2="56" y2="56" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.35"/>
+        <rect x="26" y="18" width="18" height="10" rx="3" fill="#fb923c" opacity="0.9"/>
+        <rect x="48" y="18" width="18" height="10" rx="3" fill="#86efac" opacity="0.75"/>
+        <g className="icon-arrow-down">
+          <circle cx="87" cy="74" r="11" fill="white" fillOpacity="0.1" stroke="white" strokeWidth="1.5" strokeOpacity="0.4"/>
+          <line x1="87" y1="67" x2="87" y2="77" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M82 73 L87 78 L92 73" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </g>
+      </svg>
+    ),
     title: "Audit-Ready Export",
     desc: "Generate PDF, CSV & ZIP reports ready for your accountant or tax software in one tap.",
     accent: "linear-gradient(135deg, #5c2a0e 0%, #ea580c 100%)",
     glow: "rgba(251,146,60,0.15)",
   },
   {
-    icon: "☁️",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <path d="M28 72 Q14 72 14 58 Q14 46 26 44 Q27 32 37 28 Q44 20 56 24 Q64 14 76 22 Q88 22 88 36 Q96 37 94 49 Q93 60 82 62 L72 62" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.8"/>
+        <line x1="28" y1="72" x2="70" y2="72" stroke="white" strokeWidth="2.5" strokeLinecap="round" opacity="0.8"/>
+        <g className="icon-arrow-up">
+          <line x1="50" y1="80" x2="50" y2="56" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+          <path d="M43 62 L50 55 L57 62" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+        </g>
+        <circle cx="78" cy="78" r="13" fill="#0f766e" stroke="white" strokeWidth="1.5" opacity="0.95"/>
+        <path d="M74 77 L74 73 C74 70 76 68 78 68 C80 68 82 70 82 73 L82 77 Z" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="72" y="76" width="12" height="8" rx="2" fill="white" opacity="0.9"/>
+        <circle cx="78" cy="75" r="2" fill="#0f766e"/>
+      </svg>
+    ),
     title: "Secure Cloud Backup",
     desc: "All your receipts and data are encrypted and backed up securely 24/7. Never lose a record.",
     accent: "linear-gradient(135deg, #0f3d3d 0%, #0d9488 100%)",
     glow: "rgba(45,212,191,0.15)",
   },
   {
-    icon: "📊",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <line x1="12" y1="28" x2="88" y2="28" stroke="white" strokeWidth="0.75" opacity="0.15"/>
+        <line x1="12" y1="48" x2="88" y2="48" stroke="white" strokeWidth="0.75" opacity="0.15"/>
+        <line x1="12" y1="68" x2="88" y2="68" stroke="white" strokeWidth="0.75" opacity="0.15"/>
+        <rect x="16" y="44" width="18" height="36" rx="5" fill="#86efac" opacity="0.7" className="icon-bar-1"/>
+        <rect x="41" y="28" width="18" height="52" rx="5" fill="#4ade80" opacity="0.85" className="icon-bar-2"/>
+        <rect x="66" y="14" width="18" height="66" rx="5" fill="#22c55e" className="icon-bar-3"/>
+        <path d="M22 62 Q38 46 50 38 Q62 30 78 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 3" opacity="0.55"/>
+        <circle cx="80" cy="16" r="8" fill="white" fillOpacity="0.15" className="icon-dot-1"/>
+        <path d="M76 19 L80 14 L84 19" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.85"/>
+      </svg>
+    ),
     title: "Real-Time Savings",
     desc: "Watch your estimated tax savings grow as you add expenses throughout the year.",
     accent: "linear-gradient(135deg, #1a4d28 0%, #16a34a 100%)",
@@ -326,10 +412,10 @@ export default function Home() {
         <section className="py-20 px-4 text-white" style={{ background: "#0f2e18" }}>
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "98%", label: "Receipt accuracy" },
-              { value: "50+", label: "Tax categories" },
-              { value: "1 tap", label: "Export to PDF" },
-              { value: "24/7", label: "Cloud backup" },
+              { value: "98%", label: "Save on bookkeeping time" },
+              { value: "100%", label: "All tax categories supported" },
+              { value: "24/7", label: "Secure cloud backup" },
+              { value: "1 tap", label: "Export audit-ready files" },
             ].map((s, i) => (
               <RevealOnScroll key={s.value} delay={i * 100}>
                 <div className="text-4xl font-bold mb-2" style={{ color: "#4ade80" }}>{s.value}</div>

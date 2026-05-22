@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 type Props = {
-  icon: string;
+  icon: ReactNode;
   title: string;
   desc: string;
   accent: string;
