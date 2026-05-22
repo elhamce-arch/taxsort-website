@@ -248,6 +248,96 @@ const posts: Record<string, {
   },
 
   // ── 4 ──────────────────────────────────────────────────────
+  "gig-worker-taxes-usa": {
+    title: "Gig Worker Taxes in the US: The Complete 2025 Guide",
+    description: "Driving for Uber or delivering for DoorDash in the US? Schedule C, self-employment tax, 1099 forms, quarterly estimated payments — all explained.",
+    category: "USA",
+    date: "May 8, 2026",
+    readTime: "10 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">If you earn money through Uber, Lyft, DoorDash, Instacart, Upwork, Fiverr, or any other platform, the IRS considers you <strong>self-employed</strong>. No employer withholds taxes from your earnings — you are responsible for reporting your income, paying self-employment tax, and making quarterly estimated payments.</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> This article reflects US federal tax rules as generally understood for the 2025 tax year. State taxes vary and are not covered here. Always verify at <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">irs.gov</a> and consult a qualified tax professional before filing.
+        </blockquote>
+
+        <h2>You Are Self-Employed — Here Is What That Means</h2>
+        <p>Gig platforms classify workers as independent contractors, not employees. As a result:</p>
+        <ul>
+          <li>No federal or state income tax is withheld from your platform earnings</li>
+          <li>No Social Security or Medicare taxes are withheld — you pay the full self-employment tax yourself</li>
+          <li>You must report all income, including cash tips and bonuses</li>
+          <li>You can deduct legitimate business expenses to reduce your taxable income</li>
+        </ul>
+
+        <h2>The Forms You Will Receive: 1099-NEC and 1099-K</h2>
+        <p>Platforms that pay you $600 or more during the calendar year are required to issue a <strong>1099-NEC</strong> (Non-Employee Compensation) or <strong>1099-K</strong> (Payment Card and Third Party Network Transactions), depending on how payments were processed.</p>
+        <p><strong>Important:</strong> Even if you earn less than the reporting threshold and receive no 1099, you are still legally required to report the income on your tax return. The IRS receives copies of all 1099s issued — income reported on a 1099 that does not appear on your return is a common audit trigger.</p>
+        <p>Check each 1099 carefully. Platforms sometimes report gross earnings before their fees and commissions are deducted. You can deduct those platform fees as a business expense — you are not taxed on money you never received as take-home pay.</p>
+
+        <h2>Where to Report: Schedule C</h2>
+        <p>Self-employment income is reported on <strong>Schedule C (Profit or Loss from Business)</strong>, filed with your Form 1040. Your net profit (income minus deductions) flows to Schedule 1 and is added to your taxable income.</p>
+        <p>If you have multiple gig income sources (e.g., you drive for Uber and do freelance design), you file a separate Schedule C for each distinct business activity, or combine them on one Schedule C if they are the same type of work.</p>
+
+        <h2>Self-Employment Tax</h2>
+        <p>This is the biggest surprise for first-year gig workers. In addition to regular income tax, self-employed individuals pay <strong>self-employment (SE) tax</strong> of <strong>15.3%</strong> on net self-employment earnings:</p>
+        <ul>
+          <li>12.4% for Social Security (on earnings up to the annual wage base — $168,600 for 2024; check IRS for the current year&apos;s limit)</li>
+          <li>2.9% for Medicare (no income cap)</li>
+          <li>An additional 0.9% Medicare surtax applies if net earnings exceed $200,000 (single) or $250,000 (married filing jointly)</li>
+        </ul>
+        <p>SE tax is calculated on <strong>Schedule SE</strong>. The good news: you can deduct <strong>50% of your SE tax</strong> on Schedule 1 as an above-the-line deduction, which reduces your adjusted gross income.</p>
+        <p>As a rough estimate, plan to set aside <strong>25–35% of net gig income</strong> for federal taxes (income tax + SE tax combined), depending on your overall income level.</p>
+
+        <h2>Quarterly Estimated Tax Payments</h2>
+        <p>Because no employer withholds tax from your gig earnings, you are generally required to pay taxes in advance through quarterly estimated payments using <strong>Form 1040-ES</strong>.</p>
+        <p>You must make estimated payments if you expect to owe at least <strong>$1,000 in federal tax</strong> for the year after withholding and credits.</p>
+
+        <table>
+          <thead>
+            <tr><th>Payment Period</th><th>Due Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>January 1 – March 31</td><td>April 15</td></tr>
+            <tr><td>April 1 – May 31</td><td>June 15</td></tr>
+            <tr><td>June 1 – August 31</td><td>September 15</td></tr>
+            <tr><td>September 1 – December 31</td><td>January 15 (following year)</td></tr>
+          </tbody>
+        </table>
+
+        <p>If a due date falls on a weekend or federal holiday, it moves to the next business day. Pay online at <a href="https://www.irs.gov/payments" target="_blank" rel="noopener noreferrer">irs.gov/payments</a> via Direct Pay — it is free and instant.</p>
+        <p>Underpaying estimated taxes results in an underpayment penalty calculated using the federal short-term interest rate plus 3 percentage points (IRS Form 2210). The penalty is generally avoided if you pay at least 90% of the current year&apos;s tax or 100% of the prior year&apos;s tax liability (110% if your prior-year AGI exceeded $150,000).</p>
+
+        <h2>Deductions for Gig Workers</h2>
+        <p>Reducing your net Schedule C profit reduces both income tax and SE tax — making deductions especially valuable for self-employed individuals.</p>
+        <ul>
+          <li><strong>Mileage</strong> — Business miles at the IRS standard rate (67¢/mile for 2024; check the current rate) or actual vehicle expenses. Rideshare and delivery drivers typically have significant mileage deductions.</li>
+          <li><strong>Phone</strong> — The business-use percentage of your monthly phone bill</li>
+          <li><strong>Platform fees and commissions</strong> — Deducted on Schedule C, reducing the gross income reported on your 1099</li>
+          <li><strong>Equipment</strong> — Insulated delivery bags, phone mounts, dashcams, etc.</li>
+          <li><strong>Parking and tolls</strong> — Deductible for business trips (separate from the mileage rate if using standard mileage)</li>
+          <li><strong>Home office</strong> — If you use a dedicated space to manage your gig work (Form 8829)</li>
+          <li><strong>Health insurance premiums</strong> — 100% deductible on Schedule 1 if you are not eligible for employer-sponsored coverage</li>
+          <li><strong>Self-employed retirement contributions</strong> — SEP-IRA (up to 25% of net SE earnings, subject to IRS annual limit) reduces taxable income (IRS Publication 560)</li>
+        </ul>
+
+        <h2>Filing Deadline and Extensions</h2>
+        <p>The federal income tax filing deadline is <strong>April 15</strong>. You can request an automatic six-month extension (to October 15) by filing <strong>Form 4868</strong> by April 15.</p>
+        <p><strong>Important:</strong> An extension to file is not an extension to pay. If you owe taxes, you must estimate and pay by April 15 to avoid the failure-to-pay penalty (0.5% of unpaid tax per month, up to 25%) and interest.</p>
+        <p>The failure-to-file penalty (5% of unpaid tax per month, up to 25%) is far larger — so file on time even if you cannot pay in full. If you cannot pay, set up a payment plan at <a href="https://www.irs.gov/payments/payment-plans-installment-agreements" target="_blank" rel="noopener noreferrer">irs.gov</a>.</p>
+
+        <h2>State Taxes</h2>
+        <p>Most states also tax self-employment income. State rules on estimated payments, deductions, and deadlines vary widely. Check your state&apos;s department of revenue website for specific requirements. Nine states have no individual income tax as of 2024: Alaska, Florida, Nevada, New Hampshire (wages only), South Dakota, Tennessee (wages only), Texas, Washington, and Wyoming.</p>
+
+        <h2>Keeping Records</h2>
+        <p>The IRS generally requires you to keep records for <strong>three years</strong> from the date you filed your return (or two years from the date you paid, whichever is later). Keep records for six years if you underreported income by more than 25% (IRS Publication 583).</p>
+        <p>Keep all 1099s, mileage logs, receipts for deductible expenses, and records of estimated tax payments made.</p>
+      </div>
+    ),
+  },
+
+  // ── 5 (was 4) ───────────────────────────────────────────────
   "gig-worker-taxes-canada": {
     title: "Gig Worker Taxes in Canada: The Complete 2025–2026 Guide",
     description: "Driving for Uber or delivering for DoorDash? Here's everything you need to know about filing taxes as a gig worker in Canada.",

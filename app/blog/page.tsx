@@ -39,6 +39,15 @@ const posts = [
     color: "#fef9e7",
   },
   {
+    slug: "gig-worker-taxes-usa",
+    title: "Gig Worker Taxes in the US: The Complete 2025 Guide",
+    excerpt: "Driving for Uber or delivering for DoorDash in the US? Here's everything about Schedule C, self-employment tax, 1099 forms, and quarterly estimated payments.",
+    category: "USA",
+    date: "May 8, 2026",
+    readTime: "10 min read",
+    color: "#e3f2fd",
+  },
+  {
     slug: "gig-worker-taxes-canada",
     title: "Gig Worker Taxes in Canada: The Complete 2026 Guide",
     excerpt: "Driving for Uber or delivering for DoorDash? Here's everything you need to know about filing taxes as a gig worker in Canada.",
