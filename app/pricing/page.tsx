@@ -14,13 +14,15 @@ const plans = [
     price: "$0",
     period: "forever",
     annualNote: null,
-    desc: "Perfect for getting started",
+    desc: "Try it out — no credit card needed",
     cta: "Download Free",
     features: [
-      "AI receipt scanning (up to 30/month)",
-      "Basic expense categorization",
-      "Manual mileage entry",
-      "Monthly summary report",
+      "AI receipt scanning (up to 10/month)",
+      "Auto expense categorization",
+      "GPS mileage tracking",
+      "1 bank or CSV import per month",
+      "1 PDF export & 1 CSV export",
+      "1 business profile",
       "Cloud backup",
       "iOS & Android",
     ],
@@ -32,16 +34,18 @@ const plans = [
     price: "$7.99",
     period: "/ month",
     annualNote: "or $44.99 / year — save 53%",
-    desc: "For serious freelancers",
+    desc: "Everything you need to stay tax-ready",
     cta: "Get Pro",
     features: [
       "Unlimited AI receipt scanning",
-      "GPS auto mileage tracking",
-      "Smart expense categorization",
+      "Unlimited bank & CSV imports",
       "Unlimited PDF & CSV exports",
-      "Multi-business support",
-      "Priority support",
-      "Advanced analytics",
+      "Multiple business profiles",
+      "Deduction Health Score",
+      "AI tax tips on every receipt",
+      "Tax Summary PDF for your accountant",
+      "Manually add & categorize expenses",
+      "This app is 100% tax deductible",
     ],
     highlight: true,
     badge: "Most Popular",
@@ -73,12 +77,12 @@ export default function PricingPage() {
 
         {/* Plans */}
         <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 items-stretch">
             {plans.map((p) => (
               <div
                 key={p.name}
-                className={`rounded-2xl p-8 relative ${p.highlight ? "text-white" : "border border-gray-200 bg-white"}`}
-                style={p.highlight ? { background: "#1a1a1a" } : {}}
+                className={`rounded-2xl p-8 relative flex flex-col ${p.highlight ? "text-white" : "border border-gray-200 bg-white"}`}
+                style={p.highlight ? { background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)" } : {}}
               >
                 {p.badge && (
                   <span className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "#4ade80", color: "#0d0d0d" }}>
@@ -107,10 +111,10 @@ export default function PricingPage() {
                 >
                   {p.cta}
                 </Link>
-                <ul className="space-y-3">
+                <ul className="space-y-3 flex-1">
                   {p.features.map((f) => (
-                    <li key={f} className={`flex items-center gap-2 text-sm ${p.highlight ? "text-gray-300" : "text-gray-600"}`}>
-                      <span className="text-green-500">✓</span>
+                    <li key={f} className={`flex items-start gap-2 text-sm ${p.highlight ? "text-gray-300" : "text-gray-600"}`}>
+                      <span className="text-green-500 mt-0.5 shrink-0">✓</span>
                       {f}
                     </li>
                   ))}
