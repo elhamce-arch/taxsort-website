@@ -10,31 +10,43 @@ const features = [
     icon: "📷",
     title: "AI Receipt Scanning",
     desc: "Snap a photo and our AI instantly reads, categorizes, and stores your receipt. No manual entry ever.",
+    accent: "linear-gradient(135deg, #1a4d28 0%, #2a7a3b 100%)",
+    glow: "rgba(74,222,128,0.15)",
   },
   {
     icon: "🗺️",
     title: "GPS Mileage Tracking",
     desc: "Automatically track every business trip with GPS. Every kilometer counts toward your deductions.",
+    accent: "linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)",
+    glow: "rgba(96,165,250,0.15)",
   },
   {
     icon: "📂",
     title: "Smart Expense Sorting",
     desc: "AI automatically categorizes expenses into CRA and IRS-approved tax categories.",
+    accent: "linear-gradient(135deg, #3b1f5e 0%, #7c3aed 100%)",
+    glow: "rgba(167,139,250,0.15)",
   },
   {
     icon: "📄",
     title: "Audit-Ready Export",
-    desc: "Generate clean, professional PDF reports ready for your accountant or tax filing in one tap.",
+    desc: "Generate PDF, CSV & ZIP reports ready for your accountant or tax software in one tap.",
+    accent: "linear-gradient(135deg, #5c2a0e 0%, #ea580c 100%)",
+    glow: "rgba(251,146,60,0.15)",
   },
   {
     icon: "☁️",
     title: "Secure Cloud Backup",
-    desc: "All your receipts and data are encrypted and backed up securely 24/7.",
+    desc: "All your receipts and data are encrypted and backed up securely 24/7. Never lose a record.",
+    accent: "linear-gradient(135deg, #0f3d3d 0%, #0d9488 100%)",
+    glow: "rgba(45,212,191,0.15)",
   },
   {
     icon: "📊",
     title: "Real-Time Savings",
-    desc: "See your estimated tax savings update in real-time as you add expenses throughout the year.",
+    desc: "Watch your estimated tax savings grow as you add expenses throughout the year.",
+    accent: "linear-gradient(135deg, #1a4d28 0%, #16a34a 100%)",
+    glow: "rgba(74,222,128,0.15)",
   },
 ];
 
@@ -252,23 +264,56 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Features — light ── */}
-        <section className="py-24 px-4 bg-white" id="features">
-          <div className="max-w-5xl mx-auto">
-            <RevealOnScroll className="text-center mb-14">
-              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Features</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Everything you need at tax time</h2>
-              <p className="text-lg text-gray-500 max-w-xl mx-auto">
-                Built for freelancers who want to spend less time on taxes and more time doing what they love.
+        {/* ── Features — dark Cash App style ── */}
+        <section className="py-24 px-4" id="features" style={{ background: "#0a0a0a" }}>
+          <div className="max-w-6xl mx-auto">
+            <RevealOnScroll className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#4ade80" }}>Features</p>
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                Everything you need<br className="hidden md:block" /> at tax time.
+              </h2>
+              <p className="text-lg text-gray-400 max-w-xl">
+                Built for anyone who wants to spend less time on taxes and keep more of what they earn.
               </p>
             </RevealOnScroll>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {features.map((f, i) => (
                 <RevealOnScroll key={f.title} delay={i * 80}>
-                  <div className="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all h-full">
-                    <div className="text-3xl mb-4">{f.icon}</div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                  <div
+                    className="rounded-3xl overflow-hidden group cursor-default h-full flex flex-col"
+                    style={{
+                      background: "#111111",
+                      boxShadow: `0 0 0 1px rgba(255,255,255,0.06)`,
+                      transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                    }}
+                    onMouseEnter={e => {
+                      (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.12), 0 8px 40px ${f.glow}`;
+                      (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
+                    }}
+                    onMouseLeave={e => {
+                      (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06)`;
+                      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    }}
+                  >
+                    {/* Card top — colored gradient visual */}
+                    <div
+                      className="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
+                      style={{ background: f.accent }}
+                    >
+                      {/* Shine overlay */}
+                      <div
+                        className="absolute inset-0 opacity-30"
+                        style={{
+                          background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                        }}
+                      />
+                      <span className="relative drop-shadow-lg" style={{ fontSize: "3.5rem" }}>{f.icon}</span>
+                    </div>
+                    {/* Card body */}
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-xl font-bold text-white mb-2">{f.title}</h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 </RevealOnScroll>
               ))}
