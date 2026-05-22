@@ -182,10 +182,10 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
-                  <path d="M3.61 1.814a1 1 0 00-.61.92v18.532a1 1 0 00.61.92L13.792 12 3.61 1.814z" fill="#4285F4"/>
-                  <path d="M4.906 2.481L13.792 12l3.373-2.5-9.964-7.186a1 1 0 00-2.295.167z" fill="#EA4335"/>
-                  <path d="M4.906 21.519a1 1 0 002.295.167L17.165 14.5 13.792 12l-8.886 9.519z" fill="#34A853"/>
-                  <path d="M17.165 9.5l2.813 1.44c.375.222.605.63.605 1.06s-.23.838-.605 1.06L17.165 14.5 13.792 12l3.373-2.5z" fill="#FBBC04"/>
+                  <path d="M3 2L3 12L9 12L12 7Z" fill="#4285F4"/>
+                  <path d="M3 12L3 22L12 17L9 12Z" fill="#34A853"/>
+                  <path d="M9 12L12 7L21 12Z" fill="#FBBC04"/>
+                  <path d="M9 12L21 12L12 17Z" fill="#EA4335"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
@@ -445,10 +445,10 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none">
-                  <path d="M3.61 1.814a1 1 0 00-.61.92v18.532a1 1 0 00.61.92L13.792 12 3.61 1.814z" fill="#4285F4"/>
-                  <path d="M4.906 2.481L13.792 12l3.373-2.5-9.964-7.186a1 1 0 00-2.295.167z" fill="#EA4335"/>
-                  <path d="M4.906 21.519a1 1 0 002.295.167L17.165 14.5 13.792 12l-8.886 9.519z" fill="#34A853"/>
-                  <path d="M17.165 9.5l2.813 1.44c.375.222.605.63.605 1.06s-.23.838-.605 1.06L17.165 14.5 13.792 12l3.373-2.5z" fill="#FBBC04"/>
+                  <path d="M3 2L3 12L9 12L12 7Z" fill="#4285F4"/>
+                  <path d="M3 12L3 22L12 17L9 12Z" fill="#34A853"/>
+                  <path d="M9 12L12 7L21 12Z" fill="#FBBC04"/>
+                  <path d="M9 12L21 12L12 17Z" fill="#EA4335"/>
                 </svg>
                 <span>
                   <span className="block text-xs text-gray-500 leading-none">Get it on</span>
