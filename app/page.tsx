@@ -191,40 +191,46 @@ export default function Home() {
               {/* Left phone */}
               <div className="hidden md:block relative w-36 md:w-44 self-end mb-8 animate-float-left">
                 <div className="rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/10">
-                  <Image
-                    src="/screenshot-receipt.jpeg"
-                    alt="AI receipt scanning"
-                    width={200}
-                    height={400}
-                    className="w-full h-auto"
-                  />
+                  <div style={{ marginTop: "-40px" }}>
+                    <Image
+                      src="/screenshot-receipt.jpeg"
+                      alt="AI receipt scanning"
+                      width={200}
+                      height={400}
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* Center phone — largest, straight float */}
               <div className="relative w-52 md:w-64 z-10 animate-float">
                 <div className="rounded-[36px] overflow-hidden shadow-[0_0_80px_rgba(74,222,128,0.25)] border-2 border-white/10">
-                  <Image
-                    src="/screenshot-expenses.jpeg"
-                    alt="TaxSort expense tracking"
-                    width={300}
-                    height={600}
-                    className="w-full h-auto"
-                    priority
-                  />
+                  <div style={{ marginTop: "-40px" }}>
+                    <Image
+                      src="/screenshot-expenses.jpeg"
+                      alt="TaxSort expense tracking"
+                      width={300}
+                      height={600}
+                      className="w-full h-auto"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* Right phone */}
               <div className="hidden md:block relative w-36 md:w-44 self-end mb-8 animate-float-right">
                 <div className="rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/10">
-                  <Image
-                    src="/screenshot-mileage.jpeg"
-                    alt="GPS mileage tracking"
-                    width={200}
-                    height={400}
-                    className="w-full h-auto"
-                  />
+                  <div style={{ marginTop: "-40px" }}>
+                    <Image
+                      src="/screenshot-mileage.jpeg"
+                      alt="GPS mileage tracking"
+                      width={200}
+                      height={400}
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -284,7 +290,9 @@ export default function Home() {
                 <RevealOnScroll key={s.step} delay={i * 120}>
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-full">
                     <div className="h-56 overflow-hidden">
-                      <Image src={s.img} alt={s.alt} width={300} height={500} className="w-full h-full object-cover object-top" />
+                      <div style={{ marginTop: "-40px" }}>
+                        <Image src={s.img} alt={s.alt} width={300} height={500} className="w-full h-auto" />
+                      </div>
                     </div>
                     <div className="p-6">
                       <div className="text-4xl font-bold text-gray-100 mb-2">{s.step}</div>
