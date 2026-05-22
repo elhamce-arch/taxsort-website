@@ -1,15 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import Link from "next/link";
 import Image from "next/image";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
-
-const stats = [
-  { value: "98%", title: "Save Your Bookkeeping Time", label: "Let AI handle receipt scanning, categorization, and organization automatically — no manual data entry ever." },
-  { value: "100%", title: "All Tax Categories Supported", label: "Every CRA and IRS-approved expense category covered. Receipts processed and sorted instantly as you snap them." },
-  { value: "24/7", title: "Secure Cloud Backup", label: "Your receipts and financial data are encrypted and backed up around the clock. Never lose a receipt again." },
-  { value: "1 tap", title: "Export Audit-Ready Files", label: "Generate professional PDF reports, CSV files, or ZIP bundles for your accountant in a single tap." },
-];
 
 const features = [
   {
@@ -127,61 +121,121 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar />
+      <Navbar dark />
       <main>
-        {/* Hero */}
-        <section style={{ background: "#e8f0e5" }} className="pt-16 pb-20 px-4">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 max-w-xl">
-              <h1 className="text-6xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
-                Snap.<br />Sort.<br />Save.<br />Done.
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-md">
-                Effortless AI receipt capture, mileage tracking, and expense sorting for freelancers.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-lg font-semibold text-white"
-                  style={{ background: "#2a7a3b" }}
-                >
+        {/* ── Hero — dark with floating phones ── */}
+        <section className="bg-[#0d0d0d] pt-20 pb-0 px-4 overflow-hidden">
+          <div className="max-w-4xl mx-auto text-center">
+
+            {/* Eyebrow */}
+            <p
+              className="text-sm font-semibold uppercase tracking-widest mb-6 animate-fade-in"
+              style={{ color: "#4ade80" }}
+            >
+              AI-Powered Tax Management
+            </p>
+
+            {/* Headline */}
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up delay-100">
+              Snap, sort, and save on{" "}
+              <span style={{ color: "#4ade80" }}>taxes</span>
+              {" "}effortlessly.
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-10 animate-fade-in-up delay-200">
+              The AI receipt scanner and mileage tracker built for freelancers, contractors, and gig workers.
+            </p>
+
+            {/* Download badges */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
+              >
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                </svg>
+                <span>
+                  <span className="block text-xs text-gray-500 leading-none">Download on the</span>
                   App Store
-                </a>
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-lg font-semibold text-gray-900 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
-                >
+                </span>
+              </a>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
+              >
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+                  <path d="M3 20.5v-17c0-.83 1-.98 1.4-.3l7.6 8.3-7.6 8.3c-.4.68-1.4.53-1.4-.3zm11.4-8.5l-2.1 2.3 4.3 2.5c.6.35 1.1-.05.9-.65L15.4 12zm-2.1-2.3L14.4 12l.9-2.65c.2-.6-.3-1-.9-.65l-4.3 2.5 2.1 2.3zm-4.7-5.4L13 7.8l2.1-2.3-4.3-2.5c-.6-.35-1.1.05-.9.65l.9 2.65z" />
+                </svg>
+                <span>
+                  <span className="block text-xs text-gray-500 leading-none">Get it on</span>
                   Google Play
-                </a>
-              </div>
+                </span>
+              </a>
             </div>
 
-            {/* App screenshot */}
-            <div className="flex-1 flex justify-center">
-              <div className="relative w-64 md:w-72">
-                <div className="absolute inset-0 rounded-3xl blur-2xl opacity-20" style={{ background: "#2a7a3b" }} />
-                <Image
-                  src="/screenshot-expenses.jpeg"
-                  alt="TaxSort expense tracking app showing categorized transactions"
-                  width={300}
-                  height={600}
-                  className="relative rounded-3xl shadow-2xl w-full"
-                  priority
-                />
+            {/* ── Phone mockups — floating ── */}
+            <div className="relative flex items-end justify-center gap-4 md:gap-6 h-[380px] md:h-[500px] animate-fade-in delay-500">
+
+              {/* Green ambient glow behind center phone */}
+              <div
+                className="absolute left-1/2 bottom-0 -translate-x-1/2 w-64 h-64 rounded-full animate-glow-pulse pointer-events-none"
+                style={{ background: "radial-gradient(circle, #4ade80 0%, transparent 70%)", filter: "blur(40px)" }}
+              />
+
+              {/* Left phone */}
+              <div className="hidden md:block relative w-36 md:w-44 self-end mb-8 animate-float-left">
+                <div className="rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/screenshot-receipt.jpeg"
+                    alt="AI receipt scanning"
+                    width={200}
+                    height={400}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              {/* Center phone — largest, straight float */}
+              <div className="relative w-52 md:w-64 z-10 animate-float">
+                <div className="rounded-[36px] overflow-hidden shadow-[0_0_80px_rgba(74,222,128,0.25)] border-2 border-white/10">
+                  <Image
+                    src="/screenshot-expenses.jpeg"
+                    alt="TaxSort expense tracking"
+                    width={300}
+                    height={600}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Right phone */}
+              <div className="hidden md:block relative w-36 md:w-44 self-end mb-8 animate-float-right">
+                <div className="rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/screenshot-mileage.jpeg"
+                    alt="GPS mileage tracking"
+                    width={200}
+                    height={400}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Trusted by */}
-        <section className="py-10 border-y border-gray-100">
+        {/* ── Trusted by ── */}
+        <section className="bg-[#111111] py-10 border-y border-white/5">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-sm text-gray-400 uppercase tracking-widest mb-6">Trusted by freelancers worldwide</p>
-            <div className="flex flex-wrap justify-center gap-10 text-gray-300 font-semibold text-lg">
+            <p className="text-xs text-gray-600 uppercase tracking-widest mb-6">Trusted by freelancers worldwide</p>
+            <div className="flex flex-wrap justify-center gap-10 text-gray-600 font-semibold text-sm">
               {["Freelancers", "Contractors", "Consultants", "Gig Workers", "Creatives"].map((t) => (
                 <span key={t}>{t}</span>
               ))}
@@ -189,138 +243,160 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats — key value props */}
-        <section className="py-20 px-4 bg-gray-900 text-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold mb-3">Why freelancers choose TaxSort</h2>
-              <p className="text-gray-400 text-lg">Built to save you time, money, and stress — every tax season.</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((s) => (
-                <div key={s.value} className="rounded-2xl p-6 border border-gray-700 hover:border-gray-500 transition-colors">
-                  <div className="text-5xl font-bold mb-3" style={{ color: "#4ade80" }}>{s.value}</div>
-                  <h3 className="text-white font-semibold text-lg mb-2">{s.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features */}
-        <section className="py-20 px-4" id="features">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Features built for freelancers</h2>
+        {/* ── Features — light ── */}
+        <section className="py-24 px-4 bg-white" id="features">
+          <div className="max-w-5xl mx-auto">
+            <RevealOnScroll className="text-center mb-14">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Features</p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Everything you need at tax time</h2>
               <p className="text-lg text-gray-500 max-w-xl mx-auto">
-                Everything you need to stay on top of your taxes year-round, not just in April.
+                Built for freelancers who want to spend less time on taxes and more time doing what they love.
               </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((f) => (
-                <div key={f.title} className="p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
-                  <div className="text-3xl mb-4">{f.icon}</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
-                </div>
+            </RevealOnScroll>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {features.map((f, i) => (
+                <RevealOnScroll key={f.title} delay={i * 80}>
+                  <div className="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all h-full">
+                    <div className="text-3xl mb-4">{f.icon}</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                  </div>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
         </section>
 
-        {/* How it works */}
-        <section style={{ background: "#e8f0e5" }} className="py-20 px-4" id="how-it-works">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Snap. Sort. Save. — in 3 steps</h2>
+        {/* ── How it works — sage green ── */}
+        <section style={{ background: "#e8f0e5" }} className="py-24 px-4" id="how-it-works">
+          <div className="max-w-5xl mx-auto">
+            <RevealOnScroll className="text-center mb-14">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>How It Works</p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Three steps to tax-ready</h2>
               <p className="text-lg text-gray-600 max-w-xl mx-auto">Tax season used to be stressful. Not anymore.</p>
-            </div>
+            </RevealOnScroll>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly.", img: "/screenshot-receipt.jpeg", alt: "TaxSort AI receipt scanning showing scanned receipt with auto-extracted vendor and amount" },
-                { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds.", img: "/screenshot-expenses.jpeg", alt: "TaxSort expense list showing categorized transactions" },
-                { step: "03", title: "Export", desc: "Generate audit-ready PDFs for your accountant or tax software in one tap.", img: "/screenshot-export.jpeg", alt: "TaxSort export screen showing PDF, CSV and ZIP export options" },
-              ].map((s) => (
-                <div key={s.step} className="bg-white rounded-2xl overflow-hidden shadow-sm">
-                  <div className="h-56 overflow-hidden">
-                    <Image src={s.img} alt={s.alt} width={300} height={500} className="w-full h-full object-cover object-top" />
+                { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly.", img: "/screenshot-receipt.jpeg", alt: "TaxSort AI receipt scanning" },
+                { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds.", img: "/screenshot-expenses.jpeg", alt: "TaxSort expense list" },
+                { step: "03", title: "Export", desc: "Generate audit-ready PDFs for your accountant in one tap.", img: "/screenshot-export.jpeg", alt: "TaxSort export screen" },
+              ].map((s, i) => (
+                <RevealOnScroll key={s.step} delay={i * 120}>
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-full">
+                    <div className="h-56 overflow-hidden">
+                      <Image src={s.img} alt={s.alt} width={300} height={500} className="w-full h-full object-cover object-top" />
+                    </div>
+                    <div className="p-6">
+                      <div className="text-4xl font-bold text-gray-100 mb-2">{s.step}</div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{s.title}</h3>
+                      <p className="text-gray-500 text-sm">{s.desc}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="text-4xl font-bold text-gray-100 mb-2">{s.step}</div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{s.title}</h3>
-                    <p className="text-gray-500 text-sm">{s.desc}</p>
-                  </div>
-                </div>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Video */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">See TaxSort in action</h2>
-            <p className="text-lg text-gray-500 mb-10">Watch how easy it is to snap, sort, and save on taxes.</p>
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/lpuW6R3Dqe4"
-                title="TaxSort App Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+        {/* ── Stats — dark ── */}
+        <section className="py-20 px-4 bg-[#0d0d0d] text-white">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "98%", label: "Receipt accuracy" },
+              { value: "50+", label: "Tax categories" },
+              { value: "1 tap", label: "Export to PDF" },
+              { value: "24/7", label: "Cloud backup" },
+            ].map((s, i) => (
+              <RevealOnScroll key={s.value} delay={i * 100}>
+                <div className="text-4xl font-bold mb-2" style={{ color: "#4ade80" }}>{s.value}</div>
+                <div className="text-gray-400 text-sm">{s.label}</div>
+              </RevealOnScroll>
+            ))}
           </div>
         </section>
 
+        {/* ── Video ── */}
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <RevealOnScroll>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Demo</p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">See TaxSort in action</h2>
+              <p className="text-lg text-gray-500 mb-10">Watch how easy it is to snap, sort, and save on taxes.</p>
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/lpuW6R3Dqe4"
+                  title="TaxSort App Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
 
-        {/* Testimonials */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-14">
+        {/* ── Testimonials ── */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-5xl mx-auto">
+            <RevealOnScroll className="text-center mb-14">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Reviews</p>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Real stories. Real savings.</h2>
               <p className="text-lg text-gray-500">Freelancers who made tax season effortless.</p>
-            </div>
+            </RevealOnScroll>
             <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t) => (
-                <div key={t.name} className="p-6 rounded-2xl border border-gray-100 hover:shadow-sm transition-all">
-                  <p className="text-gray-600 mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-                  <div>
-                    <div className="font-semibold text-gray-900">{t.name}</div>
-                    <div className="text-sm text-gray-400">{t.role}</div>
+              {testimonials.map((t, i) => (
+                <RevealOnScroll key={t.name} delay={i * 100}>
+                  <div className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-sm transition-all h-full">
+                    <p className="text-gray-600 mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
+                    <div>
+                      <div className="font-semibold text-gray-900">{t.name}</div>
+                      <div className="text-sm text-gray-400">{t.role}</div>
+                    </div>
                   </div>
-                </div>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section style={{ background: "#e8f0e5" }} className="py-20 px-4" id="download">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Start saving on taxes today</h2>
-            <p className="text-lg text-gray-600 mb-8">Free to download. No credit card required.</p>
+        {/* ── CTA — dark ── */}
+        <section className="py-24 px-4 bg-[#0d0d0d]" id="download">
+          <RevealOnScroll className="max-w-2xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Start saving on <span style={{ color: "#4ade80" }}>taxes</span> today.
+            </h2>
+            <p className="text-lg text-gray-400 mb-10">Free to download. No credit card required.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-xl font-semibold text-white"
-                style={{ background: "#2a7a3b" }}
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                Download on App Store
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                </svg>
+                <span>
+                  <span className="block text-xs text-gray-500 leading-none">Download on the</span>
+                  App Store
+                </span>
               </a>
               <a
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-xl font-semibold text-gray-900 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
               >
-                Get it on Google Play
+                <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+                  <path d="M3 20.5v-17c0-.83 1-.98 1.4-.3l7.6 8.3-7.6 8.3c-.4.68-1.4.53-1.4-.3zm11.4-8.5l-2.1 2.3 4.3 2.5c.6.35 1.1-.05.9-.65L15.4 12zm-2.1-2.3L14.4 12l.9-2.65c.2-.6-.3-1-.9-.65l-4.3 2.5 2.1 2.3zm-4.7-5.4L13 7.8l2.1-2.3-4.3-2.5c-.6-.35-1.1.05-.9.65l.9 2.65z" />
+                </svg>
+                <span>
+                  <span className="block text-xs text-gray-500 leading-none">Get it on</span>
+                  Google Play
+                </span>
               </a>
             </div>
-          </div>
+          </RevealOnScroll>
         </section>
       </main>
       <Footer />
