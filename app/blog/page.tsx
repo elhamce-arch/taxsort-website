@@ -8,9 +8,27 @@ export const metadata: Metadata = {
   description: "Tax tips, guides, and advice for freelancers, independent contractors, and self-employed individuals. Learn how to maximize deductions and simplify tax season.",
 };
 
-const categories = ["All", "Tax Tips", "Mileage", "Canada", "USA", "Gig Economy"];
+const categories = ["All", "Tax Tips", "Mileage", "Canada", "USA", "Gig Economy", "Real Estate"];
 
 const posts = [
+  {
+    slug: "uber-drivers-tax-guide",
+    title: "How Uber Drivers Can Save on Taxes",
+    excerpt: "Driving for Uber, Lyft, or any rideshare platform? You're leaving money on the table. Here's exactly how to maximize your mileage, vehicle, and business deductions.",
+    category: "Gig Economy",
+    date: "May 22, 2026",
+    readTime: "7 min read",
+    color: "#e3f2fd",
+  },
+  {
+    slug: "realtor-tax-guide",
+    title: "How Realtors Can Save on Taxes",
+    excerpt: "Real estate agents have some of the best deduction opportunities of any profession — but only if you track them. Here's every deduction realtors should be claiming.",
+    category: "Real Estate",
+    date: "May 21, 2026",
+    readTime: "8 min read",
+    color: "#fff8e1",
+  },
   {
     slug: "top-tax-deductions-freelancers",
     title: "Top 15 Tax Deductions Every Freelancer Should Know",
@@ -81,7 +99,8 @@ const categoryIcons: Record<string, string> = {
   "Mileage": "🚗",
   "Canada": "🍁",
   "USA": "🇺🇸",
-  "Gig Economy": "📱",
+  "Gig Economy": "🚗",
+  "Real Estate": "🏠",
 };
 
 export default function BlogPage() {

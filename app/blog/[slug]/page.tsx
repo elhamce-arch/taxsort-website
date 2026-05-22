@@ -16,6 +16,199 @@ const posts: Record<string, {
   content: React.ReactNode;
 }> = {
 
+  // ── Uber Drivers ───────────────────────────────────────────
+  "uber-drivers-tax-guide": {
+    title: "How Uber Drivers Can Save on Taxes",
+    description: "Driving for Uber, Lyft, or any rideshare platform? Here's exactly how to maximize your mileage, vehicle, and business deductions.",
+    category: "Gig Economy",
+    date: "May 22, 2026",
+    readTime: "7 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">If you drive for Uber, Lyft, or any rideshare platform, you are running a small business — and that means a long list of legitimate tax deductions. Most drivers claim only mileage and miss hundreds of dollars in additional savings. This guide walks through every deduction available, with rules for both the <strong>United States (IRS)</strong> and <strong>Canada (CRA)</strong>.</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> Tax rules change annually. Verify current rates with the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> or <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> and consult a qualified tax professional before filing.
+        </blockquote>
+
+        <h2>1. Mileage — Your Biggest Deduction</h2>
+        <p>For most rideshare drivers, vehicle expenses are the single largest deduction. Every business mile you drive is deductible — not just while a passenger is in the car, but from the moment you turn on the app and start driving toward a pickup.</p>
+
+        <h3>United States (IRS)</h3>
+        <p>The IRS offers two methods. Choose your method in the first year you use the vehicle for business — you generally cannot switch afterward if you used accelerated depreciation.</p>
+        <ul>
+          <li><strong>Standard mileage rate:</strong> Multiply total business miles by the IRS rate (67¢/mile for 2024 — check <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">irs.gov</a> for the current year). This is the simplest method and works well for most drivers.</li>
+          <li><strong>Actual expenses method:</strong> Deduct the business-use percentage of all vehicle costs — fuel, insurance, oil changes, registration, repairs, and depreciation. More record-keeping, but can yield a larger deduction for high-mileage, high-cost vehicles.</li>
+        </ul>
+        <p><strong>What counts as business miles?</strong> Miles driven with the app on (whether or not a passenger is aboard), miles traveling to pick up a passenger, and miles traveling between rides in an active session.</p>
+
+        <h3>Canada (CRA)</h3>
+        <p>The CRA uses the actual-expenses method for self-employed individuals. Calculate your total business kilometres as a percentage of total kilometres driven in the year, then apply that percentage to all eligible vehicle expenses.</p>
+        <ul>
+          <li>Fuel, oil changes, maintenance and repairs</li>
+          <li>Insurance premiums</li>
+          <li>Registration and licensing fees</li>
+          <li>Capital cost allowance (CCA) if you own the vehicle, or lease payments if you lease</li>
+        </ul>
+        <p><strong>Important for rideshare drivers in Canada:</strong> The CRA has ruled that rideshare services qualify as taxicab services. This means you must register for GST/HST immediately — the standard $30,000 small-supplier threshold does not apply. Uber and Lyft typically collect and remit HST on your behalf in most provinces, but confirm the arrangement with your platform.</p>
+
+        <h2>2. Your Phone</h2>
+        <p>Your smartphone is essential for rideshare work. You can deduct the business-use percentage of your monthly plan and, if you purchased the phone for work, the business-use portion of the device cost.</p>
+        <p>Track how much of your phone use is business-related. Many full-time rideshare drivers can claim 80–100% of their plan if it is used primarily for driving. Keep monthly bills as supporting documentation.</p>
+
+        <h2>3. Car Cleaning and Maintenance</h2>
+        <p>Keeping your car clean is a legitimate business expense for rideshare drivers. Car washes, interior cleaning, air fresheners, and detailing are all deductible to the extent the car is used for business. Keep receipts for every wash.</p>
+
+        <h2>4. Passenger Amenities</h2>
+        <p>Water bottles, phone chargers, mints, and small snacks provided to passengers are deductible business expenses. Keep a simple running log of what you spend each week — these small amounts add up over a year.</p>
+
+        <h2>5. Rideshare App Fees and Commissions</h2>
+        <p>The service fees and commissions Uber and Lyft deduct from your fares are a business expense. Your platform will provide an annual tax summary showing total fees paid — this amount is fully deductible.</p>
+
+        <h2>6. Parking and Tolls</h2>
+        <p>Parking fees and toll charges incurred while driving for business are deductible. This includes parking while waiting for a ride in a designated area. Keep digital or paper receipts.</p>
+        <p><strong>Note:</strong> Parking tickets and fines are not deductible.</p>
+
+        <h2>7. Dash Camera</h2>
+        <p>A dashboard camera is both a safety device and a deductible business expense. In the US, you may be able to deduct the full cost in the year of purchase under Section 179. In Canada, it is added to the appropriate CCA class. Deduct the business-use percentage if the vehicle is also used personally.</p>
+
+        <h2>8. Seat Covers and Car Accessories</h2>
+        <p>Seat covers, floor mats, and other accessories purchased specifically to maintain or improve your vehicle for rideshare purposes are deductible to the business-use percentage of the car.</p>
+
+        <h2>9. Health Insurance Premiums (US Only)</h2>
+        <p>Self-employed rideshare drivers in the US who are not eligible for coverage through a spouse's employer plan can deduct 100% of health insurance premiums for themselves and their family on Schedule 1 of Form 1040. This reduces your adjusted gross income, even if you don't itemize.</p>
+
+        <h2>10. Self-Employment Tax Deduction (US Only)</h2>
+        <p>You pay 15.3% self-employment tax as both employee and employer. The IRS allows you to deduct 50% of that SE tax on Schedule 1 — reducing your taxable income, not your SE tax bill itself.</p>
+
+        <h2>Quarterly Estimated Tax Payments</h2>
+        <h3>United States</h3>
+        <p>If you expect to owe $1,000 or more in taxes, pay quarterly: April 15, June 15, September 15, and January 15. Pay online at <a href="https://www.irs.gov/payments" target="_blank" rel="noopener noreferrer">irs.gov/payments</a>. Missing payments results in an underpayment penalty.</p>
+
+        <h3>Canada</h3>
+        <p>If you owe more than $3,000 in two consecutive years, the CRA requires quarterly instalment payments: March 15, June 15, September 15, and December 15.</p>
+
+        <h2>The Key to Maximizing Deductions: Track Everything</h2>
+        <p>The difference between drivers who maximize deductions and those who don't comes down to one habit: tracking in real time. TaxSort automatically logs your mileage via GPS and lets you snap receipts the moment you receive them — so every deductible expense is captured before it can be forgotten.</p>
+        <p>At tax time, export a complete summary for your accountant or tax software. Every trip, every wash, every phone bill — organized and ready.</p>
+      </div>
+    ),
+  },
+
+  // ── Realtors ────────────────────────────────────────────────
+  "realtor-tax-guide": {
+    title: "How Realtors Can Save on Taxes",
+    description: "Real estate agents have some of the best deduction opportunities of any profession — but only if you track them all year long.",
+    category: "Real Estate",
+    date: "May 21, 2026",
+    readTime: "8 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">Real estate agents and brokers are self-employed professionals with one of the richest sets of tax deductions available. Between mileage, marketing, licensing, and office expenses, a well-organized realtor can significantly reduce their tax bill — legally. This guide covers every major deduction for realtors in the <strong>United States (IRS Schedule C)</strong> and <strong>Canada (CRA T2125)</strong>.</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> Tax laws change. Verify current rules with the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> or <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> and consult a qualified tax professional before filing.
+        </blockquote>
+
+        <h2>1. Mileage — The Realtor's Biggest Deduction</h2>
+        <p>Realtors drive constantly — showing properties, meeting clients, attending closings, visiting offices, and going to inspections. Every one of those trips is a deductible business expense.</p>
+
+        <h3>United States (IRS)</h3>
+        <p>Use the standard mileage rate (67¢/mile for 2024 — check <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">irs.gov</a> for the current year) or deduct actual vehicle expenses based on business-use percentage. The standard mileage method is simpler and often sufficient. Log every trip: date, destination, and business purpose.</p>
+
+        <h3>Canada (CRA)</h3>
+        <p>Deduct actual vehicle expenses multiplied by your business-use percentage. Track every business kilometre driven throughout the year, along with total annual kilometres. Maintain a contemporaneous logbook — the CRA may ask for it in an audit.</p>
+
+        <p><strong>Pro tip:</strong> TaxSort automatically logs GPS mileage in the background. By year end, you have a complete, audit-ready record of every business trip.</p>
+
+        <h2>2. Home Office</h2>
+        <p>If you regularly use a dedicated space in your home for business — reviewing listings, preparing contracts, doing marketing — you can claim a home office deduction.</p>
+
+        <h3>United States (IRS — Form 8829)</h3>
+        <ul>
+          <li><strong>Simplified method:</strong> $5 per square foot, up to 300 sq ft (max $1,500/year)</li>
+          <li><strong>Regular method:</strong> Actual home expenses × business-use percentage (more work, potentially larger deduction)</li>
+        </ul>
+        <p>The space must be used regularly and exclusively for business.</p>
+
+        <h3>Canada (CRA — T2125)</h3>
+        <p>Deduct a proportional share of rent (or maintenance, property taxes, and insurance if you own) based on the square footage of the workspace relative to total home area. You cannot use the deduction to create or increase a business loss.</p>
+
+        <h2>3. Marketing and Advertising</h2>
+        <p>Marketing is one of the largest expenses for most realtors — and it is fully deductible.</p>
+        <ul>
+          <li>MLS listing fees</li>
+          <li>Professional photography and videography for listings</li>
+          <li>Drone photography</li>
+          <li>Website hosting, domain registration, and design</li>
+          <li>Social media advertising (Facebook, Instagram, Google Ads)</li>
+          <li>Print flyers, postcards, and signage</li>
+          <li>Branded merchandise (pens, notepads, calendars)</li>
+          <li>Virtual tour software subscriptions</li>
+        </ul>
+
+        <h2>4. Professional Fees and Licensing</h2>
+        <p>All fees required to maintain your real estate license and professional standing are deductible.</p>
+        <ul>
+          <li>Real estate license renewal fees</li>
+          <li>Board and association dues (NAR, CREA, and local boards)</li>
+          <li>Errors and Omissions (E&amp;O) insurance premiums</li>
+          <li>Desk fees paid to your broker</li>
+          <li>MLS membership fees</li>
+          <li>Transaction coordinator fees</li>
+        </ul>
+
+        <h2>5. Continuing Education</h2>
+        <p>Courses, seminars, conferences, and designations required to maintain or improve your skills in real estate are deductible.</p>
+        <ul>
+          <li>Designation courses (ABR, CRS, GRI, SRS, etc.)</li>
+          <li>Conference registration fees and related travel</li>
+          <li>Books, online courses, and training subscriptions</li>
+          <li>Coaching programs (business-related)</li>
+        </ul>
+
+        <h2>6. Client Entertainment and Meals</h2>
+        <p>Business meals with clients, referral partners, or other agents are 50% deductible in both the US and Canada. Keep a receipt and note the business purpose and who attended.</p>
+        <p>Client appreciation gifts are deductible up to <strong>$25 per recipient per year</strong> under US rules. In Canada, gifts to clients may be fully deductible depending on the nature of the gift — consult the CRA guidelines.</p>
+
+        <h2>7. Phone and Internet</h2>
+        <p>Your smartphone and internet connection are essential business tools. Deduct the business-use percentage of:</p>
+        <ul>
+          <li>Monthly mobile phone plan</li>
+          <li>Home or office internet service</li>
+          <li>Any real estate apps or CRM subscriptions (Follow Up Boss, kvCORE, etc.)</li>
+        </ul>
+
+        <h2>8. Office Supplies and Equipment</h2>
+        <ul>
+          <li>Printer, ink, and paper</li>
+          <li>Laptop or tablet (business-use percentage)</li>
+          <li>Locking lockboxes</li>
+          <li>Presentation materials and folders</li>
+          <li>Digital signature software (DocuSign)</li>
+        </ul>
+        <p>In the US, Section 179 may allow full first-year expensing of equipment. In Canada, claim capital cost allowance (CCA) at the appropriate class rate — Class 50 for computers at 55% declining balance.</p>
+
+        <h2>9. Staging and Open House Expenses</h2>
+        <p>If you pay staging costs out of pocket to help sell a listing, those expenses are deductible. Open house supplies (refreshments, signage, printed materials) are also business expenses — keep all receipts.</p>
+
+        <h2>10. Bank Fees and Credit Card Fees</h2>
+        <p>Monthly fees for a business bank account and annual fees for a business credit card are deductible. Interest on a business credit card used exclusively for business expenses is also deductible.</p>
+
+        <h2>Quarterly Estimated Taxes</h2>
+        <p>As a self-employed realtor, no employer withholds tax from your commission income. Stay ahead of tax bills:</p>
+        <ul>
+          <li><strong>United States:</strong> Pay quarterly to the IRS if you expect to owe $1,000 or more — April 15, June 15, September 15, January 15.</li>
+          <li><strong>Canada:</strong> Pay CRA quarterly instalments if you owe more than $3,000 two years in a row — March 15, June 15, September 15, December 15.</li>
+        </ul>
+
+        <h2>The System That Pays for Itself</h2>
+        <p>The biggest challenge for realtors isn't knowing what to deduct — it's remembering to track every expense throughout a busy year. A receipt you don't capture is a deduction you lose.</p>
+        <p>TaxSort is designed for exactly this: snap every receipt the moment you get it, let GPS mileage tracking run in the background, and export a complete tax summary when you need it. For most realtors, the app pays for itself in the first month of tracking alone.</p>
+      </div>
+    ),
+  },
+
   // ── 1 ──────────────────────────────────────────────────────
   "top-tax-deductions-freelancers": {
     title: "Top 15 Tax Deductions Every Freelancer Should Know",
@@ -25,10 +218,10 @@ const posts: Record<string, {
     readTime: "6 min read",
     content: (
       <div className="prose-content">
-        <p className="lead">Most freelancers and self-employed individuals claim only the obvious deductions — and leave hundreds or thousands of dollars on the table every year. This guide covers 15 legitimate deductions available to self-employed people in <strong>Canada (CRA T2125)</strong> and the <strong>United States (IRS Schedule C)</strong>.</p>
+        <p className="lead">Most freelancers and self-employed individuals claim only the obvious deductions — and leave hundreds or thousands of dollars on the table every year. This guide covers 15 legitimate deductions available to self-employed people in <strong>United States (IRS Schedule C)</strong> and <strong>Canada (CRA T2125)</strong>.</p>
 
         <blockquote>
-          <strong>Disclaimer:</strong> Tax laws change. This article reflects general principles as understood in 2025–2026. Always verify with the <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> or <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> and consult a qualified tax professional before filing.
+          <strong>Disclaimer:</strong> Tax laws change. This article reflects general principles as understood in 2025–2026. Always verify with the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> or <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> and consult a qualified tax professional before filing.
         </blockquote>
 
         <h2>1. Home Office</h2>
@@ -62,7 +255,7 @@ const posts: Record<string, {
         <p>Website hosting, domain names, social media ads, business cards, and promotional materials are all deductible business expenses.</p>
 
         <h2>10. Business Meals (50%)</h2>
-        <p>Both the CRA and IRS allow a deduction of 50% of meal expenses incurred for business purposes — meeting with a client or discussing business with a partner. Keep receipts and note the business purpose and who attended.</p>
+        <p>Both the IRS and CRA allow a deduction of 50% of meal expenses incurred for business purposes — meeting with a client or discussing business with a partner. Keep receipts and note the business purpose and who attended.</p>
 
         <h2>11. Professional Memberships and Dues</h2>
         <p>Industry association fees, professional licensing fees, and dues for organizations directly related to your work are deductible.</p>
@@ -100,11 +293,11 @@ const posts: Record<string, {
         <p className="lead">If you drive for your business — visiting clients, picking up supplies, going to job sites — every kilometre is a potential tax deduction. This guide explains exactly how mileage deductions work in Canada and the United States, what records you need, and how to avoid common mistakes.</p>
 
         <blockquote>
-          <strong>Disclaimer:</strong> Mileage rates and rules change annually. Always verify current rates with the <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> or <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> and consult a tax professional.
+          <strong>Disclaimer:</strong> Mileage rates and rules change annually. Always verify current rates with the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> or <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> and consult a tax professional.
         </blockquote>
 
         <h2>What Counts as a Business Drive?</h2>
-        <p>Both the CRA and IRS define business driving as travel related to earning income from your business. This includes:</p>
+        <p>Both the IRS and CRA define business driving as travel related to earning income from your business. This includes:</p>
         <ul>
           <li>Driving to meet a client or customer</li>
           <li>Travelling to a job site or work location</li>
@@ -153,7 +346,7 @@ const posts: Record<string, {
         <ul>
           <li><strong>Log trips immediately.</strong> Reconstructing a year of driving from memory will not hold up to an audit.</li>
           <li><strong>Record the purpose.</strong> &ldquo;Client visit — Sarah Chen, 123 Main St&rdquo; is far better than &ldquo;work.&rdquo;</li>
-          <li><strong>Track total odometer readings.</strong> Both the CRA and IRS may ask for beginning and end-of-year readings.</li>
+          <li><strong>Track total odometer readings.</strong> Both the IRS and CRA may ask for beginning and end-of-year readings.</li>
           <li><strong>Do not claim 100% business use unless it is true.</strong> This is a common audit trigger.</li>
         </ul>
       </div>
@@ -172,11 +365,11 @@ const posts: Record<string, {
         <p className="lead">Working from home is one of the biggest perks of being self-employed — and the home office deduction is one of the most valuable tax breaks available. But it also comes with strict rules. Here&apos;s what you can claim, what you cannot, and how to calculate it properly.</p>
 
         <blockquote>
-          <strong>Disclaimer:</strong> Tax rules vary by country and change over time. Verify current rules with the <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> or <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> and consult a tax professional.
+          <strong>Disclaimer:</strong> Tax rules vary by country and change over time. Verify current rules with the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">IRS</a> or <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> and consult a tax professional.
         </blockquote>
 
         <h2>The Golden Rule: Regular and Exclusive Use</h2>
-        <p>Both the CRA and IRS require that the workspace be used <strong>regularly and exclusively</strong> for your business. A kitchen table where you also eat dinner generally does not qualify. A dedicated room used only for work — even a clearly defined portion of a room — is a much stronger claim.</p>
+        <p>Both the IRS and CRA require that the workspace be used <strong>regularly and exclusively</strong> for your business. A kitchen table where you also eat dinner generally does not qualify. A dedicated room used only for work — even a clearly defined portion of a room — is a much stronger claim.</p>
 
         <h2>Canada (CRA) — Workspace-in-the-Home</h2>
         <p>Claimed on <strong>T2125, Part 7</strong>. To qualify, the workspace must be either:</p>
@@ -422,7 +615,7 @@ const posts: Record<string, {
         <p className="lead">A missing receipt at tax time means a deduction you cannot prove — and a deduction you cannot prove is a deduction you cannot claim. Here is how to build a system that captures every business expense as it happens, with almost no extra effort.</p>
 
         <blockquote>
-          <strong>Note:</strong> Both the CRA and IRS accept digital records as supporting documentation, provided they are accurate, complete, and legible. CRA guidance is in <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/keeping-records.html" target="_blank" rel="noopener noreferrer">IC78-10R5</a>; IRS guidance is in <a href="https://www.irs.gov/publications/p583" target="_blank" rel="noopener noreferrer">Publication 583</a>.
+          <strong>Note:</strong> Both the IRS and CRA accept digital records as supporting documentation, provided they are accurate, complete, and legible. CRA guidance is in <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/keeping-records.html" target="_blank" rel="noopener noreferrer">IC78-10R5</a>; IRS guidance is in <a href="https://www.irs.gov/publications/p583" target="_blank" rel="noopener noreferrer">Publication 583</a>.
         </blockquote>
 
         <h2>Why Receipts Get Lost</h2>
@@ -433,7 +626,7 @@ const posts: Record<string, {
         <p>TaxSort lets you snap a photo in the app, and AI extracts the vendor name, amount, date, and tax category automatically. The original image is stored in the cloud — the paper receipt can then be discarded.</p>
 
         <h2>What a Valid Receipt Needs</h2>
-        <p>Both the CRA and IRS require receipts to show:</p>
+        <p>Both the IRS and CRA require receipts to show:</p>
         <ul>
           <li>The name of the vendor or supplier</li>
           <li>The date of the transaction</li>

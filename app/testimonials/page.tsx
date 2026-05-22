@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const testimonials = [
   { name: "Sarah M.", role: "Freelance Designer", saved: "$1,240", text: "TaxSort saved me hours every tax season. I just snap receipts as I go and everything is sorted. My accountant loves the clean reports." },
-  { name: "James T.", role: "Independent Contractor", saved: "$860", text: "The mileage tracker alone saved me over $800 last year. I never thought to track all those client visits before TaxSort." },
+  { name: "James T.", role: "Realtor", saved: "$860", text: "The mileage tracker alone saved me over $800 last year. I never thought to track all those client visits before TaxSort." },
   { name: "Priya K.", role: "Self-Employed Consultant", saved: "$2,100", text: "Finally an app that understands freelancers. Simple, fast, and the AI categorization is incredibly accurate." },
   { name: "Marco R.", role: "Uber & DoorDash Driver", saved: "$1,650", text: "As a gig worker I have tons of small expenses. TaxSort handles everything automatically. I saved more in taxes than I expected." },
   { name: "Lisa W.", role: "Freelance Writer", saved: "$780", text: "I used to dread tax season. Now I'm ready all year. TaxSort makes it effortless to stay organized." },
@@ -70,7 +70,7 @@ export default function TestimonialsPage() {
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Join thousands of freelancers</h2>
-            <p className="text-lg text-gray-600 mb-8">Start saving on taxes today. Free to download.</p>
+            <p className="text-lg text-gray-600 mb-8">Start Saving on Taxes Today. Free to download.</p>
             <Link href="/#download" className="px-8 py-3 rounded-xl font-semibold text-white inline-block" style={{ background: "#2a7a3b" }}>
               Download TaxSort Free
             </Link>

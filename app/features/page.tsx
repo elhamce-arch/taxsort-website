@@ -75,7 +75,7 @@ const features = [
       </svg>
     ),
     title: "Smart Expense Sorting",
-    desc: "AI categorizes every expense into CRA and IRS-approved categories. 50+ categories supported with smart learning over time.",
+    desc: "AI categorizes every expense into IRS and CRA-approved categories. 50+ categories supported with smart learning over time.",
     accent: "linear-gradient(135deg, #3b1f5e 0%, #7c3aed 100%)",
     glow: "rgba(167,139,250,0.15)",
   },

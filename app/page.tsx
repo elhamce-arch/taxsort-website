@@ -70,7 +70,7 @@ const features = [
       </svg>
     ),
     title: "Smart Expense Sorting",
-    desc: "AI automatically categorizes expenses into CRA and IRS-approved tax categories.",
+    desc: "AI automatically categorizes expenses into IRS and CRA-approved tax categories.",
     accent: "linear-gradient(135deg, #3b1f5e 0%, #7c3aed 100%)",
     glow: "rgba(167,139,250,0.15)",
   },
@@ -145,7 +145,7 @@ const testimonials = [
   },
   {
     name: "James T.",
-    role: "Independent Contractor",
+    role: "Realtor",
     text: "The mileage tracker alone saved me over $800 last year. I never thought to track all those client visits before.",
   },
   {
@@ -205,7 +205,7 @@ const jsonLd = {
           "name": "Does TaxSort work for Canadian taxes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, TaxSort supports both CRA (Canada) and IRS (USA) tax categories, making it ideal for Canadian and American freelancers.",
+            "text": "Yes, TaxSort supports both IRS (USA) and CRA (Canada) tax categories, making it ideal for Canadian and American freelancers.",
           },
         },
       ],
@@ -381,7 +381,7 @@ export default function Home() {
             {/* Header */}
             <RevealOnScroll className="text-center mb-16">
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#4ade80" }}>How It Works</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Four steps to tax-ready</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Four Steps to Tax-Ready</h2>
               <p className="text-lg text-gray-400 max-w-xl mx-auto">Tax season used to be stressful. Not anymore.</p>
             </RevealOnScroll>
 
@@ -420,7 +420,7 @@ export default function Home() {
 
                   {[
                     { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads the merchant, amount, date, and tax category instantly — no manual entry.", emoji: "📸" },
-                    { step: "02", title: "Sort", desc: "Expenses are automatically organized into CRA and IRS-approved tax categories. Review and edit in seconds.", emoji: "🗂️" },
+                    { step: "02", title: "Sort", desc: "Expenses are automatically organized into IRS and CRA-approved tax categories. Review and edit in seconds.", emoji: "🗂️" },
                     { step: "03", title: "Track", desc: "Every business drive is logged automatically with GPS. Every kilometre counts toward your deductions.", emoji: "📍" },
                     { step: "04", title: "Export", desc: "Generate audit-ready PDF, CSV, or ZIP reports for your accountant in one tap. Tax season, done.", emoji: "📤" },
                   ].map((s, i) => (
@@ -482,7 +482,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <RevealOnScroll>
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Demo</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">See TaxSort in action</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">See TaxSort in Action</h2>
               <p className="text-lg text-gray-500 mb-10">Watch how easy it is to snap, sort, and save on taxes.</p>
               <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: "56.25%" }}>
                 <iframe
@@ -502,7 +502,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <RevealOnScroll className="text-center mb-14">
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Reviews</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Real stories. Real savings.</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Stories.<br />Real Savings.</h2>
               <p className="text-lg text-gray-500">Freelancers who made tax season effortless.</p>
             </RevealOnScroll>
             <div className="grid md:grid-cols-3 gap-6">
@@ -526,7 +526,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <RevealOnScroll className="text-center mb-12">
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#4ade80" }}>Pricing</p>
-              <h2 className="text-4xl font-bold text-white mb-4">Simple, honest pricing</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Simple, Honest Pricing</h2>
               <p className="text-gray-400">Start free. Upgrade when you need more.</p>
             </RevealOnScroll>
             <div className="grid md:grid-cols-2 gap-6">
@@ -572,7 +572,8 @@ export default function Home() {
                 </div>
               </RevealOnScroll>
             </div>
-            <RevealOnScroll className="text-center mt-8">
+            <RevealOnScroll className="text-center mt-6">
+              <p className="text-xs text-gray-500 mb-4">All prices in USD</p>
               <Link href="/pricing" className="text-sm font-semibold" style={{ color: "#4ade80" }}>See full pricing details →</Link>
             </RevealOnScroll>
           </div>
