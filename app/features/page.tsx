@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -49,6 +50,28 @@ export default function FeaturesPage() {
                 <p className="text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* App screenshots showcase */}
+        <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">See it in action</h2>
+            <div className="flex flex-col md:flex-row justify-center items-end gap-6">
+              {[
+                { src: "/screenshot-receipt.jpeg", alt: "AI receipt scanning", label: "Snap receipts instantly" },
+                { src: "/screenshot-expenses.jpeg", alt: "Expense tracking dashboard", label: "Auto-sorted expenses" },
+                { src: "/screenshot-mileage.jpeg", alt: "GPS mileage tracking", label: "GPS mileage tracking" },
+                { src: "/screenshot-export.jpeg", alt: "Export tax reports", label: "One-tap export" },
+              ].map((s, i) => (
+                <div key={s.label} className={`flex flex-col items-center gap-3 ${i === 1 ? "md:mb-8" : ""}`}>
+                  <div className="w-40 rounded-2xl overflow-hidden shadow-lg">
+                    <Image src={s.src} alt={s.alt} width={200} height={400} className="w-full h-auto" />
+                  </div>
+                  <span className="text-sm font-medium text-gray-600">{s.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

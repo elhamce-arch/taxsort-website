@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ const steps = [
     subtitle: "Capture any receipt instantly",
     desc: "Open TaxSort and take a photo of any receipt — from coffee shops to software subscriptions. Our AI reads the merchant, amount, date, and category in seconds. No manual entry, ever.",
     points: ["Works with crumpled or faded receipts", "Supports email receipt forwarding", "Bank transaction import available"],
+    img: "/screenshot-receipt.jpeg",
+    alt: "TaxSort AI receipt scanning showing scanned receipt with auto-extracted vendor and amount",
   },
   {
     step: "02",
@@ -22,6 +25,8 @@ const steps = [
     subtitle: "AI organizes everything for you",
     desc: "Every expense is automatically sorted into CRA and IRS-approved tax categories. Review your sorted expenses anytime — edit, merge, or flag anything in seconds.",
     points: ["50+ tax categories supported", "Smart duplicate detection", "Real-time savings estimate updates"],
+    img: "/screenshot-expenses.jpeg",
+    alt: "TaxSort expense list showing categorized transactions with totals",
   },
   {
     step: "03",
@@ -29,6 +34,8 @@ const steps = [
     subtitle: "One tap to audit-ready reports",
     desc: "When tax season arrives, generate a clean professional PDF report in one tap. Share it directly with your accountant or import into your tax software.",
     points: ["PDF and CSV export formats", "Compatible with TurboTax and H&R Block", "Share directly from your phone"],
+    img: "/screenshot-export.jpeg",
+    alt: "TaxSort export screen showing CSV, PDF, ZIP and Tax Summary export options",
   },
 ];
 
@@ -71,9 +78,9 @@ export default function HowItWorksPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex-1 rounded-2xl flex items-center justify-center h-64" style={{ background: "#e8f0e5" }}>
-                  <div className="text-6xl">
-                    {i === 0 ? "📷" : i === 1 ? "🗂️" : "📄"}
+                <div className="flex-1 flex justify-center">
+                  <div className="w-56 md:w-64 rounded-3xl overflow-hidden shadow-xl">
+                    <Image src={s.img} alt={s.alt} width={280} height={560} className="w-full h-auto" />
                   </div>
                 </div>
               </div>

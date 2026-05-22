@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 
 const stats = [
@@ -159,14 +160,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Stats grid */}
-            <div className="flex-1 grid grid-cols-2 gap-4 w-full max-w-md">
-              {stats.map((s) => (
-                <div key={s.value} className="bg-white rounded-2xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-gray-900 mb-1">{s.value}</div>
-                  <div className="text-sm text-gray-500">{s.label}</div>
-                </div>
-              ))}
+            {/* App screenshot */}
+            <div className="flex-1 flex justify-center">
+              <div className="relative w-64 md:w-72">
+                <div className="absolute inset-0 rounded-3xl blur-2xl opacity-20" style={{ background: "#2a7a3b" }} />
+                <Image
+                  src="/screenshot-expenses.jpeg"
+                  alt="TaxSort expense tracking app showing categorized transactions"
+                  width={300}
+                  height={600}
+                  className="relative rounded-3xl shadow-2xl w-full"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -213,14 +219,19 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly." },
-                { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds." },
-                { step: "03", title: "Export", desc: "Generate audit-ready PDFs for your accountant or tax software in one tap." },
+                { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads and categorizes it instantly.", img: "/screenshot-receipt.jpeg", alt: "TaxSort AI receipt scanning showing scanned receipt with auto-extracted vendor and amount" },
+                { step: "02", title: "Sort", desc: "Expenses are automatically organized into tax categories. Review in seconds.", img: "/screenshot-expenses.jpeg", alt: "TaxSort expense list showing categorized transactions" },
+                { step: "03", title: "Export", desc: "Generate audit-ready PDFs for your accountant or tax software in one tap.", img: "/screenshot-export.jpeg", alt: "TaxSort export screen showing PDF, CSV and ZIP export options" },
               ].map((s) => (
-                <div key={s.step} className="bg-white rounded-2xl p-8 shadow-sm">
-                  <div className="text-5xl font-bold text-gray-100 mb-4">{s.step}</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{s.title}</h3>
-                  <p className="text-gray-500">{s.desc}</p>
+                <div key={s.step} className="bg-white rounded-2xl overflow-hidden shadow-sm">
+                  <div className="h-56 overflow-hidden">
+                    <Image src={s.img} alt={s.alt} width={300} height={500} className="w-full h-full object-cover object-top" />
+                  </div>
+                  <div className="p-6">
+                    <div className="text-4xl font-bold text-gray-100 mb-2">{s.step}</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{s.title}</h3>
+                    <p className="text-gray-500 text-sm">{s.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
