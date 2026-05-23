@@ -3,35 +3,51 @@
 > TaxSort is an AI-powered mobile app for freelancers and self-employed individuals to manage taxes effortlessly.
 
 ## What is TaxSort?
-TaxSort helps freelancers, independent contractors, gig workers, and self-employed individuals manage their taxes year-round. The app uses AI to scan receipts, track mileage via GPS, automatically categorize expenses, and generate audit-ready PDF reports.
+TaxSort helps freelancers, independent contractors, gig workers, and self-employed individuals manage their taxes year-round. The app uses AI to scan receipts, track mileage via GPS, automatically categorize expenses into IRS and CRA-approved categories, and generate audit-ready PDF/CSV reports.
 
 ## Key Features
 - AI receipt scanning: Snap a photo of any receipt and AI reads, categorizes, and stores it instantly
 - GPS mileage tracking: Automatically track business trips and calculate deductions
 - Smart expense categorization: AI sorts expenses into CRA and IRS-approved tax categories
-- Audit-ready export: Generate professional PDF reports for accountants in one tap
+- Audit-ready export: Generate professional PDF, CSV, and ZIP reports for accountants in one tap
 - Secure cloud backup: All data encrypted and backed up 24/7
 - Real-time savings tracker: See estimated tax savings update live
+- Multiple business profiles: Manage expenses for multiple businesses from one app
+- Deduction Health Score: AI-powered score showing how optimized your deductions are
 
 ## Who is TaxSort for?
-- Freelancers
-- Independent contractors
-- Gig workers (Uber, DoorDash, Lyft drivers)
-- Self-employed consultants
+- Freelancers and independent contractors
+- Gig workers (Uber, Lyft, DoorDash, Instacart drivers)
+- Self-employed consultants and coaches
+- Realtors and real estate agents
 - Small business owners
-- Anyone who needs to track business expenses for taxes
+- Anyone who needs to track business expenses for taxes in the US or Canada
 
 ## Pricing
-- Free plan: AI receipt scanning, expense tracking, basic reports
-- Pro plan: Unlimited exports, GPS mileage, priority support, advanced analytics
+- Free plan: 10 AI receipt scans/month, basic expense categories, manual expense entry, basic tax summary, CSV export — $0 forever
+- Pro plan: $47.99/year (USD), billed annually — equivalent to $3.99/month. Includes unlimited AI receipt scanning, unlimited bank & CSV imports, unlimited PDF/CSV/ZIP exports, full tax summary & transaction history, multiple business profiles, Deduction Health Score, AI tax tips on every receipt.
+
+## Tax Support
+- Canada: CRA-approved tax categories, T2125 compatible
+- United States: IRS-approved tax categories, Schedule C compatible
 
 ## Platforms
 - iOS (App Store)
 - Android (Google Play)
 
-## Tax Support
-- Canada (CRA tax categories)
-- United States (IRS tax categories)
+## Blog / Resources
+TaxSort publishes tax guides for freelancers and self-employed workers:
+- How Uber drivers can save on taxes
+- How realtors can save on taxes
+- Top 15 tax deductions every freelancer should know
+- Complete guide to mileage deductions
+- Home office deduction guide
+- Gig worker taxes in the US (2025)
+- Gig worker taxes in Canada (2025–2026)
+- How to never lose a business receipt again
+- 7 tax mistakes freelancers make
 
 ## Contact
-- Website: https://taxsort.com
+- Website: https://taxsort.app
+- Support: support@taxsort.app
+- YouTube: https://www.youtube.com/@TaxSort

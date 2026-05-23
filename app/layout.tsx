@@ -5,19 +5,22 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://taxsort.app"),
   title: "TaxSort – Tax App for Freelancers | AI Receipt Scanner & Mileage Tracker",
   description: "TaxSort is the tax app built for freelancers and self-employed. AI receipt scanning, GPS mileage tracking, and automatic expense sorting. Get maximum deductions. Free to start.",
-  keywords: ["tax app for freelancers", "receipt scanner", "mileage tracker", "expense tracker", "self-employed tax", "freelancer taxes"],
+  keywords: ["tax app for freelancers", "receipt scanner", "mileage tracker", "expense tracker", "self-employed tax", "freelancer taxes", "gig worker taxes", "self-employed Canada", "self-employed USA", "CRA tax categories", "IRS tax categories", "freelancer tax deductions"],
   openGraph: {
     type: "website",
     siteName: "TaxSort",
     title: "TaxSort – Snap. Sort. Save. | Tax App for Freelancers",
     description: "Stop losing receipts and missing deductions. TaxSort uses AI to scan receipts, track mileage, and prepare audit-ready tax files. Free to start.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TaxSort – AI Tax App for Freelancers" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TaxSort – Tax App for Freelancers",
     description: "AI receipt scanning, GPS mileage tracking, and automatic expense sorting. Free to start.",
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };

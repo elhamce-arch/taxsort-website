@@ -112,7 +112,7 @@ export default function BlogPage() {
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#2a7a3b" }}>TaxSort Blog</p>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Tax tips for freelancers</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Tax Tips for Freelancers</h1>
             <p className="text-xl text-gray-600 max-w-xl mx-auto">
               Practical guides to help you track more, deduct more, and keep more of what you earn.
             </p>

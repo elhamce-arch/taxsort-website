@@ -733,8 +733,27 @@ export default async function BlogPost(
   const post = posts[slug];
   if (!post) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": post.date,
+    "author": { "@type": "Organization", "name": "TaxSort" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TaxSort",
+      "url": "https://taxsort.app",
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://taxsort.app/blog/${slug}` },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main>
         {/* Hero */}
