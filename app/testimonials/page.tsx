@@ -26,7 +26,7 @@ export default function TestimonialsPage() {
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Real stories.<br />Real savings.
+              Real Stories.<br />Real Savings.
             </h1>
             <p className="text-xl text-gray-600">Freelancers who made tax season effortless with TaxSort.</p>
           </div>
@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
         {/* CTA */}
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Join thousands of freelancers</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Join Thousands of Freelancers</h2>
             <p className="text-lg text-gray-600 mb-8">Start Saving on Taxes Today. Free to download.</p>
             <Link href="/#download" className="px-8 py-3 rounded-xl font-semibold text-white inline-block" style={{ background: "#2a7a3b" }}>
               Download TaxSort Free

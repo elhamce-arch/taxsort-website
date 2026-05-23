@@ -53,8 +53,7 @@ export default function PricingPage() {
 
         {/* Plans */}
         <section className="py-16 px-4">
-          <p className="text-center text-sm text-gray-400 mb-6">All prices in USD</p>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 items-stretch">
+          <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6 items-stretch">
 
             {/* Free */}
             <div className="rounded-2xl p-8 border border-gray-200 bg-white flex flex-col">
@@ -71,43 +70,10 @@ export default function PricingPage() {
                 className="block text-center py-3 rounded-xl font-semibold mb-8 transition-opacity hover:opacity-90 text-white"
                 style={{ background: "#2a7a3b" }}
               >
-                Get started free
+                Get Started Free
               </Link>
               <ul className="space-y-3 flex-1">
                 {freeFeatures.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="text-green-500 mt-0.5 shrink-0">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Pro Monthly */}
-            <div className="rounded-2xl p-8 border-2 border-green-400 bg-white flex flex-col relative">
-              <span
-                className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full"
-                style={{ background: "#4ade80", color: "#0d0d0d" }}
-              >
-                Most Popular
-              </span>
-              <div className="mb-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-1">Pro Monthly</h2>
-                <p className="text-sm text-gray-500 mb-4">Full access, billed monthly</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold text-gray-900">$7.99</span>
-                  <span className="text-gray-500">/ month</span>
-                </div>
-              </div>
-              <Link
-                href="/#download"
-                className="block text-center py-3 rounded-xl font-semibold mb-8 transition-opacity hover:opacity-90 text-white"
-                style={{ background: "#2a7a3b" }}
-              >
-                Start Pro Monthly
-              </Link>
-              <ul className="space-y-3 flex-1">
-                {proFeatures.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
                     <span className="text-green-500 mt-0.5 shrink-0">✓</span>
                     {f}
@@ -125,23 +91,23 @@ export default function PricingPage() {
                 className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full"
                 style={{ background: "#4ade80", color: "#0d0d0d" }}
               >
-                Best Value
+                Most Popular
               </span>
               <div className="mb-6">
-                <h2 className="text-xl font-bold mb-1">Pro Annual</h2>
-                <p className="text-sm text-gray-400 mb-4">Full access, billed yearly</p>
+                <h2 className="text-xl font-bold mb-1">Pro</h2>
+                <p className="text-sm text-gray-400 mb-4">Full access, billed annually</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold">$44.99</span>
+                  <span className="text-5xl font-bold">$47.99</span>
                   <span className="text-gray-400">/ year</span>
                 </div>
-                <p className="text-sm mt-1 text-gray-400">$3.75 / month equivalent</p>
+                <p className="text-sm mt-1 text-gray-400">$3.99 / month · USD · Billed Annually</p>
                 <div className="mt-3 inline-flex items-center gap-2">
                   <span style={{ textDecoration: "line-through", color: "#6b7280" }} className="text-sm">$95.88 / year</span>
                   <span
                     className="text-xs font-bold px-2 py-1 rounded-full"
                     style={{ background: "#4ade80", color: "#0d0d0d" }}
                   >
-                    SAVE $50.89 — 53% OFF
+                    SAVE $47.89 — 50% OFF
                   </span>
                 </div>
               </div>
@@ -167,7 +133,7 @@ export default function PricingPage() {
         {/* FAQ */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Frequently asked questions</h2>
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {faqs.map((f) => (
                 <div key={f.q} className="bg-white rounded-xl p-6 border border-gray-100">

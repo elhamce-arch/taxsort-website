@@ -190,7 +190,7 @@ export default function FeaturesPage() {
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Features built<br />for freelancers
+              Features Built<br />for Freelancers
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Everything you need to stay on top of your taxes year-round — not just in April.
@@ -215,7 +215,7 @@ export default function FeaturesPage() {
         {/* App screenshots showcase */}
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">See it in action</h2>
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">See It in Action</h2>
             <div className="flex flex-col md:flex-row justify-center items-end gap-6">
               {[
                 { src: "/screenshot-receipt.jpeg", alt: "AI receipt scanning", label: "Snap receipts instantly" },
@@ -256,7 +256,7 @@ export default function FeaturesPage() {
         {/* CTA */}
         <section style={{ background: "#e8f0e5" }} className="py-20 px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Start tracking expenses today</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Start Tracking Expenses Today</h2>
             <p className="text-lg text-gray-600 mb-8">Free to download. No credit card required.</p>
             <Link href="/pricing" className="px-8 py-3 rounded-xl font-semibold text-white inline-block" style={{ background: "#2a7a3b" }}>
               See Pricing

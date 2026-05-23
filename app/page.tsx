@@ -352,7 +352,7 @@ export default function Home() {
             <RevealOnScroll className="mb-14">
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#4ade80" }}>Features</p>
               <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Everything you need<br className="hidden md:block" /> at tax time.
+                Everything You Need<br className="hidden md:block" /> at Tax Time.
               </h2>
               <p className="text-lg text-gray-400 max-w-xl">
                 Built for anyone who wants to spend less time on taxes and keep more of what they earn.
@@ -554,12 +554,11 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-1">Pro</h3>
                   <p className="text-gray-400 text-sm mb-4">Everything you need to stay tax-ready</p>
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-5xl font-bold text-white">$7.99</span>
-                    <span className="text-gray-400 ml-1">/ month</span>
+                    <span className="text-5xl font-bold text-white">$47.99</span>
+                    <span className="text-gray-400 ml-1">/ year</span>
                   </div>
                   <p className="text-sm mb-6 flex items-center gap-2">
-                    <span style={{ textDecoration: "line-through", color: "#6b7280" }}>$95.88/yr</span>
-                    <span style={{ color: "#4ade80" }}>$44.99 / year — save 53%</span>
+                    <span style={{ color: "#4ade80" }}>$3.99 / month · USD · Billed Annually</span>
                   </p>
                   <ul className="space-y-2 text-sm text-gray-300 flex-1 mb-6">
                     {["Unlimited AI receipt scanning", "Unlimited bank & CSV imports", "Unlimited PDF, CSV & ZIP exports", "Multiple business profiles", "Deduction Health Score", "AI tax tips on every receipt"].map((f) => (
@@ -583,7 +582,7 @@ export default function Home() {
         <section className="py-24 px-4" id="download" style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)" }}>
           <RevealOnScroll className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Start saving on <span style={{ color: "#4ade80" }}>taxes</span> today.
+              Start Saving on <span style={{ color: "#4ade80" }}>Taxes</span> Today.
             </h2>
             <p className="text-lg text-gray-400 mb-10">Free to download. No credit card required.</p>
             <div className="flex flex-wrap justify-center gap-4">

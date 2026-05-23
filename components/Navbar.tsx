@@ -40,7 +40,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className={`text-sm font-medium transition-colors ${textColor}`}>Home</Link>
             <Link href="/features" className={`text-sm font-medium transition-colors ${textColor}`}>Features</Link>
-            <Link href="/#how-it-works" className={`text-sm font-medium transition-colors ${textColor}`}>How it works</Link>
+            <Link href="/#how-it-works" className={`text-sm font-medium transition-colors ${textColor}`}>How It Works</Link>
             <Link href="/pricing" className={`text-sm font-medium transition-colors ${textColor}`}>Pricing</Link>
             <Link href="/testimonials" className={`text-sm font-medium transition-colors ${textColor}`}>Testimonials</Link>
             <Link href="/blog" className={`text-sm font-medium transition-colors ${textColor}`}>Blog</Link>
@@ -81,7 +81,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
         >
           <Link href="/" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Home</Link>
           <Link href="/features" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Features</Link>
-          <Link href="/how-it-works" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>How it works</Link>
+          <Link href="/how-it-works" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>How It Works</Link>
           <Link href="/pricing" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Pricing</Link>
           <Link href="/testimonials" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Testimonials</Link>
           <Link href="/blog" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Blog</Link>
