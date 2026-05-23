@@ -5,7 +5,9 @@ export const alt = "TaxSort – AI Tax App for Freelancers";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OGImage() {
+export default async function OGImage() {
+  const logoSrc = "https://taxsort.app/logo.png";
+
   return new ImageResponse(
     (
       <div
@@ -97,22 +99,12 @@ export default function OGImage() {
             padding: "14px 32px",
           }}
         >
-          <div
-            style={{
-              width: "36px",
-              height: "36px",
-              background: "#2a7a3b",
-              borderRadius: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: "20px",
-              fontWeight: 800,
-            }}
-          >
-            T
-          </div>
+          <img
+            src={logoSrc}
+            width={40}
+            height={40}
+            style={{ borderRadius: "8px" }}
+          />
           <span style={{ color: "white", fontSize: "24px", fontWeight: 700, display: "flex" }}>
             TaxSort
           </span>
