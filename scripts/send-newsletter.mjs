@@ -66,7 +66,7 @@ Return ONLY a JSON object with this exact structure:
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.7, maxOutputTokens: 2048 },
+        generationConfig: { temperature: 0.7, maxOutputTokens: 2048, responseMimeType: "application/json" },
       }),
     }
   );
@@ -78,10 +78,13 @@ Return ONLY a JSON object with this exact structure:
   const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
   if (!text) throw new Error("Empty Gemini response: " + JSON.stringify(data));
 
-  const stripped = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-  const jsonMatch = stripped.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) throw new Error("No JSON in response: " + text);
-  return JSON.parse(jsonMatch[0]);
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON in response: " + text);
+    return JSON.parse(jsonMatch[0]);
+  }
 }
 
 async function createAndSendBroadcast(subject, previewText, html) {
