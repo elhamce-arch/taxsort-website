@@ -46,7 +46,7 @@ export default function TermsPage() {
               <div>
                 <h2 className="text-xl font-bold text-gray-900 mb-3">4. Subscriptions and Billing</h2>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
-                  <li>TaxSort offers a free plan and a Pro plan billed annually at $47.99 USD/year.</li>
+                  <li>TaxSort offers a free plan and a Pro plan billed annually at $44.99 USD/year.</li>
                   <li>Subscriptions are processed through Apple App Store or Google Play and are subject to their respective terms.</li>
                   <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period.</li>
                   <li>You can manage and cancel your subscription in your App Store or Google Play account settings.</li>

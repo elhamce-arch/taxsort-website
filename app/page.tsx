@@ -556,11 +556,11 @@ export default function Home() {
                   </div>
                   <p className="text-gray-400 text-sm mb-4">Everything you need to stay tax-ready</p>
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-5xl font-bold text-white">$47.99</span>
+                    <span className="text-5xl font-bold text-white">$44.99</span>
                     <span className="text-gray-400 ml-1">/ year</span>
                   </div>
                   <p className="text-sm mb-6 flex items-center gap-2">
-                    <span style={{ color: "#4ade80" }}>$3.99 / month · USD · Billed Annually</span>
+                    <span style={{ color: "#4ade80" }}>$3.75 / month · USD · Billed Annually</span>
                   </p>
                   <ul className="space-y-2 text-sm text-gray-300 flex-1 mb-6">
                     {["Unlimited AI receipt scanning", "Unlimited bank & CSV imports", "Unlimited PDF, CSV & ZIP exports", "Multiple business profiles", "Deduction Health Score", "AI tax tips on every receipt"].map((f) => (

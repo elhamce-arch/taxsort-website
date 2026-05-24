@@ -105,17 +105,17 @@ export default function PricingPage() {
                 <h2 className="text-xl font-bold mb-1">Pro</h2>
                 <p className="text-sm text-gray-400 mb-4">Full access, billed annually</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold">$47.99</span>
+                  <span className="text-5xl font-bold">$44.99</span>
                   <span className="text-gray-400">/ year</span>
                 </div>
-                <p className="text-sm mt-1 text-gray-400">$3.99 / month · USD · Billed Annually</p>
+                <p className="text-sm mt-1 text-gray-400">$3.75 / month · USD · Billed Annually</p>
                 <div className="mt-3 inline-flex items-center gap-2">
-                  <span style={{ textDecoration: "line-through", color: "#6b7280" }} className="text-sm">$95.88 / year</span>
+                  <span style={{ textDecoration: "line-through", color: "#6b7280" }} className="text-sm">$89.88 / year</span>
                   <span
                     className="text-xs font-bold px-2 py-1 rounded-full"
                     style={{ background: "#4ade80", color: "#0d0d0d" }}
                   >
-                    SAVE $47.89 — 50% OFF
+                    SAVE $44.89 — 50% OFF
                   </span>
                 </div>
               </div>

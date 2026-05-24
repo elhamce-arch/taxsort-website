@@ -26,7 +26,7 @@ TaxSort helps freelancers, independent contractors, gig workers, and self-employ
 
 ## Pricing
 - Free plan: 10 AI receipt scans/month, basic expense categories, manual expense entry, basic tax summary, CSV export — $0 forever
-- Pro plan: $47.99/year (USD), billed annually — equivalent to $3.99/month. Includes unlimited AI receipt scanning, unlimited bank & CSV imports, unlimited PDF/CSV/ZIP exports, full tax summary & transaction history, multiple business profiles, Deduction Health Score, AI tax tips on every receipt.
+- Pro plan: $44.99/year (USD), billed annually — equivalent to $3.75/month. Includes unlimited AI receipt scanning, unlimited bank & CSV imports, unlimited PDF/CSV/ZIP exports, full tax summary & transaction history, multiple business profiles, Deduction Health Score, AI tax tips on every receipt.
 
 ## Tax Support
 - Canada: CRA-approved tax categories, T2125 compatible, HST/GST amount tracked per receipt, total HST/GST paid shown for ITC claims
