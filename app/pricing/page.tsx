@@ -36,9 +36,23 @@ const faqs = [
   { q: "Can my accountant access my reports?", a: "Yes. Export PDF or CSV reports and share them directly with your accountant via email or file sharing." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       <main>
         {/* Hero */}
@@ -87,12 +101,6 @@ export default function PricingPage() {
               className="rounded-2xl p-8 flex flex-col relative text-white"
               style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)" }}
             >
-              <span
-                className="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full"
-                style={{ background: "#4ade80", color: "#0d0d0d" }}
-              >
-                Most Popular
-              </span>
               <div className="mb-6">
                 <h2 className="text-xl font-bold mb-1">Pro</h2>
                 <p className="text-sm text-gray-400 mb-4">Full access, billed annually</p>

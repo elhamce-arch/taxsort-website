@@ -28,6 +28,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="alternate" hrefLang="en-us" href="https://taxsort.app" />
+        <link rel="alternate" hrefLang="en-ca" href="https://taxsort.app" />
+        <link rel="alternate" hrefLang="en" href="https://taxsort.app" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
