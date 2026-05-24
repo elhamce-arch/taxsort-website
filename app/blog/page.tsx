@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import SubscribeForm from "@/components/SubscribeForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -183,19 +184,7 @@ export default function BlogPage() {
           <div className="max-w-xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Get tax tips in your inbox</h2>
             <p className="text-gray-600 mb-6">Monthly guides for freelancers. No spam, unsubscribe anytime.</p>
-            <div className="flex gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-green-400 text-sm"
-              />
-              <button
-                className="px-5 py-3 rounded-xl text-sm font-semibold text-white whitespace-nowrap"
-                style={{ background: "#2a7a3b" }}
-              >
-                Subscribe
-              </button>
-            </div>
+            <SubscribeForm />
           </div>
         </section>
       </main>
