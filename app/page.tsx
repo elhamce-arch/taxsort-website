@@ -187,30 +187,13 @@ const jsonLd = {
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is TaxSort?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "TaxSort is an AI-powered mobile app that helps freelancers and self-employed individuals manage taxes by scanning receipts, tracking mileage, and automatically categorizing expenses.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Is TaxSort free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, TaxSort has a free plan that includes AI receipt scanning and expense tracking. A Pro plan is also available for unlimited exports and advanced features.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Does TaxSort work for Canadian taxes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, TaxSort supports both IRS (USA) and CRA (Canada) tax categories, making it ideal for Canadian and American freelancers.",
-          },
-        },
+        { "@type": "Question", "name": "Is TaxSort free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. TaxSort has a free plan that includes 10 AI receipt scans per month, GPS mileage tracking, and 1 bank import per month. No credit card required." } },
+        { "@type": "Question", "name": "Can I cancel anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cancel your Pro subscription anytime with no fees or penalties. Your data remains accessible on the Free plan." } },
+        { "@type": "Question", "name": "Does TaxSort work for US taxes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. TaxSort fully supports IRS tax categories for American freelancers and self-employed workers filing Schedule C." } },
+        { "@type": "Question", "name": "What about Canadian taxes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. TaxSort fully supports CRA tax categories for Canadian freelancers filing T2125. HST/GST paid is tracked separately for ITC claims." } },
+        { "@type": "Question", "name": "Does it capture HST/GST from receipts?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every receipt scan automatically extracts the subtotal, HST/GST or sales tax, and total as separate fields. Canadian users get a total HST/GST paid summary in every export." } },
+        { "@type": "Question", "name": "Can my accountant access my reports?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export PDF or CSV reports and share them directly with your accountant via email or file sharing." } },
+        { "@type": "Question", "name": "Is my data secure?", "acceptedAnswer": { "@type": "Answer", "text": "All data is encrypted in transit and at rest. We use bank-level security to protect your financial information." } },
       ],
     },
   ],
@@ -374,6 +357,9 @@ export default function Home() {
                 </RevealOnScroll>
               ))}
             </div>
+            <RevealOnScroll className="text-center mt-10">
+              <Link href="/features" className="text-sm font-semibold" style={{ color: "#4ade80" }}>See all features →</Link>
+            </RevealOnScroll>
           </div>
         </section>
 
@@ -568,6 +554,35 @@ export default function Home() {
               <p className="text-xs text-gray-500 mb-4">All prices in USD</p>
               <Link href="/pricing" className="text-sm font-semibold" style={{ color: "#4ade80" }}>See full pricing details →</Link>
             </RevealOnScroll>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-3xl mx-auto">
+            <RevealOnScroll className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>FAQ</p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <p className="text-lg text-gray-500">Everything you need to know before getting started.</p>
+            </RevealOnScroll>
+            <div className="space-y-4">
+              {[
+                { q: "Is TaxSort free?", a: "Yes. TaxSort has a free plan that includes 10 AI receipt scans per month, GPS mileage tracking, and 1 bank import per month. No credit card required." },
+                { q: "Can I cancel anytime?", a: "Yes. Cancel your Pro subscription anytime with no fees or penalties. Your data remains accessible on the Free plan." },
+                { q: "Does TaxSort work for US taxes?", a: "Yes. TaxSort fully supports IRS tax categories for American freelancers and self-employed workers filing Schedule C." },
+                { q: "What about Canadian taxes?", a: "Yes. TaxSort fully supports CRA tax categories for Canadian freelancers filing T2125. HST/GST paid is tracked separately for ITC claims." },
+                { q: "Does it capture HST/GST from receipts?", a: "Yes. Every receipt scan automatically extracts the subtotal, HST/GST or sales tax, and total as separate fields. Canadian users get a total HST/GST paid summary in every export." },
+                { q: "Can my accountant access my reports?", a: "Yes. Export PDF or CSV reports and share them directly with your accountant via email or file sharing." },
+                { q: "Is my data secure?", a: "All data is encrypted in transit and at rest. We use bank-level security to protect your financial information." },
+              ].map((f, i) => (
+                <RevealOnScroll key={f.q} delay={i * 60}>
+                  <div className="bg-white rounded-xl p-6 border border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-2">{f.q}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{f.a}</p>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
         </section>
 
