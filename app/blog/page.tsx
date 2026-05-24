@@ -23,7 +23,7 @@ const posts = [
   {
     slug: "realtor-tax-guide",
     title: "How Realtors Can Save on Taxes",
-    excerpt: "Real estate agents have some of the best deduction opportunities of any profession — but only if you track them. Here's every deduction realtors should be claiming.",
+    excerpt: "Real estate agents have some of the best deduction opportunities of any profession, but only if you track them. Here's every deduction realtors should be claiming.",
     category: "Real Estate",
     date: "May 21, 2026",
     readTime: "8 min read",
@@ -32,7 +32,7 @@ const posts = [
   {
     slug: "top-tax-deductions-freelancers",
     title: "Top 15 Tax Deductions Every Freelancer Should Know",
-    excerpt: "Most freelancers leave money on the table at tax time. Here are the 15 most commonly missed deductions — from your home office to your phone bill.",
+    excerpt: "Most freelancers leave money on the table at tax time. Here are the 15 most commonly missed deductions, from your home office to your phone bill.",
     category: "Tax Tips",
     date: "May 20, 2026",
     readTime: "6 min read",
@@ -41,7 +41,7 @@ const posts = [
   {
     slug: "mileage-deduction-guide",
     title: "The Complete Guide to Mileage Deductions for Self-Employed",
-    excerpt: "Every business kilometre you drive is a tax deduction. Here's exactly how to track, calculate, and claim your mileage — whether you're in Canada or the US.",
+    excerpt: "Every business kilometre you drive is a tax deduction. Here's exactly how to track, calculate, and claim your mileage, whether you're in Canada or the US.",
     category: "Mileage",
     date: "May 15, 2026",
     readTime: "8 min read",
@@ -77,7 +77,7 @@ const posts = [
   {
     slug: "receipt-scanning-tips",
     title: "How to Never Lose a Business Receipt Again",
-    excerpt: "The best freelancers are obsessive about receipts — but not in a stressful way. Here's the simple system to capture every deductible expense automatically.",
+    excerpt: "The best freelancers are obsessive about receipts, but not in a stressful way. Here's the simple system to capture every deductible expense automatically.",
     category: "Tax Tips",
     date: "April 28, 2026",
     readTime: "4 min read",
@@ -86,7 +86,7 @@ const posts = [
   {
     slug: "freelancer-tax-mistakes",
     title: "7 Tax Mistakes Freelancers Make (And How to Avoid Them)",
-    excerpt: "From missing the self-employment deduction to forgetting quarterly payments — these are the most expensive mistakes freelancers make at tax time.",
+    excerpt: "From missing the self-employment deduction to forgetting quarterly payments. These are the most expensive mistakes freelancers make at tax time.",
     category: "Tax Tips",
     date: "April 20, 2026",
     readTime: "7 min read",
@@ -123,8 +123,12 @@ export default function BlogPage() {
         <section className="py-12 px-4 border-b border-gray-100">
           <div className="max-w-5xl mx-auto">
             <article className="rounded-2xl overflow-hidden border border-gray-100 md:flex hover:shadow-lg transition-all">
-              <div className="md:w-2/5 h-48 md:h-auto flex items-center justify-center text-6xl" style={{ background: posts[0].color }}>
-                {categoryIcons[posts[0].category] ?? "📝"}
+              <div className="md:w-2/5 h-56 md:h-auto flex flex-col items-center justify-center relative overflow-hidden" style={{ background: posts[0].color }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10" />
+                <div className="relative z-10 flex flex-col items-center gap-3">
+                  <span className="text-7xl">{categoryIcons[posts[0].category] ?? "📝"}</span>
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/70 text-gray-700 uppercase tracking-wide">{posts[0].category}</span>
+                </div>
               </div>
               <div className="p-8 md:w-3/5 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
@@ -147,8 +151,12 @@ export default function BlogPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {posts.slice(1).map((p) => (
                 <article key={p.slug} className="rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-all flex flex-col">
-                  <div className="h-32 flex items-center justify-center text-4xl" style={{ background: p.color }}>
-                    {categoryIcons[p.category] ?? "📝"}
+                  <div className="h-44 flex flex-col items-center justify-center relative overflow-hidden" style={{ background: p.color }}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10" />
+                    <div className="relative z-10 flex flex-col items-center gap-2">
+                      <span className="text-5xl">{categoryIcons[p.category] ?? "📝"}</span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-white/70 text-gray-700">{p.category}</span>
+                    </div>
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-3">
