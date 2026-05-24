@@ -112,15 +112,7 @@ export default function PricingPage() {
                   <span className="text-gray-400">/ year</span>
                 </div>
                 <p className="text-sm mt-1 text-gray-400">$3.75 / month · USD · Billed Annually</p>
-                <div className="mt-3 inline-flex items-center gap-2">
-                  <span style={{ textDecoration: "line-through", color: "#6b7280" }} className="text-sm">$89.88 / year</span>
-                  <span
-                    className="text-xs font-bold px-2 py-1 rounded-full"
-                    style={{ background: "#4ade80", color: "#0d0d0d" }}
-                  >
-                    SAVE $44.89 — 50% OFF
-                  </span>
-                </div>
+                <p className="text-sm mt-2" style={{ color: "#4ade80" }}>Less than a coffee a month · Cancel anytime</p>
               </div>
               <Link
                 href="/#download"

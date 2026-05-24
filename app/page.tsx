@@ -517,7 +517,7 @@ export default function Home() {
                 <div className="rounded-2xl p-8 flex flex-col h-full relative" style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)", boxShadow: "0 0 0 1px rgba(74,222,128,0.25), 0 8px 40px rgba(74,222,128,0.1)" }}>
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="text-xl font-bold text-white">Pro</h3>
-                    <span className="text-xs font-bold px-2 py-1 rounded-full" style={{ background: "#4ade80", color: "#0d0d0d" }}>SAVE 50%</span>
+                    <span className="text-xs font-bold px-2 py-1 rounded-full" style={{ background: "#4ade80", color: "#0d0d0d" }}>ANNUAL PLAN</span>
                   </div>
                   <p className="text-gray-400 text-sm mb-4">Everything you need to stay tax-ready</p>
                   <div className="flex items-baseline gap-1 mb-1">
