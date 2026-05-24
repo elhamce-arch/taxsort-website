@@ -27,6 +27,15 @@ function getWeekNumber() {
   return Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7);
 }
 
+async function listModels() {
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1/models?key=${GEMINI_KEY}`
+  );
+  const data = await res.json();
+  const names = (data.models ?? []).map((m) => m.name);
+  console.log("Available models:", names.join(", "));
+}
+
 async function generateEmailContent(topic) {
   const prompt = `You are writing a weekly tax tips email newsletter for TaxSort, a tax app for freelancers and self-employed people in the US and Canada.
 
@@ -112,6 +121,8 @@ async function main() {
   if (!GEMINI_KEY || !RESEND_KEY || !AUDIENCE_ID) {
     throw new Error("Missing required environment variables: GEMINI_API_KEY, RESEND_API_KEY, RESEND_AUDIENCE_ID");
   }
+
+  await listModels();
 
   const week = getWeekNumber();
   const topic = topics[week % topics.length];
