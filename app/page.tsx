@@ -26,7 +26,7 @@ const features = [
       </svg>
     ),
     title: "AI Receipt Scanning",
-    desc: "Snap a photo and our AI instantly reads, categorizes, and stores your receipt. No manual entry ever.",
+    desc: "Snap a photo and our AI instantly reads the merchant, subtotal, HST/GST/sales tax, and total — categorizes and stores it automatically. No manual entry ever.",
     accent: "linear-gradient(135deg, #1a4d28 0%, #2a7a3b 100%)",
     glow: "rgba(74,222,128,0.15)",
   },
@@ -92,7 +92,7 @@ const features = [
       </svg>
     ),
     title: "Audit-Ready Export",
-    desc: "Generate PDF, CSV & ZIP reports ready for your accountant or tax software in one tap.",
+    desc: "Generate PDF, CSV & ZIP reports in one tap. Includes a Tax/HST column per expense and a total HST/GST paid summary for Canadian ITC claims.",
     accent: "linear-gradient(135deg, #5c2a0e 0%, #ea580c 100%)",
     glow: "rgba(251,146,60,0.15)",
   },
@@ -419,7 +419,7 @@ export default function Home() {
                   />
 
                   {[
-                    { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads the merchant, amount, date, and tax category instantly — no manual entry.", emoji: "📸" },
+                    { step: "01", title: "Snap", desc: "Take a photo of any receipt. Our AI reads the merchant, subtotal, HST/GST/sales tax, total, and category instantly — no manual entry.", emoji: "📸" },
                     { step: "02", title: "Sort", desc: "Expenses are automatically organized into IRS and CRA-approved tax categories. Review and edit in seconds.", emoji: "🗂️" },
                     { step: "03", title: "Track", desc: "Every business drive is logged automatically with GPS. Every kilometre counts toward your deductions.", emoji: "📍" },
                     { step: "04", title: "Export", desc: "Generate audit-ready PDF, CSV, or ZIP reports for your accountant in one tap. Tax season, done.", emoji: "📤" },

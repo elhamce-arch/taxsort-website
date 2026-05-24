@@ -18,6 +18,8 @@ const freeFeatures = [
 
 const proFeatures = [
   "Unlimited AI receipt scanning",
+  "HST/GST & sales tax captured per receipt",
+  "Total HST/GST paid summary for ITC claims (🇨🇦)",
   "Unlimited bank & CSV imports",
   "Unlimited PDF, CSV & ZIP exports",
   "Full tax summary & transaction history",
