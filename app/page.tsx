@@ -498,35 +498,33 @@ export default function Home() {
               <RevealOnScroll>
                 <div className="rounded-2xl p-8 flex flex-col h-full" style={{ background: "#111111", boxShadow: "0 0 0 1px rgba(255,255,255,0.08)" }}>
                   <h3 className="text-xl font-bold text-white mb-1">Free</h3>
-                  <p className="text-gray-400 text-sm mb-4">Try it out — no credit card needed</p>
+                  <p className="text-gray-400 text-sm mb-4">Get started at no cost</p>
                   <div className="flex items-baseline gap-1 mb-6">
                     <span className="text-5xl font-bold text-white">$0</span>
-                    <span className="text-gray-400 ml-1">forever</span>
+                    <span className="text-gray-400 ml-1">/ forever</span>
                   </div>
                   <ul className="space-y-2 text-sm text-gray-400 flex-1 mb-6">
-                    {["AI receipt scanning (up to 10/month)", "Auto expense categorization", "GPS mileage tracking", "1 bank or CSV import/month", "Cloud backup"].map((f) => (
+                    {["10 AI receipt scans / month", "Basic expense categories", "Manual expense entry", "Basic tax summary", "CSV export"].map((f) => (
                       <li key={f} className="flex items-start gap-2"><span style={{ color: "#4ade80" }}>✓</span>{f}</li>
                     ))}
                   </ul>
                   <Link href="/#download" className="block text-center py-3 rounded-xl font-semibold text-white transition-colors" style={{ border: "1px solid rgba(255,255,255,0.2)" }}>
-                    Download Free
+                    Get Started Free
                   </Link>
                 </div>
               </RevealOnScroll>
               <RevealOnScroll delay={100}>
                 <div className="rounded-2xl p-8 flex flex-col h-full relative" style={{ background: "linear-gradient(160deg, #1a4d28 0%, #0f2e18 100%)", boxShadow: "0 0 0 1px rgba(74,222,128,0.25), 0 8px 40px rgba(74,222,128,0.1)" }}>
-                  <div className="flex items-center justify-between mb-1">
+                  <div className="mb-1">
                     <h3 className="text-xl font-bold text-white">Pro</h3>
-                    <span className="text-xs font-bold px-2 py-1 rounded-full" style={{ background: "#4ade80", color: "#0d0d0d" }}>ANNUAL PLAN</span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">Everything you need to stay tax-ready</p>
+                  <p className="text-gray-400 text-sm mb-4">Full access, billed annually</p>
                   <div className="flex items-baseline gap-1 mb-1">
                     <span className="text-5xl font-bold text-white">$44.99</span>
                     <span className="text-gray-400 ml-1">/ year</span>
                   </div>
-                  <p className="text-sm mb-6 flex items-center gap-2">
-                    <span style={{ color: "#4ade80" }}>$3.75 / month · USD · Billed Annually</span>
-                  </p>
+                  <p className="text-sm mb-1" style={{ color: "#4ade80" }}>$3.75 / month · USD · Billed Annually</p>
+                  <p className="text-sm mb-6" style={{ color: "#4ade80" }}>Less than a coffee a month · Cancel anytime</p>
                   <ul className="space-y-2 text-sm text-gray-300 flex-1 mb-6">
                     {[
                       "Unlimited AI receipt scanning",
@@ -539,13 +537,14 @@ export default function Home() {
                       "Multiple business profiles",
                       "Deduction Health Score",
                       "AI tax tips on every receipt",
+                      "Manually add & categorize expenses",
                       "This app is 100% tax deductible",
                     ].map((f) => (
                       <li key={f} className="flex items-start gap-2"><span style={{ color: "#4ade80" }}>✓</span>{f}</li>
                     ))}
                   </ul>
-                  <Link href="/pricing" className="block text-center py-3 rounded-xl font-semibold bg-white text-gray-900 hover:bg-gray-100 transition-colors">
-                    Get Pro
+                  <Link href="/#download" className="block text-center py-3 rounded-xl font-semibold bg-white text-gray-900 hover:bg-gray-100 transition-colors">
+                    Start Pro Annual
                   </Link>
                 </div>
               </RevealOnScroll>
