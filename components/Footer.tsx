@@ -27,7 +27,6 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-medium mb-3 text-sm">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li>
                 <a href="https://www.youtube.com/@TaxSort" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-2">

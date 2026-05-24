@@ -135,23 +135,26 @@ const features = [
     accent: "linear-gradient(135deg, #1a4d28 0%, #16a34a 100%)",
     glow: "rgba(74,222,128,0.15)",
   },
-];
-
-const testimonials = [
   {
-    name: "Sarah M.",
-    role: "Freelance Designer",
-    text: "TaxSort saved me hours every tax season. I just snap receipts as I go and everything is sorted. My accountant loves the reports.",
-  },
-  {
-    name: "James T.",
-    role: "Realtor",
-    text: "The mileage tracker alone saved me over $800 last year. I never thought to track all those client visits before.",
-  },
-  {
-    name: "Priya K.",
-    role: "Self-Employed Consultant",
-    text: "Finally an app that understands freelancers. Simple, fast, and the AI categorization is incredibly accurate.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <circle cx="50" cy="50" r="34" fill="none" stroke="white" strokeWidth="2" opacity="0.2"/>
+        <path d="M50 50 L50 16 A34 34 0 0 1 84 50 Z" fill="#4ade80" opacity="0.9"/>
+        <path d="M50 50 L84 50 A34 34 0 0 1 26 76 Z" fill="#60a5fa" opacity="0.8"/>
+        <path d="M50 50 L26 76 A34 34 0 0 1 50 16 Z" fill="#a78bfa" opacity="0.7"/>
+        <circle cx="50" cy="50" r="14" fill="#0a0a0a"/>
+        <line x1="68" y1="20" x2="80" y2="14" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+        <line x1="82" y1="65" x2="90" y2="70" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+        <line x1="28" y1="78" x2="20" y2="86" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+        <circle cx="80" cy="14" r="3" fill="#4ade80"/>
+        <circle cx="90" cy="70" r="3" fill="#60a5fa"/>
+        <circle cx="20" cy="86" r="3" fill="#a78bfa"/>
+      </svg>
+    ),
+    title: "Spending Insights",
+    desc: "See exactly where your money goes with interactive pie charts broken down by tax category. Switch between total spending and deductible-only view for any year.",
+    accent: "linear-gradient(135deg, #1e3a5f 0%, #7c3aed 100%)",
+    glow: "rgba(167,139,250,0.15)",
   },
 ];
 
@@ -497,30 +500,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Testimonials ── */}
-        <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-5xl mx-auto">
-            <RevealOnScroll className="text-center mb-14">
-              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2a7a3b" }}>Reviews</p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Stories.<br />Real Savings.</h2>
-              <p className="text-lg text-gray-500">Freelancers who made tax season effortless.</p>
-            </RevealOnScroll>
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <RevealOnScroll key={t.name} delay={i * 100}>
-                  <div className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-sm transition-all h-full">
-                    <p className="text-gray-600 mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-                    <div>
-                      <div className="font-semibold text-gray-900">{t.name}</div>
-                      <div className="text-sm text-gray-400">{t.role}</div>
-                    </div>
-                  </div>
-                </RevealOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── Pricing preview ── */}
         <section className="py-20 px-4" style={{ background: "#0a0a0a" }} id="pricing">
           <div className="max-w-4xl mx-auto">
@@ -563,7 +542,19 @@ export default function Home() {
                     <span style={{ color: "#4ade80" }}>$3.75 / month · USD · Billed Annually</span>
                   </p>
                   <ul className="space-y-2 text-sm text-gray-300 flex-1 mb-6">
-                    {["Unlimited AI receipt scanning", "Unlimited bank & CSV imports", "Unlimited PDF, CSV & ZIP exports", "Multiple business profiles", "Deduction Health Score", "AI tax tips on every receipt"].map((f) => (
+                    {[
+                      "Unlimited AI receipt scanning",
+                      "HST/GST & sales tax captured per receipt",
+                      "Total HST/GST paid summary for ITC claims (🇨🇦)",
+                      "Spending Insights with interactive charts",
+                      "Unlimited bank & CSV imports",
+                      "Unlimited PDF, CSV & ZIP exports",
+                      "Full tax summary & transaction history",
+                      "Multiple business profiles",
+                      "Deduction Health Score",
+                      "AI tax tips on every receipt",
+                      "This app is 100% tax deductible",
+                    ].map((f) => (
                       <li key={f} className="flex items-start gap-2"><span style={{ color: "#4ade80" }}>✓</span>{f}</li>
                     ))}
                   </ul>

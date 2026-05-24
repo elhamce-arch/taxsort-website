@@ -179,6 +179,27 @@ const features = [
     accent: "linear-gradient(135deg, #451a03 0%, #d97706 100%)",
     glow: "rgba(251,191,36,0.15)",
   },
+  {
+    icon: (
+      <svg viewBox="0 0 100 100" width="96" height="96" fill="none">
+        <circle cx="50" cy="50" r="34" fill="none" stroke="white" strokeWidth="2" opacity="0.2"/>
+        <path d="M50 50 L50 16 A34 34 0 0 1 84 50 Z" fill="#4ade80" opacity="0.9"/>
+        <path d="M50 50 L84 50 A34 34 0 0 1 26 76 Z" fill="#60a5fa" opacity="0.8"/>
+        <path d="M50 50 L26 76 A34 34 0 0 1 50 16 Z" fill="#a78bfa" opacity="0.7"/>
+        <circle cx="50" cy="50" r="14" fill="#0a0a0a"/>
+        <line x1="68" y1="20" x2="80" y2="14" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+        <line x1="82" y1="65" x2="90" y2="70" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+        <line x1="28" y1="78" x2="20" y2="86" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+        <circle cx="80" cy="14" r="3" fill="#4ade80"/>
+        <circle cx="90" cy="70" r="3" fill="#60a5fa"/>
+        <circle cx="20" cy="86" r="3" fill="#a78bfa"/>
+      </svg>
+    ),
+    title: "Spending Insights",
+    desc: "See exactly where your money goes with interactive pie charts broken down by tax category. Switch between total spending and deductible-only view, and compare across years.",
+    accent: "linear-gradient(135deg, #1e3a5f 0%, #7c3aed 100%)",
+    glow: "rgba(167,139,250,0.15)",
+  },
 ];
 
 export default function FeaturesPage() {
