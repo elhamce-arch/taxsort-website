@@ -6,10 +6,11 @@
 TaxSort helps freelancers, independent contractors, gig workers, and self-employed individuals manage their taxes year-round. The app uses AI to scan receipts, track mileage via GPS, automatically categorize expenses into IRS and CRA-approved categories, and generate audit-ready PDF/CSV reports.
 
 ## Key Features
-- AI receipt scanning: Snap a photo of any receipt and AI reads, categorizes, and stores it instantly
-- GPS mileage tracking: Automatically track business trips and calculate deductions
+- AI receipt scanning: Snap a photo of any receipt and AI reads, categorizes, and stores it instantly — extracts subtotal, HST/GST/sales tax, and total as separate fields
+- GPS mileage tracking: Automatically track business trips and calculate deductions using CRA and IRS mileage rates
 - Smart expense categorization: AI sorts expenses into CRA and IRS-approved tax categories
-- Audit-ready export: Generate professional PDF, CSV, and ZIP reports for accountants in one tap
+- HST/GST tracking: Captures tax paid on every receipt; Canadian users get a total HST/GST paid summary for Input Tax Credit (ITC) claims
+- Audit-ready export: Generate professional PDF, CSV, and ZIP reports for accountants in one tap; PDF includes a dedicated Tax/HST column per expense
 - Secure cloud backup: All data encrypted and backed up 24/7
 - Real-time savings tracker: See estimated tax savings update live
 - Multiple business profiles: Manage expenses for multiple businesses from one app
@@ -28,8 +29,8 @@ TaxSort helps freelancers, independent contractors, gig workers, and self-employ
 - Pro plan: $47.99/year (USD), billed annually — equivalent to $3.99/month. Includes unlimited AI receipt scanning, unlimited bank & CSV imports, unlimited PDF/CSV/ZIP exports, full tax summary & transaction history, multiple business profiles, Deduction Health Score, AI tax tips on every receipt.
 
 ## Tax Support
-- Canada: CRA-approved tax categories, T2125 compatible
-- United States: IRS-approved tax categories, Schedule C compatible
+- Canada: CRA-approved tax categories, T2125 compatible, HST/GST amount tracked per receipt, total HST/GST paid shown for ITC claims
+- United States: IRS-approved tax categories, Schedule C compatible, sales tax captured per receipt as part of expense total
 
 ## Platforms
 - iOS (App Store)

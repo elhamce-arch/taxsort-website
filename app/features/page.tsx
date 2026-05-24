@@ -31,7 +31,7 @@ const features = [
       </svg>
     ),
     title: "AI Receipt Scanning",
-    desc: "Snap any receipt and AI extracts merchant, amount, date, and tax category instantly. Works on crumpled, faded, or digital receipts.",
+    desc: "Snap any receipt and AI extracts merchant, date, subtotal, HST/GST/sales tax, and total separately — and categorizes it instantly. Works on crumpled, faded, or digital receipts.",
     accent: "linear-gradient(135deg, #1a4d28 0%, #2a7a3b 100%)",
     glow: "rgba(74,222,128,0.15)",
   },
@@ -97,7 +97,7 @@ const features = [
       </svg>
     ),
     title: "Audit-Ready Export",
-    desc: "Generate professional PDF or CSV reports in one tap. Send directly to your accountant or import into TurboTax or H&R Block.",
+    desc: "Generate professional PDF or CSV reports in one tap. Canadian users get a dedicated HST/GST paid total for ITC claims. Send directly to your accountant or import into TurboTax or H&R Block.",
     accent: "linear-gradient(135deg, #5c2a0e 0%, #ea580c 100%)",
     glow: "rgba(251,146,60,0.15)",
   },
