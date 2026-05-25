@@ -6,7 +6,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "TaxSort Pricing – Free & Pro Plans for Freelancers and Self-Employed",
   description: "Start free or upgrade to Pro. TaxSort offers flexible pricing for freelancers, gig workers, and self-employed. AI receipt scanning and mileage tracking included.",
-};
+  alternates: { canonical: "https://www.taxsort.app/pricing" },
+}
 
 const freeFeatures = [
   "10 AI receipt scans / month",
