@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## URL Shortening
+
+App Store and Play Store links are shortened via [Bitly](https://bitly.com).
+
+- **Account:** elham.ce@gmail.com
+- **Short link:** [bit.ly/4wuO2C9](https://bit.ly/4wuO2C9)
+- **Manage links:** https://app.bitly.com
