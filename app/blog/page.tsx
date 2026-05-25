@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import SubscribeForm from "@/components/SubscribeForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -176,15 +175,6 @@ export default function BlogPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Newsletter CTA */}
-        <section style={{ background: "#e8f0e5" }} className="py-16 px-4">
-          <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Get tax tips in your inbox</h2>
-            <p className="text-gray-600 mb-6">Monthly guides for freelancers. No spam, unsubscribe anytime.</p>
-            <SubscribeForm />
           </div>
         </section>
       </main>
