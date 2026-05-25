@@ -9,7 +9,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "TaxSort Features – AI Receipt Scanner, GPS Mileage Tracker & Expense Sorter",
   description: "Explore TaxSort features: AI-powered receipt scanning, GPS mileage tracking, automatic expense categorization, and one-tap audit-ready PDF export for freelancers.",
-};
+  alternates: { canonical: "https://www.taxsort.app/features" },
+}
 
 const features = [
   {
