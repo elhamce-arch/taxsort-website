@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "TaxSort Blog – Tax Tips for Freelancers & Self-Employed",
   description: "Tax tips, guides, and advice for freelancers, independent contractors, and self-employed individuals. Learn how to maximize deductions and simplify tax season.",
+  alternates: { canonical: "https://www.taxsort.app/blog" },
 };
 
 const categories = ["All", "Tax Tips", "Mileage", "Canada", "USA", "Gig Economy", "Real Estate"];
