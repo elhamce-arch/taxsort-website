@@ -6,7 +6,7 @@ import InstallBanner from "@/components/InstallBanner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://taxsort.app"),
+  metadataBase: new URL("https://www.taxsort.app"),
   title: "TaxSort – Tax App for Freelancers | AI Receipt Scanner & Mileage Tracker",
   description: "TaxSort is the tax app built for freelancers and self-employed. AI receipt scanning, GPS mileage tracking, and automatic expense sorting. Get maximum deductions. Free to start.",
   keywords: ["tax app for freelancers", "receipt scanner", "mileage tracker", "expense tracker", "self-employed tax", "freelancer taxes", "gig worker taxes", "self-employed Canada", "self-employed USA", "CRA tax categories", "IRS tax categories", "freelancer tax deductions"],
