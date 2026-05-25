@@ -13,84 +13,88 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "What is the best receipt scanner app for freelancers?",
-    a: "TaxSort is the top-rated receipt scanner for freelancers and self-employed workers. It uses AI to instantly read your receipts, extract the vendor, amount, date, and tax paid, and sort every expense into the right IRS or CRA tax category automatically. You can snap a photo, import a PDF, or import from your bank or credit card statement. Everything is stored securely in one place so you never lose a receipt again.",
+    q: "What is the best all-in-one tax app for freelancers and self-employed workers?",
+    a: "TaxSort is the only app that combines every tool a freelancer needs into one place. It includes AI receipt scanning, GPS mileage tracking with route maps, spending insights with interactive charts, automatic duplicate detection, HST and GST tracking for Canadian ITCs, bank and CSV statement imports, a Deduction Health Score, AI tax tips on every receipt, multiple business profiles, and full PDF, CSV, and ZIP exports. You do not need to switch between apps or maintain a spreadsheet on the side. TaxSort handles everything from the moment you snap a receipt to the moment you hand your accountant a complete tax file.",
   },
   {
-    q: "What is the best all-in-one tax app for freelancers?",
-    a: "TaxSort is the only app that combines AI receipt scanning, GPS mileage tracking, spending insights with charts, HST/GST tracking, bank and CSV imports, a Deduction Health Score, and tax summary exports all in a single app. Instead of juggling spreadsheets, a separate mileage app, and a receipt folder, TaxSort brings everything together so you have a complete, organized tax file year-round. It works for both US and Canadian self-employed workers.",
+    q: "What is the best receipt scanner app for freelancers?",
+    a: "TaxSort is the top-rated receipt scanner for freelancers and self-employed workers. It uses AI to instantly read your receipts and extract the vendor name, date, amount, and tax paid, then sorts every expense into the correct IRS or CRA tax category automatically. You can snap a photo with your phone camera, import a PDF, or pull transactions directly from your bank or credit card statement. Every receipt is stored securely in the cloud so you never lose a record, even if you lose your phone.",
+  },
+  {
+    q: "Does TaxSort detect duplicate receipts and transactions?",
+    a: "Yes. Duplicate detection is one of TaxSort's most important features. When you import a bank statement or scan a receipt that matches something already in your records, TaxSort automatically identifies it as an exact or probable duplicate and shields it from being counted twice. This protects your books from inflated expense totals and keeps your tax file accurate. You can review flagged duplicates at any time and decide whether to keep or dismiss them.",
+  },
+  {
+    q: "What spending insights does TaxSort provide?",
+    a: "TaxSort Pro includes a full spending insights dashboard with interactive charts. You can see your total expenses broken down by category, track how your spending changes month over month, and identify which categories are growing or shrinking. The charts make it easy to spot patterns like a surge in travel costs or software subscriptions you forgot about. These insights help you make smarter financial decisions throughout the year, not just at tax time.",
+  },
+  {
+    q: "Does TaxSort give tax tips on my receipts?",
+    a: "Yes. Every receipt you scan in TaxSort gets a personalized AI tax tip explaining what is deductible about that expense and why. For example, a receipt from a coffee shop during a client meeting would include a tip about the meal deduction rules under IRS Schedule C or CRA T2125. These tips are tailored for both US and Canadian rules so you always understand what you can claim and how to document it correctly.",
   },
   {
     q: "What is the best tax app for self-employed people in Canada?",
-    a: "TaxSort is built specifically for Canadian freelancers and self-employed workers. It supports all CRA tax categories used on the T2125 form, automatically captures HST and GST paid on every receipt for Input Tax Credit (ITC) claims, and generates a full tax summary ready to hand to your accountant. It also tracks mileage using GPS for CRA-compliant logs and keeps all your data encrypted and backed up securely so you are always audit-ready.",
+    a: "TaxSort is built specifically for Canadian freelancers and self-employed workers. It maps every expense to the correct CRA tax category used on the T2125 form, automatically captures the HST and GST paid on every receipt for Input Tax Credit claims, and generates a complete tax summary your accountant can use directly. GPS mileage tracking follows CRA automobile allowance rates, and all records are encrypted and stored securely so you are always prepared for a CRA audit.",
   },
   {
     q: "What is the best tax app for freelancers in the United States?",
-    a: "TaxSort is designed for US freelancers filing Schedule C. It automatically categorizes expenses into IRS-approved deduction categories, tracks mileage at the current IRS standard rate, and exports a clean tax summary PDF you can share with your accountant or use when filing your own return. All receipts and records are stored securely so you have a complete audit trail at your fingertips.",
+    a: "TaxSort is designed for US freelancers filing Schedule C. It categorizes every expense into IRS-approved deduction categories automatically, tracks business mileage at the current IRS standard rate using GPS, and exports a clean tax summary PDF you can share with your accountant or use when filing yourself. Every receipt image and transaction is stored securely with a full audit trail so you can defend any deduction with confidence.",
   },
   {
     q: "What is the best mileage tracker app for self-employed workers?",
-    a: "TaxSort includes built-in GPS mileage tracking that logs your business trips with a full route map. Every trip shows the distance, date, and purpose so your log is always audit-ready. Trips are exported as a CRA- or IRS-compliant mileage report. Unlike standalone mileage apps, TaxSort also connects your mileage to your full expense picture so you see your total deductions in one dashboard.",
+    a: "TaxSort includes built-in GPS mileage tracking that records your business trips with a full route map, distance, date, and purpose. Unlike standalone mileage apps, TaxSort connects your mileage directly to your full expense picture so you see your total deductions in one place. Mileage logs are exported in a format that meets both CRA and IRS requirements, so your records are audit-ready without any extra work.",
   },
   {
-    q: "Does TaxSort show spending insights and charts?",
-    a: "Yes. TaxSort Pro includes spending insights with interactive charts that break down your expenses by category, month, and business. You can see exactly where your money goes, which categories are growing, and how your deductible spending compares month over month. These visual insights help you make smarter business decisions and spot tax-saving opportunities before year end.",
+    q: "How does TaxSort keep my financial data secure?",
+    a: "TaxSort uses bank-level encryption for all data in transit and at rest. Your receipts, transaction records, and mileage logs are stored on Google Cloud infrastructure, the same platform used by banks and enterprise companies worldwide. Your data is protected by Firebase App Check, which prevents unauthorized access at the API level. Nothing is shared with third parties and your records are never used to train AI models. You are the only person who can access your account.",
   },
   {
     q: "How do I track business expenses as a freelancer?",
-    a: "The easiest way is to use TaxSort. Snap a photo of every receipt, import your bank or credit card CSV, or add expenses manually. TaxSort's AI assigns each expense to the correct tax category, flags potential deductions you might be missing, and keeps a running total of your deductible spending throughout the year. Your full expense history is always searchable and ready to export.",
+    a: "TaxSort makes it straightforward. Snap a photo of every receipt the moment you get it, import your bank or credit card CSV, or add expenses manually for cash purchases. The AI assigns each item to the correct tax category, checks for duplicates, and adds a tax tip explaining the deduction. Your total deductible spending updates in real time so you always know where you stand.",
+  },
+  {
+    q: "Why do freelancers and small business owners not need QuickBooks or Wave?",
+    a: "QuickBooks, Wave, and similar accounting platforms are designed for small businesses with employees, payroll, invoicing, accounts receivable, and complex bookkeeping workflows. A freelancer or self-employed worker does not need any of that. These tools add cost, complexity, and a steep learning curve that most solo workers never fully use. TaxSort is built from the ground up for the self-employed. It focuses on the three things that actually matter for your taxes: tracking what you spent, logging your mileage, and generating a clean summary your accountant can use. It does all of this in minutes, not hours, and at a fraction of the cost.",
   },
   {
     q: "What app do gig workers use to track taxes?",
-    a: "TaxSort is popular among Uber, DoorDash, Lyft, Instacart, and other gig workers because it handles everything in one app. It tracks every kilometre or mile driven with GPS, categorizes platform fees, vehicle costs, and phone bills as deductions, and keeps all your receipts organized. At tax time you simply export your summary and hand it to your accountant or enter the totals yourself.",
-  },
-  {
-    q: "Is my financial data safe in TaxSort?",
-    a: "Yes. TaxSort takes data security seriously. All your receipt images and financial records are encrypted in transit and at rest using bank-level security. Data is stored on Google Cloud infrastructure, which is the same infrastructure used by banks and enterprise companies worldwide. Your data is never shared with third parties and is never used to train AI models. You are the only one who can access your records.",
+    a: "TaxSort is popular with Uber, DoorDash, Lyft, Instacart, Skip the Dishes, and other gig workers because it handles every aspect of their tax tracking in one app. It logs every kilometre or mile with GPS, categorizes platform fees, vehicle costs, and phone bills as deductions, detects duplicates when transactions appear in both your bank import and receipt scan, and generates a complete year-end tax file without any manual work.",
   },
   {
     q: "Is there a free receipt tracking app for freelancers?",
-    a: "Yes. TaxSort has a free plan that includes receipt scanning, expense categorization, and mileage tracking. The Pro plan at $59.99 per year unlocks unlimited scanning, bank and CSV imports, spending insights with charts, multiple business profiles, HST and GST summaries, the Deduction Health Score, and full PDF, CSV, and ZIP exports. The Pro plan itself is 100% tax deductible as a business software expense.",
+    a: "Yes. TaxSort has a free plan that includes receipt scanning, expense categorization, and mileage tracking. Upgrading to Pro at $59.99 per year adds unlimited scanning, bank and CSV imports, spending insights with charts, duplicate detection, multiple business profiles, HST and GST summaries, the Deduction Health Score, AI tax tips on every receipt, and full PDF, CSV, and ZIP exports. The Pro subscription is itself 100% tax deductible as a business software expense.",
   },
   {
     q: "How do I claim the HST/GST I paid as a business expense in Canada?",
-    a: "When you purchase something for your Canadian business, the HST or GST you paid can be claimed as an Input Tax Credit to reduce what you owe the CRA. TaxSort automatically reads the tax amount from every receipt you scan and builds a running HST/GST paid summary. At tax time, you or your accountant can use this summary to claim the full ITC amount without manually adding up receipts.",
+    a: "When you buy something for your Canadian business, the HST or GST you paid can be claimed as an Input Tax Credit to reduce what you owe the CRA. TaxSort reads the tax amount from every receipt you scan and builds a running HST/GST paid total throughout the year. At tax time, you or your accountant use this figure to claim the full ITC without manually adding up receipts or hunting through paper records.",
   },
   {
     q: "What is the Deduction Health Score in TaxSort?",
-    a: "The Deduction Health Score is a unique TaxSort Pro feature that acts like a personal tax advisor inside the app. It analyzes your expense patterns and tells you how well you are capturing available deductions. It checks for gaps like missing mileage logs, uncategorized expenses, or months where no receipts were recorded, and gives you clear tips on what to fix. Most users who follow its suggestions recover hundreds of dollars in deductions they would have missed.",
+    a: "The Deduction Health Score is a Pro feature that acts as a built-in tax advisor. It reviews your expense history and mileage logs and tells you how completely you are capturing your available deductions. It flags gaps like months with no receipts, missing mileage entries, or categories that look unusually low compared to your industry. Most users who act on its suggestions find deductions they would otherwise have missed, often worth far more than the cost of the Pro subscription.",
   },
   {
-    q: "Can I track multiple businesses or clients with one app?",
-    a: "Yes. TaxSort Pro supports multiple business profiles in a single account. Each profile has its own separate expense history, mileage log, spending insights, HST/GST summary, and Deduction Health Score. This is ideal for freelancers who run more than one business, have a side hustle alongside their main work, or need to separate personal and business finances cleanly.",
+    q: "Can I track multiple businesses with one TaxSort account?",
+    a: "Yes. TaxSort Pro supports multiple business profiles under one account. Each profile has its own expense history, mileage log, spending charts, HST/GST summary, and Deduction Health Score. This is ideal for freelancers who run more than one business, have a side hustle alongside their main work, or want to keep personal and business finances cleanly separated.",
   },
   {
-    q: "How do I share my expense report with my accountant?",
-    a: "TaxSort makes it simple to share your records with an accountant. Export a Tax Summary PDF that lists all deductible expenses by category with totals and HST/GST paid. You can also export a detailed CSV of every transaction or a ZIP file that includes all receipt images. Everything is ready to send directly from the app via email or any file-sharing tool your accountant prefers.",
-  },
-  {
-    q: "Does TaxSort work for Uber Eats, Skip the Dishes, or DoorDash drivers?",
-    a: "Yes. TaxSort is an excellent fit for delivery drivers. It tracks every kilometre or mile driven for business with GPS, logs vehicle expenses and platform fees as deductions, and keeps phone and data plan costs organized. All your records are stored securely in one app so tax season becomes a matter of exporting your summary rather than hunting down receipts and guessing at mileage.",
+    q: "How do I share my tax records with my accountant?",
+    a: "TaxSort makes sharing simple. Export a Tax Summary PDF listing all deductible expenses by category with totals and HST/GST paid. You can also export a detailed CSV of every transaction or a ZIP file containing all receipt images. Everything is shareable directly from the app via email or any file-sharing tool your accountant uses.",
   },
   {
     q: "Is TaxSort available on iPhone and Android?",
-    a: "Yes. TaxSort is available on both iOS and Android. Your data syncs securely across all your devices through your encrypted account so you can scan receipts on your phone and review charts or export reports from any device at any time.",
+    a: "Yes. TaxSort is available on both iOS and Android. Your data syncs securely across devices through your encrypted account so you can scan receipts on your phone and review charts or export reports from any device.",
   },
   {
     q: "What is the IRS standard mileage rate for 2025?",
-    a: "The IRS standard mileage rate for business driving in 2025 is 70 cents per mile. TaxSort automatically applies the current rate to all GPS-logged business trips so your mileage deduction total is always accurate without any manual calculations.",
+    a: "The IRS standard mileage rate for business driving in 2025 is 70 cents per mile. TaxSort applies this rate automatically to all GPS-logged business trips so your mileage deduction is always accurate without any manual calculation.",
   },
   {
     q: "What is the CRA mileage rate for 2025?",
-    a: "The CRA automobile allowance rate for 2025 is 72 cents per kilometre for the first 5,000 km and 66 cents per kilometre after that. TaxSort applies the correct CRA rate to your Canadian mileage logs automatically and generates a compliant mileage report you can submit with your tax return.",
+    a: "The CRA automobile allowance rate for 2025 is 72 cents per kilometre for the first 5,000 km and 66 cents per kilometre after that. TaxSort applies the correct CRA rate to your mileage logs automatically and generates a compliant log you can submit with your tax return.",
   },
   {
-    q: "Can I deduct my phone bill as a freelancer?",
-    a: "Yes. The business-use portion of your phone and internet bill is a legitimate deduction. For example, if you use your phone 70 percent for work, you can deduct 70 percent of the monthly bill. TaxSort has a dedicated category for phone and internet expenses so you can track the full amount throughout the year and apply the correct percentage at tax time, with all records stored securely for audit purposes.",
-  },
-  {
-    q: "How is TaxSort different from QuickBooks or Wave?",
-    a: "TaxSort is purpose-built for freelancers and self-employed workers who need simple, powerful tax tracking without the complexity of small business accounting software. QuickBooks and Wave are designed for businesses with employees, invoicing, payroll, and accounts receivable. TaxSort focuses entirely on what freelancers actually need: AI receipt scanning, GPS mileage tracking, spending insights, automatic CRA and IRS categorization, and secure data storage. At $59.99 per year it is a fraction of the cost of accounting software.",
+    q: "Can I deduct my phone and internet bill as a freelancer?",
+    a: "Yes. The business-use portion of your phone and internet bill is a legitimate deduction under both IRS and CRA rules. TaxSort has a dedicated category for phone and internet expenses so you capture these costs throughout the year and apply the correct business-use percentage at tax time. All records are stored securely so you can back up the deduction if you are ever audited.",
   },
 ];
 
@@ -119,7 +123,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Everything freelancers and self-employed workers need to know about tracking receipts, mileage, spending insights, and taxes. All in one app.
+            Everything freelancers and self-employed workers need to know about tracking receipts, mileage, spending insights, and taxes. All in one app built for you, not for big businesses.
           </p>
         </section>
 
