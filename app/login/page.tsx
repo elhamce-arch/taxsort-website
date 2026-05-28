@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithRedirect, getRedirectResult } from "firebase/auth";
 import { auth, googleProvider } from "@/lib/firebase";
 import { useAuth } from "@/lib/auth-context";
 import Image from "next/image";
@@ -16,15 +16,22 @@ export default function LoginPage() {
     if (!loading && user) router.replace("/dashboard");
   }, [user, loading, router]);
 
+  // Handle redirect result on page load
+  useEffect(() => {
+    getRedirectResult(auth).then(result => {
+      if (result?.user) router.replace("/dashboard");
+    }).catch(() => {
+      setError("Sign-in failed. Please try again.");
+    });
+  }, [router]);
+
   async function handleGoogle() {
     setError("");
     setSigningIn(true);
     try {
-      await signInWithPopup(auth, googleProvider);
-      router.replace("/dashboard");
+      await signInWithRedirect(auth, googleProvider);
     } catch {
       setError("Sign-in failed. Please try again.");
-    } finally {
       setSigningIn(false);
     }
   }
