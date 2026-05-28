@@ -5,6 +5,8 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
 } from "firebase/auth";
 import { auth, googleProvider } from "@/lib/firebase";
 import Image from "next/image";
@@ -19,6 +21,8 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
+  const [pendingVerification, setPendingVerification] = useState<string | null>(null);
+  const [resent, setResent] = useState(false);
 
   // Check if user is already signed in
   useEffect(() => {
@@ -53,10 +57,19 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
     try {
-      if (mode === "signin") {
-        await signInWithEmailAndPassword(auth, email, password);
-      } else {
-        await createUserWithEmailAndPassword(auth, email, password);
+      if (mode === "signup") {
+        const result = await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(result.user);
+        await signOut(auth);
+        setPendingVerification(email);
+        return;
+      }
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      if (!result.user.emailVerified) {
+        await sendEmailVerification(result.user);
+        await signOut(auth);
+        setPendingVerification(result.user.email ?? email);
+        return;
       }
       router.replace("/dashboard");
     } catch (err: unknown) {
@@ -75,9 +88,62 @@ export default function LoginPage() {
     }
   }
 
+  async function handleResend() {
+    setResent(false);
+    setLoading(true);
+    try {
+      // Sign in temporarily just to send the email, then sign out again
+      if (auth.currentUser) {
+        await sendEmailVerification(auth.currentUser);
+      }
+      setResent(true);
+    } catch {
+      setError("Could not resend. Try signing in again to get a new link.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   if (checkingAuth) return (
     <div className="min-h-screen flex items-center justify-center" style={{ background: "#F0F6F5" }}>
       <div className="w-8 h-8 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+
+  if (pendingVerification) return (
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ background: "#F0F6F5" }}>
+      <div className="bg-white rounded-2xl shadow-lg p-10 w-full max-w-sm flex flex-col items-center gap-5 text-center">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: "#e8f5e9" }}>
+          <svg className="w-8 h-8" fill="none" stroke="#00897B" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h1 className="text-xl font-bold text-gray-900">Check your inbox</h1>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          We sent a verification link to<br />
+          <span className="font-medium text-gray-700">{pendingVerification}</span>.<br />
+          Click the link to activate your account, then come back and sign in.
+        </p>
+        {resent && (
+          <p className="text-sm text-teal-600 font-medium">Verification email resent.</p>
+        )}
+        {error && (
+          <p className="text-sm text-red-600">{error}</p>
+        )}
+        <button
+          onClick={handleResend}
+          disabled={loading || resent}
+          className="text-sm text-teal-600 hover:underline disabled:opacity-50"
+        >
+          {resent ? "Email sent" : "Resend verification email"}
+        </button>
+        <button
+          onClick={() => { setPendingVerification(null); setResent(false); setError(""); }}
+          className="text-sm text-gray-400 hover:underline"
+        >
+          Back to sign in
+        </button>
+      </div>
     </div>
   );
 
