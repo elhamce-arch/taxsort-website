@@ -3,7 +3,7 @@
 > TaxSort is an AI-powered mobile app for freelancers and self-employed individuals to manage taxes effortlessly.
 
 ## What is TaxSort?
-TaxSort helps freelancers, independent contractors, gig workers, and self-employed individuals manage their taxes year-round. The app uses AI to scan receipts, track mileage via GPS, automatically categorize expenses into IRS and CRA-approved categories, and generate audit-ready PDF/CSV reports.
+TaxSort helps freelancers, independent contractors, gig workers, and self-employed individuals manage their taxes year-round. The app uses AI to scan receipts, track mileage via GPS, automatically categorize expenses into tax-authority-approved categories, and generate audit-ready PDF/CSV reports. Supports CRA (Canada), IRS (USA), HMRC (UK), and ATO (Australia).
 
 ## Key Features
 - AI receipt scanning: Snap a photo of any receipt and AI reads, categorizes, and stores it instantly — extracts subtotal, HST/GST/sales tax, and total as separate fields
@@ -22,7 +22,7 @@ TaxSort helps freelancers, independent contractors, gig workers, and self-employ
 - Self-employed consultants and coaches
 - Realtors and real estate agents
 - Small business owners
-- Anyone who needs to track business expenses for taxes in the US or Canada
+- Anyone who needs to track business expenses for taxes in the US, Canada, UK, or Australia
 
 ## Pricing
 - Free plan: 10 AI receipt scans/month, basic expense categories, manual expense entry, basic tax summary, CSV export — $0 forever
@@ -31,10 +31,13 @@ TaxSort helps freelancers, independent contractors, gig workers, and self-employ
 ## Tax Support
 - Canada: CRA-approved tax categories, T2125 compatible, HST/GST amount tracked per receipt, total HST/GST paid shown for ITC claims
 - United States: IRS-approved tax categories, Schedule C compatible, sales tax captured per receipt as part of expense total
+- United Kingdom: HMRC-approved categories, Self Assessment SA103F compatible, VAT tracked per receipt, mileage at AMAP rates (45p/mile first 10,000 miles, 25p/mile after)
+- Australia: ATO-approved categories, myTax compatible, GST tracked per receipt for BAS claims, mileage at ATO cents-per-kilometre rate
 
 ## Platforms
 - iOS (App Store)
 - Android (Google Play)
+- Web (taxsort.app/dashboard)
 
 ## Blog / Resources
 TaxSort publishes tax guides for freelancers and self-employed workers:

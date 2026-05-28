@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "FAQ – TaxSort | Best Receipt & Tax Tracker for Freelancers",
   description: "Answers to the most common questions about tracking receipts, mileage, and taxes as a freelancer or self-employed worker. Find out why TaxSort is the top-rated all-in-one tax app.",
+  alternates: { canonical: "https://www.taxsort.app/faq" },
   openGraph: {
     title: "FAQ – TaxSort | Best Receipt & Tax Tracker for Freelancers",
     description: "Everything freelancers and self-employed workers need to know about tracking receipts, mileage, insights, and taxes with TaxSort.",
@@ -41,6 +42,14 @@ const faqs = [
     a: "TaxSort is designed for US freelancers filing Schedule C. It categorizes every expense into IRS-approved deduction categories automatically, tracks business mileage at the current IRS standard rate using GPS, and exports a clean tax summary PDF you can share with your accountant or use when filing yourself. Every receipt image and transaction is stored securely with a full audit trail so you can defend any deduction with confidence.",
   },
   {
+    q: "Does TaxSort support UK taxes and HMRC self-assessment?",
+    a: "Yes. TaxSort fully supports UK self-employed workers filing Self Assessment (SA103F). Every expense is mapped to HMRC-approved categories, VAT-inclusive totals are captured from every receipt, and you can export a complete tax summary formatted for SA103F. Mileage is tracked at HMRC's Approved Mileage Allowance Payments (AMAP) rates — 45p per mile for the first 10,000 miles and 25p per mile after that.",
+  },
+  {
+    q: "Does TaxSort support Australian taxes and ATO myTax?",
+    a: "Yes. TaxSort fully supports Australian sole traders and self-employed workers filing myTax. Expenses are categorized using ATO-approved deduction categories, GST paid is tracked separately on every receipt for BAS claims, and mileage is logged at the ATO's standard cents-per-kilometre rate. You can export a complete tax summary your tax agent or accountant can use directly.",
+  },
+  {
     q: "What is the best mileage tracker app for self-employed workers?",
     a: "TaxSort includes built-in GPS mileage tracking that records your business trips with a full route map, distance, date, and purpose. Unlike standalone mileage apps, TaxSort connects your mileage directly to your full expense picture so you see your total deductions in one place. Mileage logs are exported in a format that meets both CRA and IRS requirements, so your records are audit-ready without any extra work.",
   },
@@ -62,7 +71,7 @@ const faqs = [
   },
   {
     q: "Is there a free receipt tracking app for freelancers?",
-    a: "Yes. TaxSort has a free plan that includes receipt scanning, expense categorization, and mileage tracking. Upgrading to Pro at $59.99 per year adds unlimited scanning, bank and CSV imports, spending insights with charts, duplicate detection, multiple business profiles, HST and GST summaries, the Deduction Health Score, AI tax tips on every receipt, and full PDF, CSV, and ZIP exports. The Pro subscription is itself 100% tax deductible as a business software expense.",
+    a: "Yes. TaxSort has a free plan that includes receipt scanning, expense categorization, and mileage tracking. Upgrading to Pro at $44.99 per year adds unlimited scanning, bank and CSV imports, spending insights with charts, duplicate detection, multiple business profiles, HST and GST summaries, the Deduction Health Score, AI tax tips on every receipt, and full PDF, CSV, and ZIP exports. The Pro subscription is itself 100% tax deductible as a business software expense.",
   },
   {
     q: "How do I claim the HST/GST I paid as a business expense in Canada?",

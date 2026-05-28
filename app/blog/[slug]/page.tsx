@@ -716,6 +716,7 @@ export async function generateMetadata(
   return {
     title: `${post.title} – TaxSort Blog`,
     description: post.description,
+    alternates: { canonical: `https://www.taxsort.app/blog/${slug}` },
   };
 }
 
