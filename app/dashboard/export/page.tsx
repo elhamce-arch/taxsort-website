@@ -10,6 +10,7 @@ interface Receipt {
   date: { seconds: number };
   category: string;
   notes?: string;
+  imageUrl?: string;
 }
 
 interface Business { id: string; name: string; }
@@ -152,6 +153,32 @@ async function exportZIP(receipts: Receipt[], bizName: string, suffix: string) {
   downloadBlob(blob, `TaxSort-bundle-${suffix}.zip`);
 }
 
+async function exportImagesZIP(receipts: Receipt[], suffix: string) {
+  const JSZip = (await import("jszip")).default;
+  const zip = new JSZip();
+  const folder = zip.folder("receipts");
+  zip.file("expenses.csv", buildCSV(receipts));
+  let fetched = 0;
+  for (const r of receipts) {
+    if (!r.imageUrl) continue;
+    try {
+      const res = await fetch(r.imageUrl);
+      const blob = await res.blob();
+      const ext = blob.type.includes("pdf") ? "pdf" : "jpg";
+      const safeName = (r.vendor ?? "receipt").replace(/[^a-zA-Z0-9]/g, "-").slice(0, 30);
+      const date = r.date ? fmtDate(r.date) : "unknown";
+      folder?.file(`${date}-${safeName}.${ext}`, blob);
+      fetched++;
+    } catch { /* skip missing images */ }
+  }
+  if (fetched === 0) {
+    alert("No receipt images found for the selected range.");
+    return;
+  }
+  const blob = await zip.generateAsync({ type: "blob" });
+  downloadBlob(blob, `TaxSort-images-${suffix}.zip`);
+}
+
 export default function ExportPage() {
   const { user } = useAuth();
   const [businesses, setBusinesses] = useState<Business[]>([]);
@@ -246,6 +273,15 @@ export default function ExportPage() {
       desc: "CSV + QuickBooks IIF packed into a single ZIP file",
       label: "Download ZIP",
       action: () => run("zip", () => exportZIP(receipts, bizName, suffix)),
+    },,
+    {
+      key: "images",
+      iconPath: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
+      iconColor: "#0288D1", bg: "#E1F5FE",
+      title: "Receipt Images ZIP",
+      desc: "All receipt photos packed into a ZIP file — includes CSV summary",
+      label: "Download Images",
+      action: () => run("images", () => exportImagesZIP(receipts, suffix)),
     },
   ];
 
