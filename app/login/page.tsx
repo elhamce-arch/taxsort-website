@@ -63,16 +63,17 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
     try {
+      const verificationSettings = { url: "https://www.taxsort.app/login" };
       if (mode === "signup") {
         const result = await createUserWithEmailAndPassword(auth, email, password);
-        await sendEmailVerification(result.user);
+        await sendEmailVerification(result.user, verificationSettings);
         // Keep user signed in so resend works; dashboard is blocked for unverified users
         setPendingVerification(result.user.email ?? email);
         return;
       }
       const result = await signInWithEmailAndPassword(auth, email, password);
       if (!result.user.emailVerified) {
-        await sendEmailVerification(result.user);
+        await sendEmailVerification(result.user, verificationSettings);
         setPendingVerification(result.user.email ?? email);
         return;
       }
@@ -99,7 +100,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
       if (auth.currentUser) {
-        await sendEmailVerification(auth.currentUser);
+        await sendEmailVerification(auth.currentUser, { url: "https://www.taxsort.app/login" });
         setResent(true);
       } else {
         setError("Session expired. Go back and sign in again to get a new link.");
