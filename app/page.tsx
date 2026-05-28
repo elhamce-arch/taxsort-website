@@ -235,6 +235,16 @@ export default function Home() {
             {/* Download badges */}
             <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300">
               <a
+                href="https://app.taxsort.app"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-colors shadow-lg"
+                style={{ background: "#4ade80", color: "#0f2e18" }}
+              >
+                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 3h6v6M10 14L21 3M21 13v8a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/>
+                </svg>
+                Launch Web App
+              </a>
+              <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"

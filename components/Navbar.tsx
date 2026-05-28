@@ -48,6 +48,13 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://app.taxsort.app"
+              className="px-5 py-2 rounded-lg text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ background: "#4ade80", color: "#0f2e18" }}
+            >
+              Launch App
+            </a>
             <Link
               href="#download"
               className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -85,6 +92,13 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
           <Link href="/pricing" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Pricing</Link>
           <Link href="/blog" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>Blog</Link>
           <Link href="/faq" className={`py-2 text-sm font-medium ${dark ? "text-gray-300" : "text-gray-700"}`}>FAQ</Link>
+          <a
+            href="https://app.taxsort.app"
+            className="py-2 px-4 rounded-lg text-sm font-semibold text-center"
+            style={{ background: "#4ade80", color: "#0f2e18" }}
+          >
+            Launch App
+          </a>
           <Link
             href="#download"
             className="py-2 px-4 rounded-lg text-sm font-semibold text-white text-center"
