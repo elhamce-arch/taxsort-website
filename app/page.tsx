@@ -235,7 +235,7 @@ export default function Home() {
             {/* Download badges */}
             <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up delay-300">
               <a
-                href="https://app.taxsort.app"
+                href="/dashboard"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-colors shadow-lg"
                 style={{ background: "#4ade80", color: "#0f2e18" }}
               >
