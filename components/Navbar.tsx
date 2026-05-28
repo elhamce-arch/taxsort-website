@@ -24,9 +24,11 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
     { href: "/faq", label: "FAQ" },
   ];
 
-  const isActive = (href: string) => href !== "/" && href !== "/#how-it-works"
-    ? pathname.startsWith(href)
-    : pathname === "/";
+  const isActive = (href: string) => {
+    if (href === "/#how-it-works") return false;
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav
@@ -60,7 +62,7 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
                       : "text-gray-300 hover:text-white hover:bg-white/10"
                     : isActive(href)
                       ? "text-white"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                 }`}
                 style={!dark && isActive(href) ? { background: "#16a34a" } : undefined}
               >

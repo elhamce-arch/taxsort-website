@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     description: "AI receipt scanning, GPS mileage tracking, and automatic expense sorting. Free to start.",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
