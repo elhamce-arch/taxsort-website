@@ -25,12 +25,22 @@ export default function LoginPage() {
   useEffect(() => {
     getRedirectResult(auth)
       .then(result => {
-        if (result?.user) router.replace("/dashboard");
-        else setCheckingRedirect(false);
+        if (result?.user) {
+          router.replace("/dashboard");
+        } else if (auth.currentUser) {
+          // App Check may have failed but user is still signed in
+          router.replace("/dashboard");
+        } else {
+          setCheckingRedirect(false);
+        }
       })
       .catch(() => {
-        setCheckingRedirect(false);
-        setError("Google sign-in failed. Please try again.");
+        // Even if getRedirectResult fails (e.g. App Check), check if user is signed in
+        if (auth.currentUser) {
+          router.replace("/dashboard");
+        } else {
+          setCheckingRedirect(false);
+        }
       });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
