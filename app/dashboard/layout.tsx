@@ -8,9 +8,26 @@ import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/auth-context";
 
 const nav = [
-  { href: "/dashboard", label: "Expenses", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
-  { href: "/dashboard/upload", label: "Upload Receipt", icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" },
-  { href: "/dashboard/export", label: "Export", icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" },
+  {
+    href: "/dashboard",
+    label: "Expenses",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
+  },
+  {
+    href: "/dashboard/insights",
+    label: "Insights",
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+  },
+  {
+    href: "/dashboard/upload",
+    label: "Upload Receipt",
+    icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12",
+  },
+  {
+    href: "/dashboard/export",
+    label: "Export",
+    icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4",
+  },
 ];
 
 interface BeforeInstallPromptEvent extends Event {
@@ -55,7 +72,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="flex min-h-screen" style={{ background: "#F0F6F5" }}>
-      {/* Sidebar */}
       <aside className="w-60 bg-white border-r border-gray-100 flex flex-col py-6 px-4 fixed h-full">
         <Link href="/dashboard" className="flex items-center gap-2 mb-8 px-2">
           <Image src="/logo.png" alt="TaxSort" width={32} height={32} className="rounded-lg" />
@@ -111,7 +127,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
       </aside>
 
-      {/* Main content */}
       <main className="flex-1 ml-60 p-8">
         {children}
       </main>
