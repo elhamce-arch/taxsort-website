@@ -24,15 +24,21 @@ export default function LoginPage() {
   const [pendingVerification, setPendingVerification] = useState<string | null>(null);
   const [resent, setResent] = useState(false);
 
-  // Check if user is already signed in
+  // Use onAuthStateChanged so we reliably detect already-signed-in users
   useEffect(() => {
-    if (auth.currentUser) {
-      router.replace("/dashboard");
-    } else {
-      setCheckingAuth(false);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const unsubscribe = auth.onAuthStateChanged((u) => {
+      if (!u) {
+        setCheckingAuth(false);
+      } else if (u.emailVerified) {
+        router.replace("/dashboard");
+      } else {
+        // Signed in but unverified — show verification screen
+        setPendingVerification(u.email ?? "");
+        setCheckingAuth(false);
+      }
+    });
+    return unsubscribe;
+  }, [router]);
 
   async function handleGoogle() {
     setError("");
@@ -60,14 +66,13 @@ export default function LoginPage() {
       if (mode === "signup") {
         const result = await createUserWithEmailAndPassword(auth, email, password);
         await sendEmailVerification(result.user);
-        await signOut(auth);
-        setPendingVerification(email);
+        // Keep user signed in so resend works; dashboard is blocked for unverified users
+        setPendingVerification(result.user.email ?? email);
         return;
       }
       const result = await signInWithEmailAndPassword(auth, email, password);
       if (!result.user.emailVerified) {
         await sendEmailVerification(result.user);
-        await signOut(auth);
         setPendingVerification(result.user.email ?? email);
         return;
       }
@@ -90,18 +95,47 @@ export default function LoginPage() {
 
   async function handleResend() {
     setResent(false);
+    setError("");
     setLoading(true);
     try {
-      // Sign in temporarily just to send the email, then sign out again
       if (auth.currentUser) {
         await sendEmailVerification(auth.currentUser);
+        setResent(true);
+      } else {
+        setError("Session expired. Go back and sign in again to get a new link.");
       }
-      setResent(true);
     } catch {
-      setError("Could not resend. Try signing in again to get a new link.");
+      setError("Could not resend. Please try again in a minute.");
     } finally {
       setLoading(false);
     }
+  }
+
+  // Called when user has clicked the verification link and comes back
+  async function handleCheckVerified() {
+    setError("");
+    setLoading(true);
+    try {
+      if (auth.currentUser) {
+        await auth.currentUser.reload();
+        if (auth.currentUser.emailVerified) {
+          router.replace("/dashboard");
+        } else {
+          setError("Email not verified yet. Check your inbox and click the link first.");
+        }
+      }
+    } catch {
+      setError("Something went wrong. Please try signing in again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleBackToSignIn() {
+    if (auth.currentUser) await signOut(auth);
+    setPendingVerification(null);
+    setResent(false);
+    setError("");
   }
 
   if (checkingAuth) return (
@@ -122,7 +156,7 @@ export default function LoginPage() {
         <p className="text-sm text-gray-500 leading-relaxed">
           We sent a verification link to<br />
           <span className="font-medium text-gray-700">{pendingVerification}</span>.<br />
-          Click the link to activate your account, then come back and sign in.
+          Click the link, then come back here.
         </p>
         {resent && (
           <p className="text-sm text-teal-600 font-medium">Verification email resent.</p>
@@ -131,6 +165,14 @@ export default function LoginPage() {
           <p className="text-sm text-red-600">{error}</p>
         )}
         <button
+          onClick={handleCheckVerified}
+          disabled={loading}
+          className="w-full py-3 rounded-xl font-semibold text-white text-sm transition-opacity hover:opacity-90 disabled:opacity-60"
+          style={{ background: "#00897B" }}
+        >
+          {loading ? "Checking…" : "I've verified my email"}
+        </button>
+        <button
           onClick={handleResend}
           disabled={loading || resent}
           className="text-sm text-teal-600 hover:underline disabled:opacity-50"
@@ -138,7 +180,7 @@ export default function LoginPage() {
           {resent ? "Email sent" : "Resend verification email"}
         </button>
         <button
-          onClick={() => { setPendingVerification(null); setResent(false); setError(""); }}
+          onClick={handleBackToSignIn}
           className="text-sm text-gray-400 hover:underline"
         >
           Back to sign in
