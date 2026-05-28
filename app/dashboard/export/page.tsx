@@ -16,16 +16,12 @@ interface Business { id: string; name: string; }
 
 type Range = "ytd" | "last_year" | "last90" | "last30" | "all";
 
+const RANGE_LABELS: Record<Range, string> = {
+  ytd: "This Year", last_year: "Last Year", last90: "Last 90 Days", last30: "Last 30 Days", all: "All Time",
+};
+
 function fmtDate(ts: { seconds: number }) {
   return new Date(ts.seconds * 1000).toLocaleDateString("en-CA");
-}
-
-function rangeLabel(r: Range) {
-  if (r === "ytd") return "This Year";
-  if (r === "last_year") return "Last Year";
-  if (r === "last90") return "Last 90 Days";
-  if (r === "last30") return "Last 30 Days";
-  return "All Time";
 }
 
 function filterByRange(receipts: Receipt[], range: Range): Receipt[] {
@@ -48,8 +44,13 @@ function downloadBlob(blob: Blob, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-function buildCSVRows(receipts: Receipt[]) {
-  return [
+function toCSV(rows: string[][]): string {
+  return rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("
+");
+}
+
+function buildCSV(receipts: Receipt[]): string {
+  return toCSV([
     ["Date", "Vendor", "Category", "Amount", "Notes"],
     ...receipts.map(r => [
       r.date ? fmtDate(r.date) : "",
@@ -58,20 +59,10 @@ function buildCSVRows(receipts: Receipt[]) {
       (r.total ?? 0).toFixed(2),
       r.notes ?? "",
     ]),
-  ];
+  ]);
 }
 
-function rowsToCSV(rows: string[][]) {
-  return rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("
-");
-}
-
-function exportCSV(receipts: Receipt[], filename: string) {
-  const csv = rowsToCSV(buildCSVRows(receipts));
-  downloadBlob(new Blob([csv], { type: "text/csv" }), filename);
-}
-
-function buildIIF(receipts: Receipt[], bizName: string) {
+function buildIIF(receipts: Receipt[]): string {
   const header = "!TRNS	TRNSID	TRNSTYPE	DATE	ACCNT	NAME	AMOUNT	MEMO
 !SPL	SPLID	TRNSTYPE	DATE	ACCNT	NAME	AMOUNT	MEMO
 !ENDTRNS
@@ -88,101 +79,79 @@ ENDTRNS`;
 ");
 }
 
-async function exportPDF(receipts: Receipt[], bizName: string, title: string, isTaxSummary: boolean, range: Range) {
-  const { default: jsPDF } = await import("jspdf");
-  const { default: autoTable } = await import("jspdf-autotable");
-  const doc = new jsPDF();
-  const teal = [0, 137, 123] as [number, number, number];
-  const today = new Date().toLocaleDateString("en-CA");
-
-  doc.setFillColor(...teal);
-  doc.rect(0, 0, 210, 28, "F");
-  doc.setTextColor(255, 255, 255);
-  doc.setFontSize(16);
-  doc.setFont("helvetica", "bold");
-  doc.text(title, 14, 12);
-  doc.setFontSize(9);
-  doc.setFont("helvetica", "normal");
-  doc.text(`${bizName}  ·  ${rangeLabel(range)}  ·  Generated ${today}`, 14, 20);
-
-  doc.setTextColor(30, 30, 30);
-
-  const total = receipts.reduce((s, r) => s + (r.total ?? 0), 0);
-
-  if (isTaxSummary) {
-    // Category summary with deductible amounts
-    const byCategory: Record<string, number> = {};
-    receipts.forEach(r => {
-      const c = r.category ?? "Uncategorized";
-      byCategory[c] = (byCategory[c] ?? 0) + (r.total ?? 0);
-    });
-    const sorted = Object.entries(byCategory).sort(([, a], [, b]) => b - a);
-
-    let totalDed = 0;
-    const rows = sorted.map(([cat, amt]) => {
-      const lower = cat.toLowerCase();
-      const isPersonal = lower.includes("personal");
-      const mult = lower.includes("meal") || lower.includes("entertainment") ? 0.5 : 1;
-      const ded = isPersonal ? 0 : amt * mult;
-      totalDed += ded;
-      const note = isPersonal ? "Non-deductible" : mult < 1 ? "50% rule" : "100%";
-      return [cat, `$${amt.toFixed(2)}`, note, `$${ded.toFixed(2)}`];
-    });
-    rows.push(["TOTAL", `$${total.toFixed(2)}`, "", `$${totalDed.toFixed(2)}`]);
-
-    autoTable(doc, {
-      startY: 36,
-      head: [["Category", "Amount", "Rule", "Est. Deductible"]],
-      body: rows,
-      headStyles: { fillColor: teal, textColor: 255, fontStyle: "bold" },
-      alternateRowStyles: { fillColor: [245, 250, 249] },
-      columnStyles: { 1: { halign: "right" }, 3: { halign: "right" } },
-      foot: [],
-    });
-
-    const finalY = (doc as unknown as { lastAutoTable: { finalY: number } }).lastAutoTable?.finalY ?? 120;
-    doc.setFontSize(9);
-    doc.setTextColor(120, 120, 120);
-    doc.text("* Meals & Entertainment estimated at 50% deductible (US/CA). Consult your accountant for exact figures.", 14, finalY + 10, { maxWidth: 182 });
-
-  } else {
-    // Full transaction list
-    const rows = receipts.map(r => [
-      r.date ? fmtDate(r.date) : "—",
-      r.vendor ?? "Unknown",
-      r.category ?? "Uncategorized",
-      `$${(r.total ?? 0).toFixed(2)}`,
-    ]);
-
-    autoTable(doc, {
-      startY: 36,
-      head: [["Date", "Vendor", "Category", "Amount"]],
-      body: rows,
-      headStyles: { fillColor: teal, textColor: 255, fontStyle: "bold" },
-      alternateRowStyles: { fillColor: [245, 250, 249] },
-      columnStyles: { 3: { halign: "right" } },
-    });
-
-    const finalY = (doc as unknown as { lastAutoTable: { finalY: number } }).lastAutoTable?.finalY ?? 120;
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(0, 137, 123);
-    doc.text(`Total: $${total.toFixed(2)}  (${receipts.length} transactions)`, 14, finalY + 12);
-  }
-
-  const suffix = new Date().toISOString().slice(0, 10);
-  doc.save(`TaxSort-${isTaxSummary ? "tax-summary" : "report"}-${suffix}.pdf`);
+function openPrint(html: string) {
+  const win = window.open("", "_blank", "width=900,height=700");
+  if (!win) { alert("Please allow pop-ups for this site to generate PDFs."); return; }
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  setTimeout(() => { win.print(); }, 600);
 }
 
-async function exportZIP(receipts: Receipt[], bizName: string) {
-  const { default: JSZip } = await import("jszip");
+function buildReportHTML(receipts: Receipt[], bizName: string, rangeLabel: string): string {
+  const total = receipts.reduce((s, r) => s + (r.total ?? 0), 0);
+  const rows = receipts.map(r =>
+    `<tr><td>${r.date ? fmtDate(r.date) : "—"}</td><td>${r.vendor ?? "Unknown"}</td><td>${r.category ?? "Uncategorized"}</td><td style="text-align:right">$${(r.total ?? 0).toFixed(2)}</td></tr>`
+  ).join("");
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Expense Report</title>
+  <style>
+    body{font-family:system-ui,sans-serif;color:#1a1a1a;padding:32px;max-width:800px;margin:0 auto}
+    .header{background:#00897B;color:#fff;padding:20px 24px;border-radius:8px;margin-bottom:24px}
+    .header h1{margin:0 0 4px;font-size:20px}.header p{margin:0;opacity:.85;font-size:13px}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th{background:#f0f9f8;color:#00897B;text-align:left;padding:8px 12px;border-bottom:2px solid #b2dfdb;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+    td{padding:7px 12px;border-bottom:1px solid #f0f0f0}
+    tr:hover td{background:#f9fffe}
+    .total-row td{font-weight:700;border-top:2px solid #b2dfdb;background:#f0f9f8}
+    @media print{body{padding:0}.no-print{display:none}}
+  </style></head><body>
+  <div class="header"><h1>Expense Report — ${bizName}</h1><p>${rangeLabel} &nbsp;·&nbsp; ${receipts.length} transactions &nbsp;·&nbsp; Generated ${new Date().toLocaleDateString("en-CA")}</p></div>
+  <table><thead><tr><th>Date</th><th>Vendor</th><th>Category</th><th style="text-align:right">Amount</th></tr></thead>
+  <tbody>${rows}<tr class="total-row"><td colspan="3">Total</td><td style="text-align:right">$${total.toFixed(2)}</td></tr></tbody></table>
+  <script>window.onafterprint=function(){window.close()}<\/script></body></html>`;
+}
+
+function buildSummaryHTML(receipts: Receipt[], bizName: string, rangeLabel: string): string {
+  const byCategory: Record<string, number> = {};
+  receipts.forEach(r => { const c = r.category ?? "Uncategorized"; byCategory[c] = (byCategory[c] ?? 0) + (r.total ?? 0); });
+  const sorted = Object.entries(byCategory).sort(([, a], [, b]) => b - a);
+  const total = receipts.reduce((s, r) => s + (r.total ?? 0), 0);
+  let totalDed = 0;
+  const rows = sorted.map(([cat, amt]) => {
+    const lower = cat.toLowerCase();
+    const isPersonal = lower.includes("personal");
+    const mult = (lower.includes("meal") || lower.includes("entertainment")) && !lower.includes("50%") ? 0.5 : isPersonal ? 0 : 1;
+    const ded = isPersonal ? 0 : amt * mult;
+    totalDed += ded;
+    const rule = isPersonal ? "Non-deductible" : mult < 1 ? "50% rule" : "100%";
+    return `<tr><td>${cat}</td><td style="text-align:right">$${amt.toFixed(2)}</td><td style="text-align:center">${rule}</td><td style="text-align:right;color:#00897B;font-weight:600">$${ded.toFixed(2)}</td></tr>`;
+  }).join("");
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Tax Summary</title>
+  <style>
+    body{font-family:system-ui,sans-serif;color:#1a1a1a;padding:32px;max-width:800px;margin:0 auto}
+    .header{background:#00897B;color:#fff;padding:20px 24px;border-radius:8px;margin-bottom:24px}
+    .header h1{margin:0 0 4px;font-size:20px}.header p{margin:0;opacity:.85;font-size:13px}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th{background:#f0f9f8;color:#00897B;text-align:left;padding:8px 12px;border-bottom:2px solid #b2dfdb;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+    td{padding:7px 12px;border-bottom:1px solid #f0f0f0}
+    .total-row td{font-weight:700;border-top:2px solid #b2dfdb;background:#f0f9f8}
+    .note{margin-top:20px;font-size:11px;color:#888;line-height:1.6;border-top:1px solid #eee;padding-top:12px}
+    @media print{body{padding:0}}
+  </style></head><body>
+  <div class="header"><h1>Tax Expense Summary — ${bizName}</h1><p>${rangeLabel} &nbsp;·&nbsp; ${receipts.length} transactions &nbsp;·&nbsp; Generated ${new Date().toLocaleDateString("en-CA")}</p></div>
+  <table><thead><tr><th>Category</th><th style="text-align:right">Total</th><th style="text-align:center">Rule</th><th style="text-align:right">Est. Deductible</th></tr></thead>
+  <tbody>${rows}<tr class="total-row"><td>TOTAL</td><td style="text-align:right">$${total.toFixed(2)}</td><td></td><td style="text-align:right;color:#00897B">$${totalDed.toFixed(2)}</td></tr></tbody></table>
+  <p class="note">* Meals &amp; Entertainment estimated at 50% deductible (US/CA rules). This summary is for reference only — consult your accountant for exact tax figures.</p>
+  <script>window.onafterprint=function(){window.close()}<\/script></body></html>`;
+}
+
+async function exportZIP(receipts: Receipt[], bizName: string, suffix: string) {
+  const JSZip = (await import("jszip")).default;
   const zip = new JSZip();
-  const csv = rowsToCSV(buildCSVRows(receipts));
-  const iif = buildIIF(receipts, bizName);
-  zip.file("expenses.csv", csv);
-  zip.file("quickbooks.iif", iif);
+  zip.file("expenses.csv", buildCSV(receipts));
+  zip.file("quickbooks.iif", buildIIF(receipts));
   const blob = await zip.generateAsync({ type: "blob" });
-  downloadBlob(blob, `TaxSort-bundle-${new Date().toISOString().slice(0, 10)}.zip`);
+  downloadBlob(blob, `TaxSort-bundle-${suffix}.zip`);
 }
 
 export default function ExportPage() {
@@ -217,77 +186,68 @@ export default function ExportPage() {
 
   const receipts = useMemo(() => filterByRange(allReceipts, range), [allReceipts, range]);
   const total = receipts.reduce((s, r) => s + (r.total ?? 0), 0);
+  const suffix = new Date().toISOString().slice(0, 10);
+  const rangeLabel = RANGE_LABELS[range];
 
-  async function run(key: string, fn: () => Promise<void>) {
+  async function run(key: string, fn: () => Promise<void> | void) {
     setWorking(key);
     try { await fn(); } finally { setWorking(null); }
   }
 
-  const suffix = new Date().toISOString().slice(0, 10);
-
   const exports = [
     {
       key: "csv",
-      icon: "M3 10h18M3 14h18M10 3v18M14 3v18",
-      iconColor: "#26A69A",
-      bg: "#E0F2F1",
+      iconPath: "M3 10h18M3 14h18M10 3v18M14 3v18",
+      iconColor: "#26A69A", bg: "#E0F2F1",
       title: "Export as CSV",
       desc: "Open in Excel, Google Sheets, or any accounting software",
       label: "Download CSV",
-      action: () => run("csv", async () => exportCSV(receipts, `TaxSort-expenses-${suffix}.csv`)),
+      action: () => run("csv", () => downloadBlob(new Blob([buildCSV(receipts)], { type: "text/csv" }), `TaxSort-expenses-${suffix}.csv`)),
     },
     {
       key: "pdf",
-      icon: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
-      iconColor: "#EF5350",
-      bg: "#FFEBEE",
+      iconPath: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+      iconColor: "#EF5350", bg: "#FFEBEE",
       title: "PDF Expense Report",
-      desc: "Professional report with all transactions and category totals",
-      label: "Download PDF",
-      action: () => run("pdf", () => exportPDF(receipts, bizName, "Expense Report", false, range)),
+      desc: "Full transaction list — opens in a new tab, use browser Print → Save as PDF",
+      label: "Open PDF",
+      action: () => run("pdf", () => openPrint(buildReportHTML(receipts, bizName, rangeLabel))),
     },
     {
       key: "summary",
-      icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-      iconColor: "#00796B",
-      bg: "#E0F2F1",
+      iconPath: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
+      iconColor: "#00796B", bg: "#E0F2F1",
       title: "Tax Summary PDF",
-      desc: "Accountant-ready: category totals with 50% meals rule applied, estimated deductible total",
-      label: "Download Summary",
-      action: () => run("summary", () => exportPDF(receipts, bizName, "Tax Expense Summary", true, range)),
+      desc: "Category totals with 50% meals rule applied — opens in a new tab, use Print → Save as PDF",
+      label: "Open Summary",
+      action: () => run("summary", () => openPrint(buildSummaryHTML(receipts, bizName, rangeLabel))),
     },
     {
       key: "qb",
-      icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-      iconColor: "#2E7D32",
-      bg: "#E8F5E9",
+      iconPath: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+      iconColor: "#2E7D32", bg: "#E8F5E9",
       title: "QuickBooks IIF",
-      desc: "Import directly into QuickBooks Desktop — categories pre-mapped to standard QB accounts",
+      desc: "Import directly into QuickBooks Desktop — categories pre-mapped to QB accounts",
       label: "Download IIF",
-      action: () => run("qb", async () => {
-        const iif = buildIIF(receipts, bizName);
-        downloadBlob(new Blob([iif], { type: "text/plain" }), `TaxSort-quickbooks-${suffix}.iif`);
-      }),
+      action: () => run("qb", () => downloadBlob(new Blob([buildIIF(receipts)], { type: "text/plain" }), `TaxSort-quickbooks-${suffix}.iif`)),
     },
     {
       key: "history",
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-      iconColor: "#00897B",
-      bg: "#E0F2F1",
+      iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+      iconColor: "#00897B", bg: "#E0F2F1",
       title: "Full History CSV",
       desc: "Every transaction ever recorded — ignores the date filter above",
       label: "Export All Time",
-      action: () => run("history", async () => exportCSV(allReceipts, `TaxSort-full-history-${suffix}.csv`)),
+      action: () => run("history", () => downloadBlob(new Blob([buildCSV(allReceipts)], { type: "text/csv" }), `TaxSort-full-history-${suffix}.csv`)),
     },
     {
       key: "zip",
-      icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12",
-      iconColor: "#7E57C2",
-      bg: "#EDE7F6",
+      iconPath: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12",
+      iconColor: "#7E57C2", bg: "#EDE7F6",
       title: "ZIP Bundle",
       desc: "CSV + QuickBooks IIF packed into a single ZIP file",
       label: "Download ZIP",
-      action: () => run("zip", () => exportZIP(receipts, bizName)),
+      action: () => run("zip", () => exportZIP(receipts, bizName, suffix)),
     },
   ];
 
@@ -300,7 +260,7 @@ export default function ExportPage() {
         <div className="flex justify-center py-20"><div className="w-8 h-8 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" /></div>
       ) : (
         <>
-          {/* Filters */}
+          {/* Filters bar */}
           <div className="bg-white rounded-2xl border border-gray-100 p-5 mb-6 flex flex-wrap gap-4 items-center justify-between">
             <div>
               <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Business</p>
@@ -319,11 +279,9 @@ export default function ExportPage() {
               <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Date Range</p>
               <select value={range} onChange={e => setRange(e.target.value as Range)}
                 className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-700">
-                <option value="ytd">This Year</option>
-                <option value="last_year">Last Year</option>
-                <option value="last90">Last 90 Days</option>
-                <option value="last30">Last 30 Days</option>
-                <option value="all">All Time</option>
+                {(Object.keys(RANGE_LABELS) as Range[]).map(r => (
+                  <option key={r} value={r}>{RANGE_LABELS[r]}</option>
+                ))}
               </select>
             </div>
             <div className="text-right">
@@ -338,7 +296,7 @@ export default function ExportPage() {
               <div key={e.key} className="bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: e.bg }}>
                   <svg className="w-5 h-5" fill="none" stroke={e.iconColor} strokeWidth="1.8" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d={e.icon} />
+                    <path strokeLinecap="round" strokeLinejoin="round" d={e.iconPath} />
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
@@ -347,7 +305,7 @@ export default function ExportPage() {
                 </div>
                 <button
                   onClick={e.action}
-                  disabled={working !== null || (e.key !== "history" && receipts.length === 0)}
+                  disabled={working !== null || (e.key !== "history" && e.key !== "zip" && receipts.length === 0)}
                   className="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
                   style={{ background: "#00897B" }}
                 >
