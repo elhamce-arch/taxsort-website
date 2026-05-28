@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  signInWithRedirect,
-  getRedirectResult,
+  signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
@@ -19,35 +18,34 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [checkingRedirect, setCheckingRedirect] = useState(true);
+  const [checkingAuth, setCheckingAuth] = useState(true);
 
-  // Handle Google redirect result once on mount
+  // Check if user is already signed in
   useEffect(() => {
-    getRedirectResult(auth)
-      .then(result => {
-        if (result?.user) {
-          router.replace("/dashboard");
-        } else if (auth.currentUser) {
-          // App Check may have failed but user is still signed in
-          router.replace("/dashboard");
-        } else {
-          setCheckingRedirect(false);
-        }
-      })
-      .catch(() => {
-        // Even if getRedirectResult fails (e.g. App Check), check if user is signed in
-        if (auth.currentUser) {
-          router.replace("/dashboard");
-        } else {
-          setCheckingRedirect(false);
-        }
-      });
+    if (auth.currentUser) {
+      router.replace("/dashboard");
+    } else {
+      setCheckingAuth(false);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function handleGoogle() {
     setError("");
-    await signInWithRedirect(auth, googleProvider);
+    setLoading(true);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      if (result.user) {
+        router.replace("/dashboard");
+      }
+    } catch (err: unknown) {
+      const code = (err as { code?: string }).code ?? "";
+      if (code !== "auth/popup-closed-by-user" && code !== "auth/cancelled-popup-request") {
+        setError("Google sign-in failed. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function handleEmailAuth(e: React.FormEvent) {
@@ -77,7 +75,7 @@ export default function LoginPage() {
     }
   }
 
-  if (checkingRedirect) return (
+  if (checkingAuth) return (
     <div className="min-h-screen flex items-center justify-center" style={{ background: "#F0F6F5" }}>
       <div className="w-8 h-8 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" />
     </div>
@@ -100,7 +98,8 @@ export default function LoginPage() {
         {/* Google */}
         <button
           onClick={handleGoogle}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors font-medium text-gray-800"
+          disabled={loading}
+          className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors font-medium text-gray-800 disabled:opacity-60"
         >
           <svg viewBox="0 0 24 24" width="20" height="20">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
