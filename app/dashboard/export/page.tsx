@@ -45,8 +45,7 @@ function downloadBlob(blob: Blob, filename: string) {
 }
 
 function toCSV(rows: string[][]): string {
-  return rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("
-");
+  return rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join(String.fromCharCode(10));
 }
 
 function buildCSV(receipts: Receipt[]): string {
@@ -63,10 +62,10 @@ function buildCSV(receipts: Receipt[]): string {
 }
 
 function buildIIF(receipts: Receipt[]): string {
-  const header = "!TRNS	TRNSID	TRNSTYPE	DATE	ACCNT	NAME	AMOUNT	MEMO
-!SPL	SPLID	TRNSTYPE	DATE	ACCNT	NAME	AMOUNT	MEMO
+  const header = `!TRNS\tTRNSID\tTRNSTYPE\tDATE\tACCNT\tNAME\tAMOUNT\tMEMO
+!SPL\tSPLID\tTRNSTYPE\tDATE\tACCNT\tNAME\tAMOUNT\tMEMO
 !ENDTRNS
-";
+`;
   const rows = receipts.map((r, i) => {
     const dt = r.date ? new Date(r.date.seconds * 1000).toLocaleDateString("en-US") : "";
     const amt = (r.total ?? 0).toFixed(2);
@@ -75,8 +74,7 @@ function buildIIF(receipts: Receipt[]): string {
 SPL	${i + 1}	CHECK	${dt}	${cat}	${r.vendor ?? ""}	${amt}	
 ENDTRNS`;
   });
-  return header + rows.join("
-");
+  return header + rows.join(String.fromCharCode(10));
 }
 
 function openPrint(html: string) {
