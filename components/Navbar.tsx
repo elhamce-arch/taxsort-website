@@ -57,11 +57,12 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
                   dark
                     ? isActive(href)
                       ? "text-white bg-white/10"
-                      : "text-gray-300 hover:text-white hover:bg-white/8"
+                      : "text-gray-300 hover:text-white hover:bg-white/10"
                     : isActive(href)
-                      ? "text-gray-900 bg-gray-100"
-                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                      ? "text-white"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 }`}
+                style={!dark && isActive(href) ? { background: "#16a34a" } : undefined}
               >
                 {label}
               </Link>
