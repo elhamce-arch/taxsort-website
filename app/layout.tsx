@@ -39,6 +39,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="en-gb" href="https://www.taxsort.app" />
         <link rel="alternate" hrefLang="en-au" href="https://www.taxsort.app" />
         <link rel="alternate" hrefLang="en" href="https://www.taxsort.app" />
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.png" />
         <link rel="manifest" href="/dashboard-manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
