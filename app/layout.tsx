@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import InstallBanner from "@/components/InstallBanner";
+import { AuthProvider } from "@/lib/auth-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,8 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="en" href="https://taxsort.app" />
       </head>
       <body className={inter.className}>
-        {children}
-        <InstallBanner />
+        <AuthProvider>
+          {children}
+          <InstallBanner />
+        </AuthProvider>
       </body>
     </html>
   );
