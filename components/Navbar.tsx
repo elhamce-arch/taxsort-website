@@ -58,13 +58,17 @@ export default function Navbar({ dark = false }: { dark?: boolean }) {
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   dark
                     ? isActive(href)
-                      ? "text-white bg-white/10"
+                      ? "font-semibold"
                       : "text-gray-300 hover:text-white hover:bg-white/10"
                     : isActive(href)
-                      ? "text-white"
+                      ? "text-white font-semibold"
                       : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                 }`}
-                style={!dark && isActive(href) ? { background: "#16a34a" } : undefined}
+                style={
+                  isActive(href)
+                    ? { background: "#4ade80", color: "#0f2e18" }
+                    : undefined
+                }
               >
                 {label}
               </Link>
