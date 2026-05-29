@@ -704,6 +704,415 @@ const posts: Record<string, {
   },
 };
 
+  // ── USA 2026 ────────────────────────────────────────────────
+  "freelancer-taxes-usa-2026": {
+    title: "Freelancer Taxes in the US: The Complete 2026 Guide",
+    description: "Everything US freelancers and independent contractors need to know for the 2025 tax year: Schedule C, self-employment tax, quarterly payments, and every deduction you can claim.",
+    category: "USA",
+    date: "May 29, 2026",
+    readTime: "11 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">If you freelance, consult, drive for a rideshare platform, or run any self-employed business in the United States, you are responsible for tracking your own taxes. Unlike W-2 employees, no employer withholds anything on your behalf. The upside: you can deduct every legitimate business expense and significantly reduce what you owe. This guide covers everything you need to know for the <strong>2025 tax year</strong> (filed in 2026).</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> Tax law changes annually. Always verify current rates and rules at <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer">irs.gov</a> or with a qualified CPA before filing.
+        </blockquote>
+
+        <h2>Who Needs to File as Self-Employed?</h2>
+        <p>You must file Schedule SE and report self-employment income if your net earnings from self-employment are <strong>$400 or more</strong> in a tax year. This applies to freelancers, independent contractors, gig workers, sole proprietors, and single-member LLCs.</p>
+        <p>You will receive a <strong>1099-NEC</strong> from any client who paid you $600 or more during the year. However, you must report all self-employment income regardless of whether you receive a 1099 — the IRS gets copies of all 1099s and cross-references them against your return.</p>
+
+        <h2>Schedule C: Your Business Tax Return</h2>
+        <p>Self-employed individuals report business income and expenses on <strong>Schedule C (Profit or Loss from Business)</strong>, which is attached to your Form 1040. Schedule C calculates your net profit — the figure that flows into your income tax calculation and self-employment tax calculation.</p>
+        <p>Net profit = Total revenue − Total deductible business expenses</p>
+        <p>The lower your net profit, the less tax you owe. This is why tracking every legitimate expense matters.</p>
+
+        <h2>Self-Employment Tax</h2>
+        <p>Self-employed individuals pay <strong>self-employment (SE) tax</strong> of <strong>15.3%</strong> on net earnings, which covers Social Security (12.4%) and Medicare (2.9%). For 2025, Social Security tax applies to the first <strong>$176,100</strong> of net self-employment earnings. There is no cap on the 2.9% Medicare portion.</p>
+        <p>The good news: you can deduct <strong>half of your SE tax</strong> (the employer-equivalent portion) as an above-the-line deduction on your Form 1040, reducing your adjusted gross income (AGI).</p>
+        <ul>
+          <li>Net SE earnings × 92.35% = SE tax base (the 7.65% reduction mirrors the employer deduction W-2 employees receive)</li>
+          <li>SE tax base × 15.3% = SE tax owed</li>
+          <li>SE tax ÷ 2 = deductible amount on Form 1040</li>
+        </ul>
+
+        <h2>Quarterly Estimated Tax Payments</h2>
+        <p>Because no employer withholds taxes for you, the IRS requires self-employed individuals to pay <strong>estimated taxes quarterly</strong>. Failing to do so results in an underpayment penalty, even if you pay in full by April 15.</p>
+        <p>2026 quarterly due dates (for the 2025 tax year):</p>
+        <ul>
+          <li><strong>Q1 (Jan–Mar):</strong> April 15, 2025</li>
+          <li><strong>Q2 (Apr–May):</strong> June 16, 2025</li>
+          <li><strong>Q3 (Jun–Aug):</strong> September 15, 2025</li>
+          <li><strong>Q4 (Sep–Dec):</strong> January 15, 2026</li>
+        </ul>
+        <p>Use <strong>Form 1040-ES</strong> to calculate and submit estimated payments. A safe harbour rule: pay at least 100% of last year's tax liability (110% if AGI exceeded $150,000) and you will avoid the underpayment penalty regardless of your final bill.</p>
+
+        <h2>The Biggest Tax Deductions for US Freelancers</h2>
+
+        <h3>1. Mileage and Vehicle Expenses</h3>
+        <p>The IRS standard mileage rate for 2025 is <strong>70 cents per mile</strong> for business use (check irs.gov for updated 2026 rates). Track every business mile: client visits, networking events, post office runs for business packages, and supply pickups all qualify. You may alternatively deduct actual vehicle expenses (fuel, insurance, maintenance, depreciation) based on your business-use percentage — whichever method yields a larger deduction.</p>
+        <p>TaxSort's GPS mileage tracker automatically logs every trip and calculates your deduction, so you never undercount miles.</p>
+
+        <h3>2. Home Office Deduction</h3>
+        <p>If you use part of your home <strong>regularly and exclusively</strong> for business, you can deduct it. The simplified method allows <strong>$5 per square foot</strong> (up to 300 sq ft, so a maximum of $1,500). The regular method deducts the business-use percentage of actual home expenses: rent/mortgage interest, utilities, insurance, and repairs.</p>
+
+        <h3>3. Health Insurance Premiums</h3>
+        <p>Self-employed individuals who are not eligible for employer-sponsored health insurance through a spouse can deduct <strong>100% of health, dental, and vision insurance premiums</strong> for themselves and their family as an above-the-line deduction. This is one of the most valuable deductions exclusive to the self-employed.</p>
+
+        <h3>4. Retirement Contributions</h3>
+        <p>Contributing to a <strong>SEP-IRA</strong> allows you to deduct up to 25% of net self-employment income, with a 2025 maximum of <strong>$70,000</strong>. A <strong>Solo 401(k)</strong> allows even higher combined contributions as both employee and employer. Retirement contributions reduce your taxable income dollar-for-dollar — one of the most powerful tax planning tools available.</p>
+
+        <h3>5. Qualified Business Income (QBI) Deduction</h3>
+        <p>Under the Tax Cuts and Jobs Act (currently in effect through 2025; Congress is expected to address its expiration), most self-employed individuals can deduct up to <strong>20% of qualified business income</strong>. For 2025, income limits phase in at $197,300 (single) and $394,600 (married filing jointly) for specified service trades. For most freelancers below these thresholds, this deduction applies automatically.</p>
+
+        <h3>6. Software, Subscriptions, and Tools</h3>
+        <p>Any software or subscription you use for business is fully deductible: project management tools, accounting software, design apps, cloud storage, professional memberships, and industry publications. Keep receipts using TaxSort's AI scanner — photograph each receipt the moment you pay and it is automatically categorised under Software & Subscriptions.</p>
+
+        <h3>7. Phone and Internet</h3>
+        <p>Deduct the business-use percentage of your phone plan and home internet. If your phone is used 70% for business, deduct 70% of your monthly bill. Freelancers who work exclusively from home commonly deduct 50–80% of their internet bill.</p>
+
+        <h3>8. Professional Development</h3>
+        <p>Online courses, books, certifications, conferences, and workshops directly related to your current business are fully deductible. Note: costs for training in a new career are not deductible — only education that maintains or improves skills in your existing trade qualifies.</p>
+
+        <h3>9. Business Insurance</h3>
+        <p>Professional liability (E&O) insurance, general liability insurance, and business property insurance premiums are fully deductible as ordinary business expenses.</p>
+
+        <h3>10. Meals (50% Deductible)</h3>
+        <p>Business meals with clients, prospects, or business partners are <strong>50% deductible</strong>. Document the date, attendees, business purpose, and amount. The meal must have a direct business purpose — a general networking lunch qualifies; a personal lunch where you discuss work does not.</p>
+
+        <h2>How TaxSort Simplifies US Tax Filing</h2>
+        <p>TaxSort is built for US freelancers and independent contractors. The app automatically categorises every expense under the correct IRS Schedule C line items, tracks GPS mileage, and generates a <strong>Schedule C-ready export</strong> you can hand directly to your CPA or import into tax software. Switch on AI receipt scanning and every receipt is captured, totalled, and sorted before you even open your laptop.</p>
+        <p>At tax time, export your full year as a CSV or PDF summary — organised by IRS category, with deductible amounts pre-calculated.</p>
+
+        <h2>Key Deadlines for US Freelancers (2025 Tax Year)</h2>
+        <ul>
+          <li><strong>January 15, 2026:</strong> Q4 2025 estimated payment due</li>
+          <li><strong>January 31, 2026:</strong> 1099-NEC forms due from clients</li>
+          <li><strong>April 15, 2026:</strong> Federal tax return due (or extension request + payment)</li>
+          <li><strong>October 15, 2026:</strong> Extended return due</li>
+        </ul>
+
+        <h2>Bottom Line</h2>
+        <p>The US tax system for self-employed individuals is detailed, but the deductions are generous. The key is documentation: every expense, every mile, every receipt. Track them throughout the year — not just in April — and you will arrive at tax time prepared, with the maximum deductions already calculated.</p>
+        <p>Download TaxSort and let AI handle the tracking so you can focus on your business.</p>
+      </div>
+    ),
+  },
+
+  // ── Canada 2026 ─────────────────────────────────────────────
+  "self-employed-taxes-canada-2026": {
+    title: "Self-Employed Taxes in Canada: The Complete 2026 Guide",
+    description: "Everything Canadian freelancers and independent contractors need to know: T2125, CRA rules, CPP contributions, GST/HST, and every deduction you can claim for the 2025 tax year.",
+    category: "Canada",
+    date: "May 29, 2026",
+    readTime: "11 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">Working as a freelancer, independent contractor, or sole proprietor in Canada means you are responsible for your own tax filings. You report business income on <strong>Form T2125</strong>, pay CPP contributions on both the employer and employee side, and may need to collect and remit GST/HST. The complexity is manageable — and the deductions are significant. This guide covers the <strong>2025 tax year</strong> (filed by April 30, 2026, or June 15, 2026 for the self-employed).</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> Canadian tax law changes every year. Verify all figures with the <a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" rel="noopener noreferrer">CRA</a> or a qualified accountant before filing.
+        </blockquote>
+
+        <h2>Who Is Considered Self-Employed in Canada?</h2>
+        <p>The CRA considers you self-employed if you work as a freelancer, independent contractor, sole proprietor, or in a business partnership. The distinction between employee and contractor has significant tax implications. The CRA uses a four-factor test (control, ownership of tools, chance of profit/risk of loss, integration) to assess the relationship. If there is a dispute, the CRA may reclassify a contractor as an employee — a serious issue for both parties.</p>
+
+        <h2>T2125: Statement of Business or Professional Activities</h2>
+        <p>Self-employed Canadians report business income and expenses on <strong>Form T2125</strong>, attached to their personal T1 return. T2125 calculates your net business income, which flows into Line 13500 (business income) or Line 13700 (professional income) of your T1.</p>
+        <p>Net business income = Gross business income − Allowable business expenses</p>
+        <p>This net figure is used to calculate income tax, CPP contributions, and any applicable provincial taxes.</p>
+
+        <h2>CPP Contributions for the Self-Employed</h2>
+        <p>Self-employed individuals pay <strong>both the employee and employer portions of CPP</strong>, effectively doubling the contribution. For 2025:</p>
+        <ul>
+          <li>CPP1 contribution rate: <strong>5.95%</strong> each side (11.9% total) on pensionable earnings</li>
+          <li>CPP1 maximum pensionable earnings: <strong>$71,300</strong> (2025; check CRA for updated figures)</li>
+          <li>Basic exemption: $3,500 (not subject to CPP)</li>
+          <li>CPP2 (second additional) also applies above a second earnings ceiling — check CRA for current thresholds</li>
+        </ul>
+        <p>Half of your CPP contribution (the employer-equivalent portion) is deductible as a business expense on T2125. The other half generates a non-refundable tax credit on your T1.</p>
+
+        <h2>GST/HST: When You Must Register</h2>
+        <p>Once your worldwide taxable supplies exceed <strong>$30,000 in any single calendar quarter or in four consecutive calendar quarters</strong>, you must register for GST/HST. At that point you must charge GST/HST on your services and remit it to the CRA (less input tax credits for GST/HST you paid on business expenses).</p>
+        <p>Even below the threshold, voluntary registration can be advantageous: it allows you to claim input tax credits on your business expenses. Many accountants recommend registering early if you have significant business expenses.</p>
+        <p>Rates by province vary: Ontario charges 13% HST, British Columbia charges 5% GST + 7% PST separately, Alberta is 5% GST only. Always confirm the applicable rate for your province and your clients' provinces.</p>
+
+        <h2>2025 Federal Income Tax Brackets</h2>
+        <p>Federal tax applies to your net income after deductions (including the basic personal amount of approximately <strong>$16,129</strong> for 2025):</p>
+        <ul>
+          <li><strong>15%</strong> on the first $57,375</li>
+          <li><strong>20.5%</strong> on $57,375 to $114,750</li>
+          <li><strong>26%</strong> on $114,750 to $158,519</li>
+          <li><strong>29%</strong> on $158,519 to $220,000</li>
+          <li><strong>33%</strong> on income over $220,000</li>
+        </ul>
+        <p>Provincial income tax is added on top. Combined federal and provincial marginal rates range from approximately 20% at the low end to 53%+ at the top bracket in high-tax provinces.</p>
+
+        <h2>Filing Deadlines</h2>
+        <ul>
+          <li><strong>April 30, 2026:</strong> Payment deadline — any balance owing must be paid by this date to avoid interest</li>
+          <li><strong>June 15, 2026:</strong> T1 filing deadline for self-employed individuals and their spouses</li>
+        </ul>
+        <p>Note: interest on any balance owing still accrues from May 1, 2026 even if you file by June 15. Pay your estimated balance by April 30 even if you have not yet filed your return.</p>
+
+        <h2>Top Tax Deductions for Self-Employed Canadians</h2>
+
+        <h3>1. Business-Use Vehicle Expenses</h3>
+        <p>You can deduct vehicle expenses based on the percentage of kilometres driven for business versus personal use. Eligible expenses include fuel, oil, insurance, maintenance, registration, and capital cost allowance (CCA) on the vehicle.</p>
+        <p>The CRA also allows a simplified <strong>per-kilometre rate</strong> for employees receiving a taxable vehicle allowance, but self-employed individuals generally must use the actual-cost method. Keep a detailed mileage log — the CRA frequently audits vehicle claims. TaxSort's GPS tracker automatically logs every trip with the date, distance, and purpose, creating a CRA-compliant log throughout the year.</p>
+
+        <h3>2. Home Office Expenses (T2200 / T777S)</h3>
+        <p>If you work from home, you can deduct the business-use portion of your home expenses. The CRA's detailed method allows deduction of rent, utilities, internet, insurance, and maintenance based on the percentage of your home used exclusively for work (calculated by area). The simplified flat rate is available for employees but not sole proprietors — self-employed individuals must use the detailed method.</p>
+
+        <h3>3. Business Travel and Meals</h3>
+        <p>Travel costs for business purposes — flights, hotels, taxis, parking — are fully deductible. Meals and entertainment with clients are <strong>50% deductible</strong>. Document the business purpose, attendees, and amount for every meal claim. The CRA routinely disallows meals without documentation.</p>
+
+        <h3>4. Professional Fees and Memberships</h3>
+        <p>Accounting fees, legal fees, professional association dues, and licensing costs are fully deductible. Your accountant's fee for preparing your business return is deductible in the year following (when you pay it).</p>
+
+        <h3>5. Software, Subscriptions, and Technology</h3>
+        <p>Business software, cloud tools, subscriptions, and technology used for work are 100% deductible. Use TaxSort to scan and categorise every software receipt instantly — receipts are stored securely and exportable as a T2125-ready summary at year end.</p>
+
+        <h3>6. Capital Cost Allowance (CCA)</h3>
+        <p>Large purchases — computers, equipment, furniture — are typically deducted over time through CCA rather than in a single year. Different asset classes have different CCA rates. Class 10 (30%) covers vehicles; Class 8 (20%) covers general equipment; Class 12 (100%) covers tools under $500 and certain software. The <strong>Accelerated Investment Incentive</strong> and the <strong>Immediate Expensing Incentive</strong> (up to $1.5 million for eligible depreciable property for certain businesses) may allow faster write-offs — confirm eligibility with your accountant.</p>
+
+        <h3>7. Marketing and Advertising</h3>
+        <p>Website costs, online advertising, business cards, promotional materials, and social media advertising are fully deductible. Note: advertising placed in non-Canadian media may have restrictions — consult the CRA guidelines on advertising deductibility.</p>
+
+        <h3>8. Phone and Internet</h3>
+        <p>The business-use portion of your cell phone plan and home internet is deductible. If your phone is used 60% for business, deduct 60% of the annual cost.</p>
+
+        <h2>How TaxSort Helps Canadian Freelancers</h2>
+        <p>TaxSort is designed around CRA rules and T2125 categories. Every expense you scan is sorted into the correct T2125 line item — Office Expenses, Motor Vehicle, Travel, Telephone, and more. At tax time, export a complete T2125-ready breakdown your accountant can use directly. The mileage log meets CRA's recordkeeping requirements, and the cloud backup means your records are safe if you are ever audited.</p>
+
+        <h2>Bottom Line</h2>
+        <p>Self-employment in Canada offers genuine tax advantages through deductions, but those deductions require documentation. The CRA expects you to have records for every claim. Start tracking on day one of your fiscal year — not in March when you are rushing to file. TaxSort makes that habit effortless.</p>
+      </div>
+    ),
+  },
+
+  // ── UK 2025/26 ──────────────────────────────────────────────
+  "self-employment-tax-uk-2025-26": {
+    title: "Self-Employment Tax in the UK: HMRC Self Assessment & SA103F Guide 2025/26",
+    description: "Complete guide for UK freelancers and sole traders: HMRC Self Assessment, SA103F, allowable expenses, National Insurance, and how to reduce your 2025/26 tax bill.",
+    category: "UK",
+    date: "May 29, 2026",
+    readTime: "10 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">If you are self-employed in the UK — whether as a freelancer, sole trader, consultant, or contractor — you must complete a <strong>Self Assessment tax return</strong> with HMRC each year. You report your trading income on <strong>SA103</strong> (the self-employment supplementary pages) and claim allowable expenses against your profits. Done correctly, this significantly reduces your tax and National Insurance bill. This guide covers the <strong>2025/26 tax year</strong> (6 April 2025 to 5 April 2026).</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> UK tax law changes each tax year. Always verify figures at <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer">gov.uk/hmrc</a> or with a qualified accountant before filing.
+        </blockquote>
+
+        <h2>Do You Need to Complete a Self Assessment?</h2>
+        <p>You must register for Self Assessment and complete a tax return if you are self-employed and your trading income exceeds <strong>£1,000</strong> in a tax year (the trading allowance). If your trading income is £1,000 or less, you may be able to use the trading allowance and not register — but you cannot then claim expenses against that income. Most working freelancers will exceed £1,000 and must register.</p>
+        <p>Register with HMRC by <strong>5 October</strong> following the end of the tax year in which you became self-employed. For 2025/26, register by 5 October 2026.</p>
+
+        <h2>SA103S vs SA103F: Which Form Do You Use?</h2>
+        <p>The self-employment pages come in two versions:</p>
+        <ul>
+          <li><strong>SA103S (Short):</strong> For annual turnover below the VAT registration threshold (£90,000 for 2024/25, check gov.uk for the current figure). Simpler, with fewer boxes.</li>
+          <li><strong>SA103F (Full):</strong> Required if your annual turnover exceeds the VAT threshold, if you have more complex affairs, or if you want to claim certain detailed expenses. Most established freelancers will use SA103F.</li>
+        </ul>
+        <p>TaxSort exports expenses pre-categorised to SA103F line items — Office costs, Travel, Premises, Staff, Legal and financial, Marketing, and more — making it straightforward to complete either form.</p>
+
+        <h2>2025/26 Income Tax Rates and Allowances (England, Wales, Northern Ireland)</h2>
+        <ul>
+          <li><strong>Personal allowance:</strong> £12,570 (frozen until April 2028)</li>
+          <li><strong>Basic rate (20%):</strong> £12,571 to £50,270</li>
+          <li><strong>Higher rate (40%):</strong> £50,271 to £125,140</li>
+          <li><strong>Additional rate (45%):</strong> Over £125,140</li>
+        </ul>
+        <p>The personal allowance tapers away by £1 for every £2 earned over £100,000, reaching zero at £125,140.</p>
+        <p>Scottish income tax rates differ and are set by the Scottish Parliament — Scottish taxpayers should check the current Scottish rates at gov.scot.</p>
+
+        <h2>National Insurance for the Self-Employed</h2>
+        <p>From <strong>6 April 2024</strong>, Class 2 National Insurance was abolished. Self-employed individuals now only pay:</p>
+        <ul>
+          <li><strong>Class 4 NIC:</strong> 6% on profits between £12,570 and £50,270; 2% on profits above £50,270 (2024/25 rates — confirm 2025/26 rates at gov.uk)</li>
+        </ul>
+        <p>Class 4 NIC is calculated automatically on your Self Assessment return based on your taxable profits. Note that abolishing Class 2 NIC means you may need to make voluntary Class 3 NIC payments to protect your State Pension entitlement if your profits are below the Small Profits Threshold (£6,845 for 2024/25) — HMRC will notify you if this applies.</p>
+
+        <h2>Payments on Account</h2>
+        <p>If your Self Assessment tax bill exceeds £1,000 and less than 80% of your tax is collected at source (e.g., via PAYE on other income), HMRC requires <strong>payments on account</strong> — advance payments towards your next year's tax bill.</p>
+        <ul>
+          <li>Each payment on account = 50% of the previous year's Self Assessment bill</li>
+          <li><strong>First payment on account:</strong> 31 January (same deadline as the balancing payment)</li>
+          <li><strong>Second payment on account:</strong> 31 July</li>
+        </ul>
+        <p>For the 2025/26 return: balancing payment + first payment on account due <strong>31 January 2027</strong>; second payment on account due <strong>31 July 2027</strong>.</p>
+
+        <h2>Allowable Expenses for UK Sole Traders</h2>
+
+        <h3>1. Business Travel and Mileage</h3>
+        <p>HMRC's approved mileage rates for using your own vehicle:</p>
+        <ul>
+          <li><strong>Cars and vans:</strong> 45p per mile for the first 10,000 business miles in the tax year; 25p per mile above 10,000 miles</li>
+          <li><strong>Motorcycles:</strong> 24p per mile</li>
+          <li><strong>Bicycles:</strong> 20p per mile</li>
+        </ul>
+        <p>Alternatively, claim actual vehicle running costs (fuel, insurance, servicing, road tax) based on the business-use percentage. The mileage method is simpler for most freelancers. TaxSort's GPS tracker logs every journey automatically, so you have a complete, HMRC-compliant mileage record at year end without manual spreadsheets.</p>
+
+        <h3>2. Office Costs</h3>
+        <p>Stationery, printer ink, postage, and small equipment used exclusively for business are fully deductible. If you work from a dedicated office outside your home, the full rent and running costs are deductible.</p>
+
+        <h3>3. Use of Home as Office</h3>
+        <p>If you work from home, HMRC allows two approaches:</p>
+        <ul>
+          <li><strong>Flat rate:</strong> £10/month (25–50 hours), £18/month (51–100 hours), £26/month (101+ hours). Simple but modest.</li>
+          <li><strong>Actual costs method:</strong> Calculate the proportion of your home costs (mortgage interest, rent, utilities, council tax, insurance) attributable to business use based on the number of rooms and hours used. Yields a larger deduction but requires more record-keeping. Be cautious: claiming a room exclusively for business could trigger a Capital Gains Tax charge on that portion when you sell your home.</li>
+        </ul>
+
+        <h3>4. Phone and Internet</h3>
+        <p>The business-use proportion of your phone and broadband is deductible. If you have a dedicated business line, 100% is deductible. For mixed-use phones, estimate your business usage (e.g., 70%) and deduct that percentage of the annual cost.</p>
+
+        <h3>5. Software and Subscriptions</h3>
+        <p>Business software, cloud tools, professional membership fees, and industry subscriptions are allowable expenses. Scan and store every receipt with TaxSort — expenses are automatically categorised under the correct SA103F line item.</p>
+
+        <h3>6. Professional Fees</h3>
+        <p>Accountancy fees, legal fees related to your business, and professional indemnity insurance premiums are fully deductible. Note: legal fees for buying or selling a business asset are capital in nature and not deductible as a revenue expense.</p>
+
+        <h3>7. Training and Development</h3>
+        <p>Costs of training that <strong>updates or improves skills used in your existing trade</strong> are allowable. A web designer paying for an advanced CSS course qualifies. Training to start a new business or career does not.</p>
+
+        <h3>8. Advertising and Marketing</h3>
+        <p>Website costs, online advertising, business cards, and promotional materials are allowable expenses. Client entertainment (meals, events) is generally <strong>not</strong> allowable under UK rules — HMRC does not permit deduction of business entertainment costs.</p>
+
+        <h3>9. Capital Allowances</h3>
+        <p>Equipment, computers, and tools above the annual investment threshold are claimed via capital allowances rather than as direct expenses. The <strong>Annual Investment Allowance (AIA)</strong> allows 100% of eligible capital expenditure up to <strong>£1 million</strong> per year to be deducted in the year of purchase. First-year allowances may also apply to certain qualifying items.</p>
+
+        <h2>VAT Registration</h2>
+        <p>You must register for VAT once your VAT-taxable turnover exceeds <strong>£90,000</strong> in any rolling 12-month period (2024/25 threshold — confirm the current threshold at gov.uk). Once registered, you charge VAT on your services and can reclaim VAT on business purchases. The <strong>Flat Rate Scheme</strong> simplifies VAT accounting for many freelancers with low VAT-able purchases — worth exploring with your accountant.</p>
+
+        <h2>Self Assessment Filing Deadlines</h2>
+        <ul>
+          <li><strong>5 October 2026:</strong> Register for Self Assessment (if new to self-employment in 2025/26)</li>
+          <li><strong>31 October 2026:</strong> Paper return deadline for 2025/26</li>
+          <li><strong>31 January 2027:</strong> Online return deadline + balancing payment + first payment on account due</li>
+          <li><strong>31 July 2027:</strong> Second payment on account due</li>
+        </ul>
+
+        <h2>How TaxSort Supports UK Freelancers</h2>
+        <p>TaxSort is fully configured for HMRC rules and SA103F categories. Scan receipts with the AI camera and they are instantly sorted under the correct HMRC expense category. The mileage tracker uses HMRC approved rates automatically (45p/25p per mile). At tax time, export a complete SA103F-ready breakdown your accountant can use, or use it to complete your own return via HMRC's online Self Assessment service.</p>
+
+        <h2>Bottom Line</h2>
+        <p>Self Assessment does not have to be stressful. The key is keeping accurate records throughout the year — not scrambling in January. With TaxSort, every receipt and every business mile is captured automatically, so your tax return is built in real time, not under pressure.</p>
+      </div>
+    ),
+  },
+
+  // ── Australia 2025-26 ────────────────────────────────────────
+  "freelancer-tax-australia-2025-26": {
+    title: "Freelancer Tax in Australia: ATO myTax & Sole Trader Guide 2025-26",
+    description: "Complete guide for Australian freelancers and sole traders: ATO tax obligations, myTax filing, GST registration, BAS, allowable deductions, and how to reduce your 2025-26 tax bill.",
+    category: "Australia",
+    date: "May 29, 2026",
+    readTime: "10 min read",
+    content: (
+      <div className="prose-content">
+        <p className="lead">Working as a freelancer, sole trader, or independent contractor in Australia means you are running a business — which comes with real tax obligations and real tax advantages. You must lodge an annual <strong>income tax return</strong> with the ATO, may need to register for and remit <strong>GST</strong>, and are responsible for your own <strong>superannuation</strong>. This guide covers everything for the <strong>2025-26 financial year</strong> (1 July 2025 to 30 June 2026).</p>
+
+        <blockquote>
+          <strong>Disclaimer:</strong> Australian tax law and ATO rates are updated annually. Always verify current figures at <a href="https://www.ato.gov.au" target="_blank" rel="noopener noreferrer">ato.gov.au</a> or with a registered tax agent before lodging your return.
+        </blockquote>
+
+        <h2>Are You a Sole Trader or Running a Business?</h2>
+        <p>If you provide services as a freelancer or contractor and are not employed under a PAYG arrangement, you are most likely operating as a <strong>sole trader</strong> — the simplest business structure in Australia. Your business income is reported on your personal income tax return (not a separate company return), and you are personally liable for all business debts.</p>
+        <p>The ATO distinguishes between a <strong>hobby</strong> and a <strong>business</strong> based on factors including profit intention, commercial manner of operation, and regularity of activity. If you are genuinely running a business, you must register for an <strong>Australian Business Number (ABN)</strong> and lodge tax returns accordingly.</p>
+
+        <h2>Getting an ABN</h2>
+        <p>An ABN is essential for Australian freelancers. Without one, clients who pay you more than $75 are required to withhold 47% of your payment and remit it to the ATO. Register for free at abr.business.gov.au. You can register as a sole trader or under a business name.</p>
+
+        <h2>2024-25 Individual Income Tax Rates (Apply to Business Income)</h2>
+        <p>As a sole trader, your business profit is taxed at individual income tax rates (plus the 2% Medicare Levy). The following rates applied from 1 July 2024 following the Stage 3 tax cuts:</p>
+        <ul>
+          <li><strong>$0 – $18,200:</strong> Nil (tax-free threshold)</li>
+          <li><strong>$18,201 – $45,000:</strong> 19 cents per dollar over $18,200</li>
+          <li><strong>$45,001 – $120,000:</strong> $5,092 + 32.5 cents per dollar over $45,000</li>
+          <li><strong>$120,001 – $180,000:</strong> $29,467 + 37 cents per dollar over $120,000</li>
+          <li><strong>$180,001+:</strong> $51,667 + 45 cents per dollar over $180,000</li>
+        </ul>
+        <p>Plus <strong>Medicare Levy: 2%</strong> on your taxable income (low-income reductions apply below certain thresholds). Verify 2025-26 rates at ato.gov.au as they may be updated.</p>
+
+        <h2>PAYG Instalments</h2>
+        <p>Once your tax liability exceeds a threshold (typically $1,000 after offsets), the ATO will enter you into the <strong>PAYG instalments</strong> system. You pay tax in quarterly instalments throughout the year rather than one lump sum at lodgement. The ATO calculates your instalment amount based on the previous year's income, but you can vary it if your current year income is significantly different.</p>
+        <p>PAYG instalment quarters for 2025-26:</p>
+        <ul>
+          <li>Q1 (Jul–Sep 2025): due 28 October 2025</li>
+          <li>Q2 (Oct–Dec 2025): due 28 February 2026</li>
+          <li>Q3 (Jan–Mar 2026): due 28 April 2026</li>
+          <li>Q4 (Apr–Jun 2026): due 28 July 2026</li>
+        </ul>
+
+        <h2>GST Registration and BAS</h2>
+        <p>You must register for <strong>GST</strong> once your GST turnover reaches or is expected to reach <strong>$75,000</strong> in any 12-month period (or $150,000 for non-profits). Once registered, you add 10% GST to your invoices and lodge a <strong>Business Activity Statement (BAS)</strong> — usually quarterly — reporting the GST you collected and the GST credits you are entitled to claim on business purchases.</p>
+        <p>You may voluntarily register below $75,000 to claim GST credits on your business expenses — useful if you have significant input costs. Register at ato.gov.au or through a registered BAS agent.</p>
+
+        <h2>Tax Lodgement Deadlines</h2>
+        <ul>
+          <li><strong>31 October 2026:</strong> Individual tax return lodgement deadline for 2025-26 (if lodging yourself)</li>
+          <li><strong>Later (varies):</strong> If you use a registered tax agent, extended deadlines apply — often into March or May 2027 depending on your agent's lodgement program</li>
+          <li><strong>21 days after quarter end:</strong> BAS lodgement and payment deadlines (generally)</li>
+        </ul>
+
+        <h2>Key Tax Deductions for Australian Sole Traders</h2>
+
+        <h3>1. Motor Vehicle Expenses</h3>
+        <p>If you use your car for business (travel to clients, supplier visits, business errands — not home-to-office commuting), you can claim vehicle expenses using one of two methods:</p>
+        <ul>
+          <li><strong>Cents per kilometre:</strong> A flat rate per business kilometre (88 cents/km for 2023-24; check ato.gov.au for the 2025-26 rate), up to 5,000 km per year. Simple and requires minimal records.</li>
+          <li><strong>Logbook method:</strong> Keep a 12-week logbook to establish your business-use percentage, then apply that percentage to actual vehicle running costs (fuel, insurance, registration, maintenance, depreciation). No kilometre limit, and usually yields a larger deduction for high-mileage drivers.</li>
+        </ul>
+        <p>TaxSort's GPS mileage tracker automatically records every trip with date, distance, and start/end locations, making logbook compliance effortless throughout the year.</p>
+
+        <h3>2. Home Office Expenses</h3>
+        <p>The ATO offers two methods for home office claims:</p>
+        <ul>
+          <li><strong>Fixed rate method:</strong> 70 cents per hour for each hour worked from home (as of 2023-24; verify the current rate at ato.gov.au). Covers electricity, internet, phone, stationery, and computer consumables. You must keep a record of your work hours.</li>
+          <li><strong>Actual costs method:</strong> Calculate the actual business-use proportion of home expenses (electricity, rent/mortgage interest, internet) based on dedicated workspace floor area. More complex but can yield a larger deduction for those with a dedicated home office.</li>
+        </ul>
+
+        <h3>3. Phone and Internet</h3>
+        <p>The work-related proportion of your phone and internet expenses is deductible. If you use your phone 60% for work, deduct 60% of the annual cost. Keep records showing how you calculated the work-use percentage.</p>
+
+        <h3>4. Tools, Equipment, and Technology</h3>
+        <p>Computers, software, tools, and equipment used for business are deductible. Assets costing less than the <strong>instant asset write-off threshold</strong> can be deducted in full in the year of purchase — check ato.gov.au for the current threshold, as it has changed significantly in recent years. Assets above the threshold are depreciated over their effective life using the diminishing value or prime cost method.</p>
+
+        <h3>5. Professional Development and Education</h3>
+        <p>Courses, workshops, books, and conferences that maintain or improve skills used in your current work are deductible. Training for a new career or profession is not deductible under self-education rules.</p>
+
+        <h3>6. Business Insurance</h3>
+        <p>Professional indemnity insurance, public liability insurance, and business property insurance premiums are fully deductible as business expenses.</p>
+
+        <h3>7. Accounting and Tax Agent Fees</h3>
+        <p>Fees paid to your accountant or registered tax agent for preparing your tax return and BAS are deductible. This includes TaxSort's subscription — it is a deductible business expense.</p>
+
+        <h3>8. Marketing and Advertising</h3>
+        <p>Website costs, Google Ads, social media advertising, business cards, and branding expenses are all deductible. Keep receipts using TaxSort — photograph each receipt and it is automatically filed under Advertising & Marketing.</p>
+
+        <h3>9. Superannuation Contributions</h3>
+        <p>As a sole trader, you are not legally required to pay yourself superannuation, but <strong>voluntary super contributions</strong> (concessional contributions) are deductible. For 2025-26, the concessional contributions cap is <strong>$30,000</strong> per year (check ato.gov.au for the current cap). Contributions within the cap are taxed at 15% inside the fund — much lower than most individuals' marginal tax rate — making this one of the most tax-effective strategies available to self-employed Australians.</p>
+        <p>Lodge a <strong>Notice of Intent to Claim a Deduction</strong> with your super fund before lodging your tax return to claim the deduction.</p>
+
+        <h3>10. Meals and Travel</h3>
+        <p>Meals consumed while travelling away from home overnight for business purposes are deductible. Day-to-day meal costs are generally not deductible. Accommodation, flights, and transport costs for business travel are fully deductible.</p>
+
+        <h2>Sole Trader vs Company: A Quick Note</h2>
+        <p>At higher income levels (above roughly $120,000–$150,000 of business profit), incorporating as a Pty Ltd company may reduce your tax rate — the company tax rate is 25% for base rate entities (turnover under $50 million). However, company structure adds compliance cost and complexity. Speak to a registered tax agent or accountant about the right structure for your situation.</p>
+
+        <h2>How TaxSort Supports Australian Freelancers</h2>
+        <p>TaxSort is configured for ATO rules and myTax categories. The AI receipt scanner captures and categorises every business expense under the correct ATO expense type. The GPS mileage tracker supports both the cents per km and logbook methods. At tax time, export your full year as a structured summary — sorted by ATO category, with deductible amounts calculated — ready for myTax or your tax agent. Your subscription to TaxSort is itself a deductible business expense.</p>
+
+        <h2>Bottom Line</h2>
+        <p>The Australian tax system rewards self-employed individuals who keep good records. The ATO expects documentation for every deduction claimed. With TaxSort running in the background throughout the financial year, you arrive at 30 June with organised, audit-ready records — and every deduction you are entitled to already captured.</p>
+        <p>Download TaxSort free and start tracking today.</p>
+      </div>
+    ),
+  },
+
 // ─────────────────────────────────────────────────────────────
 // Metadata
 // ─────────────────────────────────────────────────────────────

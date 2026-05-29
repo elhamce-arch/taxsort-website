@@ -9,9 +9,45 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.taxsort.app/blog" },
 };
 
-const categories = ["All", "Tax Tips", "Mileage", "Canada", "USA", "Gig Economy", "Real Estate"];
+const categories = ["All", "Tax Tips", "Mileage", "Canada", "USA", "UK", "Australia", "Gig Economy", "Real Estate"];
 
 const posts = [
+  {
+    slug: "freelancer-taxes-usa-2026",
+    title: "Freelancer Taxes in the US: The Complete 2026 Guide",
+    excerpt: "Schedule C, self-employment tax, quarterly payments, and every deduction US freelancers and independent contractors can claim for the 2025 tax year.",
+    category: "USA",
+    date: "May 29, 2026",
+    readTime: "11 min read",
+    color: "#e3f2fd",
+  },
+  {
+    slug: "self-employed-taxes-canada-2026",
+    title: "Self-Employed Taxes in Canada: The Complete 2026 Guide",
+    excerpt: "T2125, CPP contributions, GST/HST registration, and every deduction Canadian freelancers can claim. Everything you need for the 2025 tax year.",
+    category: "Canada",
+    date: "May 29, 2026",
+    readTime: "11 min read",
+    color: "#fce4ec",
+  },
+  {
+    slug: "self-employment-tax-uk-2025-26",
+    title: "Self-Employment Tax in the UK: HMRC Self Assessment & SA103F Guide 2025/26",
+    excerpt: "Complete guide for UK sole traders: Self Assessment, SA103F, Class 4 National Insurance, allowable expenses, and payments on account for the 2025/26 tax year.",
+    category: "UK",
+    date: "May 29, 2026",
+    readTime: "10 min read",
+    color: "#e8eaf6",
+  },
+  {
+    slug: "freelancer-tax-australia-2025-26",
+    title: "Freelancer Tax in Australia: ATO myTax & Sole Trader Guide 2025-26",
+    excerpt: "ABN, GST registration, BAS, PAYG instalments, and every deduction Australian sole traders can claim. Your complete ATO guide for the 2025-26 financial year.",
+    category: "Australia",
+    date: "May 29, 2026",
+    readTime: "10 min read",
+    color: "#fff8e1",
+  },
   {
     slug: "uber-drivers-tax-guide",
     title: "How Uber Drivers Can Save on Taxes",
@@ -100,6 +136,8 @@ const categoryIcons: Record<string, string> = {
   "Mileage": "🚗",
   "Canada": "🍁",
   "USA": "🇺🇸",
+  "UK": "🇬🇧",
+  "Australia": "🇦🇺",
   "Gig Economy": "🚗",
   "Real Estate": "🏠",
 };
