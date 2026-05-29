@@ -1026,13 +1026,13 @@ const posts: Record<string, {
         <p>An ABN is essential for Australian freelancers. Without one, clients who pay you more than $75 are required to withhold 47% of your payment and remit it to the ATO. Register for free at abr.business.gov.au. You can register as a sole trader or under a business name.</p>
 
         <h2>2024-25 Individual Income Tax Rates (Apply to Business Income)</h2>
-        <p>As a sole trader, your business profit is taxed at individual income tax rates (plus the 2% Medicare Levy). The following rates applied from 1 July 2024 following the Stage 3 tax cuts:</p>
+        <p>As a sole trader, your business profit is taxed at individual income tax rates (plus the 2% Medicare Levy). The following rates apply from 1 July 2024 following the Stage 3 tax cuts (which reduced the 32.5% rate to 30% and expanded the bracket thresholds):</p>
         <ul>
           <li><strong>$0 – $18,200:</strong> Nil (tax-free threshold)</li>
           <li><strong>$18,201 – $45,000:</strong> 19 cents per dollar over $18,200</li>
-          <li><strong>$45,001 – $120,000:</strong> $5,092 + 32.5 cents per dollar over $45,000</li>
-          <li><strong>$120,001 – $180,000:</strong> $29,467 + 37 cents per dollar over $120,000</li>
-          <li><strong>$180,001+:</strong> $51,667 + 45 cents per dollar over $180,000</li>
+          <li><strong>$45,001 – $135,000:</strong> $5,092 + 30 cents per dollar over $45,000</li>
+          <li><strong>$135,001 – $190,000:</strong> $32,092 + 37 cents per dollar over $135,000</li>
+          <li><strong>$190,001+:</strong> $52,442 + 45 cents per dollar over $190,000</li>
         </ul>
         <p>Plus <strong>Medicare Levy: 2%</strong> on your taxable income (low-income reductions apply below certain thresholds). Verify 2025-26 rates at ato.gov.au as they may be updated.</p>
 
@@ -1062,7 +1062,7 @@ const posts: Record<string, {
         <h3>1. Motor Vehicle Expenses</h3>
         <p>If you use your car for business (travel to clients, supplier visits, business errands - not home-to-office commuting), you can claim vehicle expenses using one of two methods:</p>
         <ul>
-          <li><strong>Cents per kilometre:</strong> A flat rate per business kilometre (88 cents/km for 2023-24; check ato.gov.au for the 2025-26 rate), up to 5,000 km per year. Simple and requires minimal records.</li>
+          <li><strong>Cents per kilometre:</strong> A flat rate per business kilometre (88 cents/km for 2024-25; check ato.gov.au for the 2025-26 rate), up to 5,000 km per year. Simple and requires minimal records.</li>
           <li><strong>Logbook method:</strong> Keep a 12-week logbook to establish your business-use percentage, then apply that percentage to actual vehicle running costs (fuel, insurance, registration, maintenance, depreciation). No kilometre limit, and usually yields a larger deduction for high-mileage drivers.</li>
         </ul>
         <p>TaxSort's GPS mileage tracker automatically records every trip with date, distance, and start/end locations, making logbook compliance effortless throughout the year.</p>
@@ -1070,7 +1070,7 @@ const posts: Record<string, {
         <h3>2. Home Office Expenses</h3>
         <p>The ATO offers two methods for home office claims:</p>
         <ul>
-          <li><strong>Fixed rate method:</strong> 70 cents per hour for each hour worked from home (as of 2023-24; verify the current rate at ato.gov.au). Covers electricity, internet, phone, stationery, and computer consumables. You must keep a record of your work hours.</li>
+          <li><strong>Fixed rate method:</strong> 67 cents per hour for each hour worked from home (current ATO rate; verify at ato.gov.au for any updates). Covers electricity, internet, phone, stationery, and computer consumables. You must keep a record of your work hours.</li>
           <li><strong>Actual costs method:</strong> Calculate the actual business-use proportion of home expenses (electricity, rent/mortgage interest, internet) based on dedicated workspace floor area. More complex but can yield a larger deduction for those with a dedicated home office.</li>
         </ul>
 
