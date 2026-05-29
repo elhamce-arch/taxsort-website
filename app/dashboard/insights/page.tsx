@@ -12,7 +12,14 @@ interface Receipt {
   category: string;
 }
 
-interface Business { id: string; name: string; }
+interface Business { id: string; name: string; currency?: string; }
+
+function currencySymbol(currency?: string) {
+  if (currency === "CAD") return "CA$";
+  if (currency === "GBP") return "£";
+  if (currency === "AUD") return "AU$";
+  return "$";
+}
 
 const PALETTE = [
   "#00897B","#26A69A","#4CAF50","#8BC34A","#FF9800",
@@ -42,7 +49,7 @@ function DonutChart({ data }: { data: { label: string; value: number; color: str
   );
 }
 
-function BarChart({ months }: { months: { label: string; value: number }[] }) {
+function BarChart({ months, sym }: { months: { label: string; value: number }[]; sym: string }) {
   const max = Math.max(...months.map(m => m.value), 1);
   const bw = 36, gap = 10, H = 110;
   const W = months.length * (bw + gap) - gap;
@@ -58,7 +65,7 @@ function BarChart({ months }: { months: { label: string; value: number }[] }) {
             <text x={x + bw / 2} y={H + 14} textAnchor="middle" fontSize={9} fill="#9CA3AF">{m.label}</text>
             {m.value > 0 && (
               <text x={x + bw / 2} y={y - 4} textAnchor="middle" fontSize={8} fill="#374151">
-                ${m.value >= 1000 ? (m.value / 1000).toFixed(1) + "k" : m.value.toFixed(0)}
+                {sym}{m.value >= 1000 ? (m.value / 1000).toFixed(1) + "k" : m.value.toFixed(0)}
               </text>
             )}
           </g>
@@ -81,7 +88,7 @@ export default function InsightsPage() {
   useEffect(() => {
     if (!user) return;
     getDocs(collection(db, "users", user.uid, "businesses")).then(async snap => {
-      const list = snap.docs.map(d => ({ id: d.id, name: (d.data().name as string) ?? d.id }));
+      const list = snap.docs.map(d => ({ id: d.id, name: (d.data().name as string) ?? d.id, currency: d.data().currency as string | undefined }));
       setBusinesses(list);
       const bid = list[0]?.id ?? "personal";
       setSelectedBiz(bid);
@@ -148,6 +155,7 @@ export default function InsightsPage() {
 
   const uniqueMonths = new Set(filtered.map(r => r.date ? `${new Date(r.date.seconds * 1000).getFullYear()}-${new Date(r.date.seconds * 1000).getMonth()}` : null)).size;
   const monthlyAvg = uniqueMonths > 0 ? total / uniqueMonths : 0;
+  const sym = currencySymbol(businesses.find(b => b.id === selectedBiz)?.currency);
 
   return (
     <div>
@@ -182,10 +190,10 @@ export default function InsightsPage() {
           {/* Summary cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {[
-              { label: "Total Spent", value: `$${total.toFixed(2)}`, sub: `${filtered.length} transactions` },
-              { label: "Est. Deductible", value: `$${deductible.toFixed(2)}`, sub: `${total > 0 ? Math.round(deductible / total * 100) : 0}% of total` },
-              { label: "Monthly Avg", value: `$${monthlyAvg.toFixed(2)}`, sub: "per active month" },
-              { label: "Largest Expense", value: `$${(largest?.total ?? 0).toFixed(2)}`, sub: largest?.vendor ?? "—" },
+              { label: "Total Spent", value: `${sym}${total.toFixed(2)}`, sub: `${filtered.length} transactions` },
+              { label: "Est. Deductible", value: `${sym}${deductible.toFixed(2)}`, sub: `${total > 0 ? Math.round(deductible / total * 100) : 0}% of total` },
+              { label: "Monthly Avg", value: `${sym}${monthlyAvg.toFixed(2)}`, sub: "per active month" },
+              { label: "Largest Expense", value: `${sym}${(largest?.total ?? 0).toFixed(2)}`, sub: largest?.vendor ?? "—" },
             ].map(c => (
               <div key={c.label} className="bg-white rounded-2xl border border-gray-100 p-5">
                 <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">{c.label}</p>
@@ -209,7 +217,7 @@ export default function InsightsPage() {
                       <div key={label}>
                         <div className="flex justify-between text-xs mb-0.5">
                           <span className="text-gray-700 truncate pr-2">{label}</span>
-                          <span className="font-medium text-gray-900 flex-shrink-0">${value.toFixed(0)}</span>
+                          <span className="font-medium text-gray-900 flex-shrink-0">{sym}{value.toFixed(0)}</span>
                         </div>
                         <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                           <div className="h-full rounded-full transition-all" style={{ width: `${(value / total) * 100}%`, background: color }} />
@@ -228,7 +236,7 @@ export default function InsightsPage() {
               {monthlyData.every(m => m.value === 0) ? (
                 <p className="text-sm text-gray-400 text-center py-8">No data yet</p>
               ) : (
-                <div className="pt-2"><BarChart months={monthlyData} /></div>
+                <div className="pt-2"><BarChart months={monthlyData} sym={sym} /></div>
               )}
             </div>
           </div>
@@ -264,10 +272,10 @@ export default function InsightsPage() {
                             <span className="text-gray-700">{cat}</span>
                           </div>
                         </td>
-                        <td className="py-2.5 text-right font-semibold text-gray-900">${amt.toFixed(2)}</td>
+                        <td className="py-2.5 text-right font-semibold text-gray-900">{sym}{amt.toFixed(2)}</td>
                         <td className="py-2.5 text-right text-gray-500">{total > 0 ? (amt / total * 100).toFixed(1) : 0}%</td>
                         <td className="py-2.5 text-right text-gray-500">{count}</td>
-                        <td className="py-2.5 text-right text-teal-700 font-medium">${ded.toFixed(2)}</td>
+                        <td className="py-2.5 text-right text-teal-700 font-medium">{sym}{ded.toFixed(2)}</td>
                       </tr>
                     );
                   })}
@@ -275,10 +283,10 @@ export default function InsightsPage() {
                 <tfoot>
                   <tr className="border-t-2 border-gray-200">
                     <td className="py-2.5 font-bold text-gray-900">Total</td>
-                    <td className="py-2.5 text-right font-bold text-gray-900">${total.toFixed(2)}</td>
+                    <td className="py-2.5 text-right font-bold text-gray-900">{sym}{total.toFixed(2)}</td>
                     <td className="py-2.5 text-right text-gray-500">100%</td>
                     <td className="py-2.5 text-right text-gray-500">{filtered.length}</td>
-                    <td className="py-2.5 text-right font-bold text-teal-700">${deductible.toFixed(2)}</td>
+                    <td className="py-2.5 text-right font-bold text-teal-700">{sym}{deductible.toFixed(2)}</td>
                   </tr>
                 </tfoot>
               </table>

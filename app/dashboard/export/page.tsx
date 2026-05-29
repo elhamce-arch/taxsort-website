@@ -13,7 +13,14 @@ interface Receipt {
   imageUrl?: string;
 }
 
-interface Business { id: string; name: string; }
+interface Business { id: string; name: string; currency?: string; }
+
+function currencySymbol(currency?: string) {
+  if (currency === "CAD") return "CA$";
+  if (currency === "GBP") return "£";
+  if (currency === "AUD") return "AU$";
+  return "$";
+}
 
 type Range = "ytd" | "last_year" | "last90" | "last30" | "all";
 
@@ -87,10 +94,10 @@ function openPrint(html: string) {
   setTimeout(() => { win.print(); }, 600);
 }
 
-function buildReportHTML(receipts: Receipt[], bizName: string, rangeLabel: string): string {
+function buildReportHTML(receipts: Receipt[], bizName: string, rangeLabel: string, sym = "$"): string {
   const total = receipts.reduce((s, r) => s + (r.total ?? 0), 0);
   const rows = receipts.map(r =>
-    `<tr><td>${r.date ? fmtDate(r.date) : "—"}</td><td>${r.vendor ?? "Unknown"}</td><td>${r.category ?? "Uncategorized"}</td><td style="text-align:right">$${(r.total ?? 0).toFixed(2)}</td></tr>`
+    `<tr><td>${r.date ? fmtDate(r.date) : "—"}</td><td>${r.vendor ?? "Unknown"}</td><td>${r.category ?? "Uncategorized"}</td><td style="text-align:right">${sym}${(r.total ?? 0).toFixed(2)}</td></tr>`
   ).join("");
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Expense Report</title>
   <style>
@@ -106,11 +113,11 @@ function buildReportHTML(receipts: Receipt[], bizName: string, rangeLabel: strin
   </style></head><body>
   <div class="header"><h1>Expense Report — ${bizName}</h1><p>${rangeLabel} &nbsp;·&nbsp; ${receipts.length} transactions &nbsp;·&nbsp; Generated ${new Date().toLocaleDateString("en-CA")}</p></div>
   <table><thead><tr><th>Date</th><th>Vendor</th><th>Category</th><th style="text-align:right">Amount</th></tr></thead>
-  <tbody>${rows}<tr class="total-row"><td colspan="3">Total</td><td style="text-align:right">$${total.toFixed(2)}</td></tr></tbody></table>
+  <tbody>${rows}<tr class="total-row"><td colspan="3">Total</td><td style="text-align:right">${sym}${total.toFixed(2)}</td></tr></tbody></table>
   <script>window.onafterprint=function(){window.close()}<\/script></body></html>`;
 }
 
-function buildSummaryHTML(receipts: Receipt[], bizName: string, rangeLabel: string): string {
+function buildSummaryHTML(receipts: Receipt[], bizName: string, rangeLabel: string, sym = "$"): string {
   const byCategory: Record<string, number> = {};
   receipts.forEach(r => { const c = r.category ?? "Uncategorized"; byCategory[c] = (byCategory[c] ?? 0) + (r.total ?? 0); });
   const sorted = Object.entries(byCategory).sort(([, a], [, b]) => b - a);
@@ -123,7 +130,7 @@ function buildSummaryHTML(receipts: Receipt[], bizName: string, rangeLabel: stri
     const ded = isPersonal ? 0 : amt * mult;
     totalDed += ded;
     const rule = isPersonal ? "Non-deductible" : mult < 1 ? "50% rule" : "100%";
-    return `<tr><td>${cat}</td><td style="text-align:right">$${amt.toFixed(2)}</td><td style="text-align:center">${rule}</td><td style="text-align:right;color:#00897B;font-weight:600">$${ded.toFixed(2)}</td></tr>`;
+    return `<tr><td>${cat}</td><td style="text-align:right">${sym}${amt.toFixed(2)}</td><td style="text-align:center">${rule}</td><td style="text-align:right;color:#00897B;font-weight:600">${sym}${ded.toFixed(2)}</td></tr>`;
   }).join("");
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Tax Summary</title>
   <style>
@@ -139,7 +146,7 @@ function buildSummaryHTML(receipts: Receipt[], bizName: string, rangeLabel: stri
   </style></head><body>
   <div class="header"><h1>Tax Expense Summary — ${bizName}</h1><p>${rangeLabel} &nbsp;·&nbsp; ${receipts.length} transactions &nbsp;·&nbsp; Generated ${new Date().toLocaleDateString("en-CA")}</p></div>
   <table><thead><tr><th>Category</th><th style="text-align:right">Total</th><th style="text-align:center">Rule</th><th style="text-align:right">Est. Deductible</th></tr></thead>
-  <tbody>${rows}<tr class="total-row"><td>TOTAL</td><td style="text-align:right">$${total.toFixed(2)}</td><td></td><td style="text-align:right;color:#00897B">$${totalDed.toFixed(2)}</td></tr></tbody></table>
+  <tbody>${rows}<tr class="total-row"><td>TOTAL</td><td style="text-align:right">${sym}${total.toFixed(2)}</td><td></td><td style="text-align:right;color:#00897B">${sym}${totalDed.toFixed(2)}</td></tr></tbody></table>
   <p class="note">* Meals &amp; Entertainment estimated at 50% deductible (US/CA rules). This summary is for reference only — consult your accountant for exact tax figures.</p>
   <script>window.onafterprint=function(){window.close()}<\/script></body></html>`;
 }
@@ -192,7 +199,7 @@ export default function ExportPage() {
   useEffect(() => {
     if (!user) return;
     getDocs(collection(db, "users", user.uid, "businesses")).then(snap => {
-      const list = snap.docs.map(d => ({ id: d.id, name: (d.data().name as string) ?? d.id }));
+      const list = snap.docs.map(d => ({ id: d.id, name: (d.data().name as string) ?? d.id, currency: d.data().currency as string | undefined }));
       setBusinesses(list);
       const biz = list[0];
       if (biz) { setSelectedBiz(biz.id); setBizName(biz.name); }
@@ -213,6 +220,7 @@ export default function ExportPage() {
   const total = receipts.reduce((s, r) => s + (r.total ?? 0), 0);
   const suffix = new Date().toISOString().slice(0, 10);
   const rangeLabel = RANGE_LABELS[range];
+  const sym = currencySymbol(businesses.find(b => b.id === selectedBiz)?.currency);
 
   async function run(key: string, fn: () => Promise<void> | void) {
     setWorking(key);
@@ -236,7 +244,7 @@ export default function ExportPage() {
       title: "PDF Expense Report",
       desc: "Full transaction list — opens in a new tab, use browser Print → Save as PDF",
       label: "Open PDF",
-      action: () => run("pdf", () => openPrint(buildReportHTML(receipts, bizName, rangeLabel))),
+      action: () => run("pdf", () => openPrint(buildReportHTML(receipts, bizName, rangeLabel, sym))),
     },
     {
       key: "summary",
@@ -245,7 +253,7 @@ export default function ExportPage() {
       title: "Tax Summary PDF",
       desc: "Category totals with 50% meals rule applied — opens in a new tab, use Print → Save as PDF",
       label: "Open Summary",
-      action: () => run("summary", () => openPrint(buildSummaryHTML(receipts, bizName, rangeLabel))),
+      action: () => run("summary", () => openPrint(buildSummaryHTML(receipts, bizName, rangeLabel, sym))),
     },
     {
       key: "qb",
@@ -320,7 +328,7 @@ export default function ExportPage() {
             </div>
             <div className="text-right">
               <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">In Range</p>
-              <p className="text-sm font-semibold text-gray-900">{receipts.length} transactions · <span className="text-teal-700">${total.toFixed(2)}</span></p>
+              <p className="text-sm font-semibold text-gray-900">{receipts.length} transactions · <span className="text-teal-700">{sym}{total.toFixed(2)}</span></p>
             </div>
           </div>
 

@@ -5,7 +5,14 @@ import { db } from "@/lib/firebase";
 import { useAuth } from "@/lib/auth-context";
 import Link from "next/link";
 
-interface Business { id: string; name: string; }
+interface Business { id: string; name: string; currency?: string; }
+
+function currencySymbol(currency?: string) {
+  if (currency === "CAD") return "CA$";
+  if (currency === "GBP") return "£";
+  if (currency === "AUD") return "AU$";
+  return "$";
+}
 interface Receipt {
   id: string;
   vendor: string;
@@ -54,7 +61,7 @@ export default function DashboardPage() {
   useEffect(() => {
     if (!user) return;
     getDocs(collection(db, "users", user.uid, "businesses")).then(snap => {
-      const list = snap.docs.map(d => ({ id: d.id, name: (d.data().name as string) ?? d.id }));
+      const list = snap.docs.map(d => ({ id: d.id, name: (d.data().name as string) ?? d.id, currency: d.data().currency as string | undefined }));
       setBusinesses(list);
       if (list.length > 0) setSelectedBiz(list[0].id);
     });
@@ -98,6 +105,7 @@ export default function DashboardPage() {
   });
 
   const total = filtered.reduce((s, r) => s + (r.total ?? 0), 0);
+  const sym = currencySymbol(businesses.find(b => b.id === selectedBiz)?.currency);
 
   return (
     <div>
@@ -105,7 +113,7 @@ export default function DashboardPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Expenses</h1>
-          <p className="text-sm text-gray-500 mt-0.5">{filtered.length} transactions · Total: <span className="font-semibold text-teal-700">${total.toFixed(2)}</span></p>
+          <p className="text-sm text-gray-500 mt-0.5">{filtered.length} transactions · Total: <span className="font-semibold text-teal-700">{sym}{total.toFixed(2)}</span></p>
         </div>
         <div className="flex items-center gap-3">
           {businesses.length > 1 && (
@@ -216,7 +224,7 @@ export default function DashboardPage() {
                     </span>
                   </td>
                   <td className="px-6 py-3 text-gray-500">{r.date ? formatDate(r.date) : "—"}</td>
-                  <td className="px-6 py-3 text-right font-semibold text-gray-900">${(r.total ?? 0).toFixed(2)}</td>
+                  <td className="px-6 py-3 text-right font-semibold text-gray-900">{sym}{(r.total ?? 0).toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
