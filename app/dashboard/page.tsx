@@ -46,6 +46,8 @@ export default function DashboardPage() {
   const [selectedBiz, setSelectedBiz] = useState<string>("");
   const [receipts, setReceipts] = useState<Receipt[]>([]);
   const [search, setSearch] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [dateFilter, setDateFilter] = useState("all");
   const [loading, setLoading] = useState(true);
 
   // Load businesses
@@ -73,10 +75,27 @@ export default function DashboardPage() {
     return unsub;
   }, [user, selectedBiz]);
 
-  const filtered = receipts.filter(r =>
-    r.vendor?.toLowerCase().includes(search.toLowerCase()) ||
-    r.category?.toLowerCase().includes(search.toLowerCase())
-  );
+  const categories = Array.from(new Set(receipts.map(r => r.category).filter(Boolean))).sort();
+
+  const now = new Date();
+  const filtered = receipts.filter(r => {
+    if (search && !r.vendor?.toLowerCase().includes(search.toLowerCase()) && !r.category?.toLowerCase().includes(search.toLowerCase())) return false;
+    if (categoryFilter !== "all" && r.category !== categoryFilter) return false;
+    if (dateFilter !== "all" && r.date) {
+      const d = new Date(r.date.seconds * 1000);
+      if (dateFilter === "this_month") {
+        if (d.getMonth() !== now.getMonth() || d.getFullYear() !== now.getFullYear()) return false;
+      } else if (dateFilter === "last_month") {
+        const lm = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+        if (d.getMonth() !== lm.getMonth() || d.getFullYear() !== lm.getFullYear()) return false;
+      } else if (dateFilter === "this_year") {
+        if (d.getFullYear() !== now.getFullYear()) return false;
+      } else if (dateFilter === "last_year") {
+        if (d.getFullYear() !== now.getFullYear() - 1) return false;
+      }
+    }
+    return true;
+  });
 
   const total = filtered.reduce((s, r) => s + (r.total ?? 0), 0);
 
@@ -111,18 +130,47 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Search */}
-      <div className="relative mb-4">
-        <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 111 11a6 6 0 0116 0z" />
-        </svg>
-        <input
-          type="text"
-          placeholder="Search vendor or category…"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
-        />
+      {/* Search + Filters */}
+      <div className="flex flex-wrap gap-3 mb-4">
+        <div className="relative flex-1 min-w-48">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 111 11a6 6 0 0116 0z" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search vendor or category…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          />
+        </div>
+        <select
+          value={categoryFilter}
+          onChange={e => setCategoryFilter(e.target.value)}
+          className="px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        >
+          <option value="all">All Categories</option>
+          {categories.map(c => <option key={c} value={c}>{c}</option>)}
+        </select>
+        <select
+          value={dateFilter}
+          onChange={e => setDateFilter(e.target.value)}
+          className="px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        >
+          <option value="all">All Time</option>
+          <option value="this_month">This Month</option>
+          <option value="last_month">Last Month</option>
+          <option value="this_year">This Year</option>
+          <option value="last_year">Last Year</option>
+        </select>
+        {(categoryFilter !== "all" || dateFilter !== "all" || search) && (
+          <button
+            onClick={() => { setCategoryFilter("all"); setDateFilter("all"); setSearch(""); }}
+            className="px-3 py-2.5 rounded-xl text-sm text-gray-500 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            Clear filters
+          </button>
+        )}
       </div>
 
       {/* Table */}
